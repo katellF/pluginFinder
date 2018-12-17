@@ -6,12 +6,4 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'ControllerConnect' => $baseDir . '/controller/frontend/ControllerConnect.php',
-    'ControllerContact' => $baseDir . '/controller/frontend/ControllerContact.php',
-    'ControllerHomeSearch' => $baseDir . '/controller/frontend/ControllerHomeSearch.php',
-    'ControllerInfo' => $baseDir . '/controller/frontend/ControllerInfo.php',
-    'Manager' => $baseDir . '/model/Manager.php',
-    'Router' => $baseDir . '/controller/Router.php',
-    'UserManager' => $baseDir . '/model/UserManager.php',
-    'View' => $baseDir . '/helpers/View.php',
 );

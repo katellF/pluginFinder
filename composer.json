@@ -3,11 +3,12 @@
     },
 
     "autoload": {
-        "classmap": [
-            "controller",
-            "model",
-            "helpers"
-        ]
+        "autoload": {
+            "psr-4": {
+                "projectPlugin\\":"src/"
+            }
+        }
+
     }
 
 }

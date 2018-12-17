@@ -1,4 +1,5 @@
 <?php
+namespace projectPlugin\controller\frontend;
 
 class ControllerHomeSearch
 {

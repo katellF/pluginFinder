@@ -6,21 +6,9 @@ namespace Composer\Autoload;
 
 class ComposerStaticInitbfc61e7adde4c02d36908f14e78e0f0f
 {
-    public static $classMap = array (
-        'ControllerConnect' => __DIR__ . '/../..' . '/controller/frontend/ControllerConnect.php',
-        'ControllerContact' => __DIR__ . '/../..' . '/controller/frontend/ControllerContact.php',
-        'ControllerHomeSearch' => __DIR__ . '/../..' . '/controller/frontend/ControllerHomeSearch.php',
-        'ControllerInfo' => __DIR__ . '/../..' . '/controller/frontend/ControllerInfo.php',
-        'Manager' => __DIR__ . '/../..' . '/model/Manager.php',
-        'Router' => __DIR__ . '/../..' . '/controller/Router.php',
-        'UserManager' => __DIR__ . '/../..' . '/model/UserManager.php',
-        'View' => __DIR__ . '/../..' . '/helpers/View.php',
-    );
-
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInitbfc61e7adde4c02d36908f14e78e0f0f::$classMap;
 
         }, null, ClassLoader::class);
     }
