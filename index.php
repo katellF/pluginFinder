@@ -10,9 +10,9 @@ define('ROOT', dirname(__DIR__) . DIRECTORY_SEPARATOR);
 define('APP', ROOT . 'pluginFinder' . DIRECTORY_SEPARATOR);
 
 
-require('Autoload.php');
+//require('Autoload.php');
 
-autoload::load();
+//autoload::load();
 
 require('controller/Router.php');
 
