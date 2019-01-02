@@ -13,7 +13,7 @@ class Router
     private $ctrlConnect;
     private $ctrlContact;
     private $ctrlInfo;
-    private $helperView;
+   private $helperView;
 
     /** @var null The controller */
     private $url_controller = null;
@@ -41,7 +41,6 @@ class Router
         if (!$this->url_controller) {
 
             $page = $this->ctrlHomeSearch;
-            $page = $this->helperView;
             //require  '/controller/home.php';
             //$page = new ControllerHomeSearch();
            $page->index();
@@ -49,14 +48,14 @@ class Router
         } elseif (file_exists( APP. 'Helpers/' . $this->url_controller . '.php')) {
             // here we did check for controller: does such a controller exist ?
 
-            echo 'Ca existe';
-            die();
+            //echo 'Ca existe';
+
 
             // if so, then load this file and create this controller
             // example: if controller would be "car", then this line would translate into: $this->car = new car();
            // require  'controller/' . $this->url_controller . '.php';
             //require  'controller/frontend/' . $this->url_controller . '.php';
-            require  'Helpers/' . $this->helperView . '.php';
+
 
             $this->url_controller = new $this->url_controller();
 

@@ -21,7 +21,7 @@ $ControllerHomeSearch = new ControllerHomeSearch();
 $ControllerConnect = new ControllerConnect();
 $ControllerContact = new ControllerContact();
 $ControllerInfo = new ControllerInfo();
-$HelperView = new View("frontend/homeSearch");
+//$HelperView = new View("frontend/homeSearch");
 
 require('src/controller/Router.php');
 
