@@ -3,11 +3,10 @@
     },
 
     "autoload": {
-        "autoload": {
-            "psr-4": {
-                "projectPlugin\\":"src/"
+        "psr-4": {
+                "Katell\\":"src/"
             }
-        }
+
 
     }
 

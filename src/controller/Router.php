@@ -1,8 +1,19 @@
 <?php
 
+use Katell\Controller\Frontend\ControllerHomeSearch;
+use Katell\Controller\Frontend\ControllerConnect;
+use Katell\Controller\Frontend\ControllerContact;
+use Katell\Controller\Frontend\ControllerInfo;
+use Katell\Helpers\View;
+
+
 class Router
 {
     private $ctrlHomeSearch;
+    private $ctrlConnect;
+    private $ctrlContact;
+    private $ctrlInfo;
+    private $helperView;
 
     /** @var null The controller */
     private $url_controller = null;
@@ -17,6 +28,10 @@ class Router
     public function __construct()
     {
         $this->ctrlHomeSearch = new ControllerHomeSearch();
+        $this->ctrlConnect = new ControllerConnect();
+        $this->ctrlContact = new ControllerContact();
+        $this->ctrlInfo = new ControllerInfo();
+        $this->helperView = new View("frontend/homeSearch");
         $this->splitUrl();
 
 
@@ -26,11 +41,12 @@ class Router
         if (!$this->url_controller) {
 
             $page = $this->ctrlHomeSearch;
+            $page = $this->helperView;
             //require  '/controller/home.php';
             //$page = new ControllerHomeSearch();
            $page->index();
 
-        } elseif (file_exists( APP. 'controller/frontend/' . $this->url_controller . '.php')) {
+        } elseif (file_exists( APP. 'Helpers/' . $this->url_controller . '.php')) {
             // here we did check for controller: does such a controller exist ?
 
             echo 'Ca existe';
@@ -39,7 +55,8 @@ class Router
             // if so, then load this file and create this controller
             // example: if controller would be "car", then this line would translate into: $this->car = new car();
            // require  'controller/' . $this->url_controller . '.php';
-            require  'controller/frontend/' . $this->url_controller . '.php';
+            //require  'controller/frontend/' . $this->url_controller . '.php';
+            require  'Helpers/' . $this->helperView . '.php';
 
             $this->url_controller = new $this->url_controller();
 

@@ -6,9 +6,34 @@ namespace Composer\Autoload;
 
 class ComposerStaticInitbfc61e7adde4c02d36908f14e78e0f0f
 {
+    public static $prefixLengthsPsr4 = array (
+        'K' => 
+        array (
+            'Katell\\' => 7,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'Katell\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
+        ),
+    );
+
+    public static $classMap = array (
+        'Katell\\Controller\\Frontend\\ControllerConnect' => __DIR__ . '/../..' . '/src/controller/frontend/ControllerConnect.php',
+        'Katell\\Controller\\Frontend\\ControllerContact' => __DIR__ . '/../..' . '/src/controller/frontend/ControllerContact.php',
+        'Katell\\Controller\\Frontend\\ControllerHomeSearch' => __DIR__ . '/../..' . '/src/controller/frontend/ControllerHomeSearch.php',
+        'Katell\\Controller\\Frontend\\ControllerInfo' => __DIR__ . '/../..' . '/src/controller/frontend/ControllerInfo.php',
+        'Katell\\Helpers\\View' => __DIR__ . '/../..' . '/src/helpers/View.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->prefixLengthsPsr4 = ComposerStaticInitbfc61e7adde4c02d36908f14e78e0f0f::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitbfc61e7adde4c02d36908f14e78e0f0f::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitbfc61e7adde4c02d36908f14e78e0f0f::$classMap;
 
         }, null, ClassLoader::class);
     }

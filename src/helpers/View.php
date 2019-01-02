@@ -1,5 +1,5 @@
 <?php
-
+namespace Katell\Helpers;
 
 class View
 {
