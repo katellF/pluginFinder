@@ -1,5 +1,5 @@
 <?php
-namespace Katell\Controller\Frontend;
+namespace Katell\Controller;
 
 class Connect
 {

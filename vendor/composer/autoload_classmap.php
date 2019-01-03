@@ -6,9 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Katell\\Controller\\Frontend\\Connect' => $baseDir . '/src/controller/Connect.php',
-    'Katell\\Controller\\Frontend\\Contact' => $baseDir . '/src/controller/Contact.php',
-    'Katell\\Controller\\Frontend\\ControllerInfo' => $baseDir . '/src/controller/ControllerInfo.php',
-    'Katell\\Controller\\Frontend\\HomeSearch' => $baseDir . '/src/controller/HomeSearch.php',
+    'Katell\\Controller\\Connect' => $baseDir . '/src/controller/Connect.php',
+    'Katell\\Controller\\Contact' => $baseDir . '/src/controller/Contact.php',
+    'Katell\\Controller\\HomeSearch' => $baseDir . '/src/controller/HomeSearch.php',
+    'Katell\\Controller\\Info' => $baseDir . '/src/controller/Info.php',
     'Katell\\Helpers\\View' => $baseDir . '/src/helpers/View.php',
 );

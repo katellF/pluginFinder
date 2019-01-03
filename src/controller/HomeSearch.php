@@ -1,5 +1,5 @@
 <?php
-namespace Katell\Controller\Frontend;
+namespace Katell\Controller;
 use Katell\Helpers\View;
 
 class HomeSearch

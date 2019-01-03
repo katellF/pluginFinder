@@ -1,9 +1,9 @@
 <?php
 
-use Katell\Controller\Frontend\HomeSearch;
-use Katell\Controller\Frontend\Connect;
-use Katell\Controller\Frontend\Contact;
-use Katell\Controller\Frontend\ControllerInfo;
+use Katell\Controller\HomeSearch;
+use Katell\Controller\Connect;
+use Katell\Controller\Contact;
+use Katell\Controller\Info;
 use Katell\Helpers\View;
 
 
@@ -30,7 +30,7 @@ class Router
         $this->ctrlHomeSearch = new HomeSearch();
         $this->ctrlConnect = new Connect();
         $this->ctrlContact = new Contact();
-        $this->ctrlInfo = new ControllerInfo();
+        $this->ctrlInfo = new Info();
         $this->helperView = new View("frontend/homeSearch");
         $this->splitUrl();
 
@@ -50,7 +50,9 @@ class Router
             $this->url_controller = new $url_controller();
 
             // check for method: does such a method exist in the controller ?
-            if (method_exists('Katell\Controller\\'.$this->url_controller, $this->url_action)) {
+
+
+            if (method_exists($url_controller, $this->url_action)) {
 
                 if (!empty($this->url_params)) {
                     // Call the method and pass arguments to it

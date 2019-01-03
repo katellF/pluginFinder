@@ -29,12 +29,12 @@
             <div class=" collapse navbar-collapse row justify-content-end menu_burger" id="navbarTogglerDemo03">
                 <ul class="navbar-nav mt-2 mt-lg-0">
                     <li class="nav-item active border_nav color_link">
-                        <a class="nav-link color_link" href="#">Accueil <span class="sr-only">(current)</span></a>
+                        <a class="nav-link color_link" href="index.php">Accueil <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active border_nav color_link">
-                        <a class="nav-link color_link" href="#">A Propos</a>
+                        <a class="nav-link color_link" href="index.php?action=info">A Propos</a>
                     <li class="nav-item active">
-                        <a class="nav-link color_link" href="#">Contact</a>
+                        <a class="nav-link color_link" href="index.php?action=contact">Contact</a>
                     </li>
                 </ul>
             </div>
