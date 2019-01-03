@@ -2,7 +2,7 @@
 
 namespace Katell\Controller\Frontend;
 
-class ControllerContact
+class Contact
 {
     public function index()
     {

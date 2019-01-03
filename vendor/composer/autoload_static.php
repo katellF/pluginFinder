@@ -21,10 +21,10 @@ class ComposerStaticInitbfc61e7adde4c02d36908f14e78e0f0f
     );
 
     public static $classMap = array (
-        'Katell\\Controller\\Frontend\\ControllerConnect' => __DIR__ . '/../..' . '/src/controller/frontend/ControllerConnect.php',
-        'Katell\\Controller\\Frontend\\ControllerContact' => __DIR__ . '/../..' . '/src/controller/frontend/ControllerContact.php',
-        'Katell\\Controller\\Frontend\\ControllerHomeSearch' => __DIR__ . '/../..' . '/src/controller/frontend/ControllerHomeSearch.php',
-        'Katell\\Controller\\Frontend\\ControllerInfo' => __DIR__ . '/../..' . '/src/controller/frontend/ControllerInfo.php',
+        'Katell\\Controller\\Frontend\\Connect' => __DIR__ . '/../..' . '/src/controller/Connect.php',
+        'Katell\\Controller\\Frontend\\Contact' => __DIR__ . '/../..' . '/src/controller/Contact.php',
+        'Katell\\Controller\\Frontend\\ControllerInfo' => __DIR__ . '/../..' . '/src/controller/ControllerInfo.php',
+        'Katell\\Controller\\Frontend\\HomeSearch' => __DIR__ . '/../..' . '/src/controller/HomeSearch.php',
         'Katell\\Helpers\\View' => __DIR__ . '/../..' . '/src/helpers/View.php',
     );
 

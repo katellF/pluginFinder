@@ -2,17 +2,13 @@
 namespace Katell\Controller\Frontend;
 use Katell\Helpers\View;
 
-class ControllerHomeSearch
+class HomeSearch
 {
 
    public function index(){
-
-      /// echo'Coucou Home';
 
        $view = new View("frontend/homeSearch");
        $view->generate(array());
 
    }
-
-
 }

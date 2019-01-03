@@ -1,8 +1,8 @@
 <?php
 
-use Katell\Controller\Frontend\ControllerHomeSearch;
-use Katell\Controller\Frontend\ControllerConnect;
-use Katell\Controller\Frontend\ControllerContact;
+use Katell\Controller\Frontend\HomeSearch;
+use Katell\Controller\Frontend\Connect;
+use Katell\Controller\Frontend\Contact;
 use Katell\Controller\Frontend\ControllerInfo;
 use Katell\Helpers\View;
 
@@ -13,7 +13,7 @@ class Router
     private $ctrlConnect;
     private $ctrlContact;
     private $ctrlInfo;
-   private $helperView;
+    private $helperView;
 
     /** @var null The controller */
     private $url_controller = null;
@@ -27,40 +27,30 @@ class Router
 
     public function __construct()
     {
-        $this->ctrlHomeSearch = new ControllerHomeSearch();
-        $this->ctrlConnect = new ControllerConnect();
-        $this->ctrlContact = new ControllerContact();
+        $this->ctrlHomeSearch = new HomeSearch();
+        $this->ctrlConnect = new Connect();
+        $this->ctrlContact = new Contact();
         $this->ctrlInfo = new ControllerInfo();
         $this->helperView = new View("frontend/homeSearch");
         $this->splitUrl();
 
 
-        var_dump(APP);
+       // var_dump($this->url_controller);
 
 
         if (!$this->url_controller) {
 
             $page = $this->ctrlHomeSearch;
-            //require  '/controller/home.php';
-            //$page = new ControllerHomeSearch();
-           $page->index();
 
-        } elseif (file_exists( APP. 'Helpers/' . $this->url_controller . '.php')) {
-            // here we did check for controller: does such a controller exist ?
+            $page->index();
 
-            //echo 'Ca existe';
+        } elseif (class_exists(   'Katell\Controller\\'.$this->url_controller )) {
 
-
-            // if so, then load this file and create this controller
-            // example: if controller would be "car", then this line would translate into: $this->car = new car();
-           // require  'controller/' . $this->url_controller . '.php';
-            //require  'controller/frontend/' . $this->url_controller . '.php';
-
-
-            $this->url_controller = new $this->url_controller();
+            $url_controller='Katell\Controller\\'.$this->url_controller;
+            $this->url_controller = new $url_controller();
 
             // check for method: does such a method exist in the controller ?
-            if (method_exists($this->url_controller, $this->url_action)) {
+            if (method_exists('Katell\Controller\\'.$this->url_controller, $this->url_action)) {
 
                 if (!empty($this->url_params)) {
                     // Call the method and pass arguments to it
@@ -82,26 +72,16 @@ class Router
         } else {
             header('location: ' . URL . 'problem');
         }
-
     }
 
-//    public function routerRequest()
-//    {
-//        if (isset($_GET['action'])) {
-//            if ($_GET['action'] == 'home') {
-//
-//                $this->ctrlHomeSearch->home();
-//            }
-//        }
-//
-//    }
 
     private function splitUrl()
     {
-        if (isset($_GET['url'])) {
+
+        if (isset($_GET['action'])) {
 
             // split URL
-            $url = trim($_GET['url'], '/');
+            $url = trim($_GET['action'], '/');
             $url = filter_var($url, FILTER_SANITIZE_URL);
             $url = explode('/', $url);
 
@@ -110,6 +90,7 @@ class Router
             // @see http://davidwalsh.name/php-shorthand-if-else-ternary-operators
             $this->url_controller = isset($url[0]) ? $url[0] : null;
             $this->url_action = isset($url[1]) ? $url[1] : null;
+
 
             // Remove controller and action from the split URL
             unset($url[0], $url[1]);

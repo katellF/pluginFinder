@@ -1,7 +1,7 @@
 <?php
 namespace Katell\Controller\Frontend;
 
-class ControllerConnect
+class Connect
 {
     public function index()
     {
