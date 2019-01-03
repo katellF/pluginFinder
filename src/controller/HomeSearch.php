@@ -9,6 +9,6 @@ class HomeSearch
 
        $view = new View("frontend/homeSearch");
        $view->generate(array());
-
    }
 }
+

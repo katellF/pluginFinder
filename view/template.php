@@ -7,8 +7,9 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <?php
-    require 'view/includes/scripts_head.php';
+    require(dirname(__FILE__) . '/includes/scripts_head.php');
     ?>
+
 
     <title><?= $title ?></title>
 </head>
@@ -24,19 +25,16 @@
 <header class="container">
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <button>
 
-            </button>
-
-            <div>
-                <ul>
-                    <li>
-                        <a href="#">Accueil <span class="sr-only">(current)</span></a>
+            <div class=" collapse navbar-collapse row justify-content-end menu_burger" id="navbarTogglerDemo03">
+                <ul class="navbar-nav mt-2 mt-lg-0">
+                    <li class="nav-item active border_nav color_link">
+                        <a class="nav-link color_link" href="#">Accueil <span class="sr-only">(current)</span></a>
                     </li>
-                    <li>
-                        <a href="#">A Propos</a>
-                    <li>
-                        <a href="#">Contact</a>
+                    <li class="nav-item active border_nav color_link">
+                        <a class="nav-link color_link" href="#">A Propos</a>
+                    <li class="nav-item active">
+                        <a class="nav-link color_link" href="#">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -45,10 +43,15 @@
     </nav>
 </header>
 <?= $content ?>
+
+<?php
+require(dirname(__FILE__) . '/includes/scripts_footer.php');
+?>
+
 </body>
 
 <?php
-require 'view/includes/footer.php';
+require(dirname(__FILE__) . '/includes/footer.php');
 ?>
 
 </html>
