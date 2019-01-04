@@ -26,6 +26,7 @@ class ComposerStaticInitbfc61e7adde4c02d36908f14e78e0f0f
         'Katell\\Controller\\HomeSearch' => __DIR__ . '/../..' . '/src/controller/HomeSearch.php',
         'Katell\\Controller\\Info' => __DIR__ . '/../..' . '/src/controller/Info.php',
         'Katell\\Helpers\\View' => __DIR__ . '/../..' . '/src/helpers/View.php',
+        'Katell\\Model\\Manager' => __DIR__ . '/../..' . '/src/model/Manager.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

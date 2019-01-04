@@ -11,4 +11,5 @@ return array(
     'Katell\\Controller\\HomeSearch' => $baseDir . '/src/controller/HomeSearch.php',
     'Katell\\Controller\\Info' => $baseDir . '/src/controller/Info.php',
     'Katell\\Helpers\\View' => $baseDir . '/src/helpers/View.php',
+    'Katell\\Model\\Manager' => $baseDir . '/src/model/Manager.php',
 );

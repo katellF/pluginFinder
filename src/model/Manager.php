@@ -1,4 +1,5 @@
 <?php
+namespace Katell\Model;
 
 abstract class Manager
 {
@@ -9,10 +10,10 @@ abstract class Manager
 
     public function __construct()
     {
-        $this->dbname = 'blog-projet4';
+        $this->dbname = 'plugins-project5';
         $this->dbhost = 'localhost';
         $this->dbuser = 'root';
-        $this->dbpassword = '';
+        $this->dbpassword = 'root';
     }
 
     protected function dbConnect()

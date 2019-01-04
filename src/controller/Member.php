@@ -1,12 +1,15 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: katell
- * Date: 1/3/19
- * Time: 11:52 AM
- */
+namespace Katell\Controller;
+use Katell\Helpers\View;
 
 class Member
 {
+    public function index()
+    {
 
+        $view = new View("backend/mySpace");
+        $view->generate(array());
+
+
+    }
 }

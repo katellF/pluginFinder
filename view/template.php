@@ -36,6 +36,9 @@
                     <li class="nav-item active">
                         <a class="nav-link color_link" href="index.php?action=contact">Contact</a>
                     </li>
+                    <li class="nav-item active">
+                        <a class="nav-link color_link" href="index.php?action=connect">S'inscrire</a>
+                    </li>
                 </ul>
             </div>
 
