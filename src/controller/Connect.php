@@ -19,8 +19,6 @@ class Connect
 
         $view = new View("frontend/register");
         $view->generate(array());
-
-
     }
 
     public function registration()
@@ -106,7 +104,7 @@ class Connect
                     $_SESSION['id'] = $res['id'];
                     $_SESSION['pseudo'] = $_POST['pseudoConnect'];
 
-                    header('Location: index.php?action=admin');
+                    header('Location: index.php?action=member');
 
                 } else {
                     throw new Exception('Mauvais identifiant ou mot de passe');
@@ -129,7 +127,7 @@ class Connect
             $view->generate(array(), 'template_logout');
 
         } else {
-            header('Location: index.php?action=admin');
+            header('Location: index.php?action=member');
         }
     }
 

@@ -4,12 +4,27 @@ use Katell\Helpers\View;
 
 class Member
 {
-    public function index()
+    private $ctrlConnect;
+
+    public function __construct()
     {
 
-        $view = new View("backend/mySpace");
-        $view->generate(array());
+        $this->ctrlConnect = new Connect();
 
+    }
 
+    public function index()
+    {
+        session_start();
+
+        //var_dump($this->ctrlConnect->isUserConnected());
+
+        if($this->ctrlConnect->isUserConnected())
+        {
+
+            $view = new View("backend/mySpace");
+            $view->generate(array(),"template_mySpace");
+
+        }
     }
 }

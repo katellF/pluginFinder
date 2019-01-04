@@ -34,13 +34,7 @@
                     <li class="nav-item active border_nav color_link">
                         <a class="nav-link color_link" href="index.php?action=info">A Propos</a>
                     <li class="nav-item active">
-                        <a class="nav-link color_link" href="index.php?action=contact">Contact</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link color_link" href="index.php?action=connect">S'inscrire</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link color_link" href="index.php?action=connect/connection">Se Connecter</a>
+                        <a class="nav-link color_link" href="index.php?action=connect/logout">Se déconnecter</a>
                     </li>
                 </ul>
             </div>
