@@ -1,8 +1,12 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.0.0/themes/algolia-min.css">
+<link rel="stylesheet" href="public/css/style.css">
 
-<p>Salut lot of text lot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textvvvlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of text
-    lot of textlot of textlot of textlot of textvvvvvlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of text
-    lot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of text
-    lot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of text
-    lot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of textlot of text
-</p>
+
+
+
+<div id="app"></div>
+
+<script src="public/js/pluginfinder.js"></script>
+
+
 
