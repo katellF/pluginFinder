@@ -1,6 +1,5 @@
 <?php
 namespace Katell\Model;
-//use Katell\Model\Manager;
 
 class UserManager extends Manager
 {

@@ -24,6 +24,9 @@ const Hit = ({hit}) =>
             <div className="hit-description">
                 <Highlight attribute="short_description" hit={hit}/>
             </div>
+            <button className="hit-favorits">
+                My favorites
+            </button>
         </div>
     </div>
 

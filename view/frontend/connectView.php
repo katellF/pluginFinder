@@ -9,7 +9,7 @@ $this->title = htmlspecialchars('Se connecter');
     <h2 class="text-center">Se connecter</h2>
 
 
-    <form action="index.php?action=connect/connection" method="post" class="form-connect">
+    <form action="index.php?action=Member/favoritesList" method="post" class="form-connect">
         <div class="form-group margin-bottom25">
             <label for="pseudo" class="margin-bottom15">pseudo</label><br/>
             <input type="text" class="form-control" id="pseudoConnect" placeholder="pseudo" name="pseudoConnect">
