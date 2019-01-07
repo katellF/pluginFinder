@@ -18,15 +18,11 @@ class Member
 
     public function index()
     {
-        session_start();
 
-        if($this->ctrlConnect->isUserConnected())
-        {
+        $this->favoritesList();
+//            $view = new View("backend/mySpace");
+//            $view->generate(array(),"template_mySpace");
 
-            $view = new View("backend/mySpace");
-            $view->generate(array(),"template_mySpace");
-
-        }
     }
 
     public function favoritesList()
@@ -44,6 +40,33 @@ class Member
 
             $view = new View("backend/mySpace");
             $view->generate(array('favorites' => $getFavorites), 'template_mySpace');
+//            if (isset($_POST) && !empty($_POST) && isset($_GET["postid"])) {
+//                $this->statusPost();
+//            }
+//
+//            if (isset($_GET['status']) && $_GET['status'] === 'published') {
+//
+//                $posts = $this->postManager->getPostsByStatus('published');
+//
+//            } elseif (isset($_GET['status']) && $_GET['status'] === 'draft') {
+//
+//                $posts = $this->postManager->getPostsByStatus('draft');
+//
+//            } elseif (isset($_GET['status']) && $_GET['status'] === 'trash') {
+//
+//                $posts = $this->postManager->getPostsByStatus('trash');
+//
+//            } elseif (isset($_GET['status']) && $_GET['status'] === 'all') {
+//
+//                $posts = $this->postManager->getPosts();
+//            } else {
+//
+//                $posts = $this->postManager->getPosts();
+//            }
+
+
+//            $view = new View("backend/admin");
+//            $view->generate(array('posts' => $posts), 'template_backend');
 
         } else {
             throw new Exception('Vous n avez pas acces à cette page!');
@@ -60,10 +83,7 @@ class Member
         var_dump($_SESSION);
         if ($this->ctrlConnect->isUserConnected()) {
 
-
             $this->favoritesManager->delete($_SESSION['id'], $pluginId);
-            $view = new View("backend/favoriteDeleted");
-            $view->generate(array(), 'template_mySpace');
         }
     }
 }
