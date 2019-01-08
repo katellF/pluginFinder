@@ -6,6 +6,31 @@ html {
     font-size: 100%;
     box-sizing: border-box;
 }
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+
+}
+/* ======================= home search  ======================= */
+.marginTop50{
+
+    margin-top: 50px;
+}
+
+.marginBottom50{
+
+    margin-bottom: 50px;
+}
+
 /* ======================= Favorite list  ======================= */
 .marginBottom50{
 
@@ -63,19 +88,7 @@ footer {
 }
 
 
-/**,*/
-/**:before,*/
-/**:after {*/
-    /*box-sizing: inherit;*/
-/*}*/
 
-/*body {*/
-    /*position: relative;*/
-    /*margin: 0;*/
-    /*padding-bottom: 6rem;*/
-    /*min-height: 100%;*/
-
-/*}*/
 
 /*h1, h2, h3 {*/
 

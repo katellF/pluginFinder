@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 //import Config from './config.js';
 import App from './app.js';
+import './styles/styles.css';
 //
 // console.log('App.js is running!');
 // const template = <p>THIS IS US</p>;
