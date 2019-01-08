@@ -43,7 +43,7 @@ const Sidebar = () =>
 const Content = () =>
 
     <div className="content">
-        <div className="info">
+        <div className="info flex justifyContentEnd">
             <Stats/>
             <SortBy
                 defaultRefinement="wp_plugins"
@@ -71,7 +71,7 @@ class App extends Component {
                     <SearchBox translations={{placeholder: 'Search for Plugins'}}/>
                 </header>
 
-                <main>
+                <main className="flex">
                     <Sidebar/>
                     <Content/>
                 </main>

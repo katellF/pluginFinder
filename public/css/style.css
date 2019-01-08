@@ -21,15 +21,7 @@ body {
 
 }
 /* ======================= home search  ======================= */
-.marginTop50{
-
-    margin-top: 50px;
-}
-
-.marginBottom50{
-
-    margin-bottom: 50px;
-}
+/* scss file src/styles/styles*/
 
 /* ======================= Favorite list  ======================= */
 .marginBottom50{
