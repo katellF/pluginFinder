@@ -36,7 +36,7 @@ class Member
 
             //var_dump("toto");
             $getFavorites=$this->favoritesManager->getFavorites($_SESSION['id']);
-            var_dump("toto");
+           // var_dump("toto");
 
             $view = new View("backend/mySpace");
             $view->generate(array('favorites' => $getFavorites), 'template_mySpace');
@@ -76,14 +76,16 @@ class Member
 
     public function deleteFavorite($pluginId)
     {
-        var_dump($pluginId);
+        //var_dump($pluginId);
 
         session_start();
-        var_dump($_SESSION['pseudo']);
-        var_dump($_SESSION);
+       // var_dump($_SESSION['pseudo']);
+       // var_dump($_SESSION);
         if ($this->ctrlConnect->isUserConnected()) {
 
             $this->favoritesManager->delete($_SESSION['id'], $pluginId);
+            $view = new View("backend/favoriteDeleted");
+            $view->generate(array(), 'template_mySpace');
         }
     }
 }

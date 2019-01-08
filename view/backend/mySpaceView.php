@@ -10,7 +10,7 @@ use Katell\Controller\Member;
     <?php
    // $getFavorites=$this->favoritesManager->getFavorites();
     while ($data = $favorites->fetch()) {
-var_dump($data);
+//var_dump($data);
     ?>
         <?= htmlspecialchars($data['pluginName'])." - ".$data['pluginId']."- <a href=\"index.php?action=Member/deleteFavorite/".$data['pluginId']."\">Delete</a>"."</br>"; ?>
 

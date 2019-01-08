@@ -1,11 +1,38 @@
 
-/*html {*/
+html {
 
-    /*height: 100%;*/
-    /*padding-top: 20px;*/
-    /*font-size: 100%;*/
-    /*box-sizing: border-box;*/
-/*}*/
+    height: 100%;
+    padding-top: 50px;
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+/* ======================= Favorite Deleted View ======================= */
+
+.favoriteDelete{
+
+    margin-top: 50px;
+}
+
+.marginBottom50{
+
+    margin-bottom: 50px;
+}
+
+/* ======================= Footer ======================= */
+
+footer {
+    margin-top: 70px;
+
+}
+
+#footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
 
 /**,*/
 /**:before,*/
