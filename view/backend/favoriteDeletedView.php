@@ -4,7 +4,7 @@
 
 
 
-    <div class="container text-center favoriteDelete">
+    <div class="container text-center marginTop50">
 
         <h2 class="marginBottom50">Favorite Plugin deleted</h2>
 

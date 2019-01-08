@@ -6,10 +6,39 @@ html {
     font-size: 100%;
     box-sizing: border-box;
 }
+/* ======================= Favorite list  ======================= */
+.marginBottom50{
 
-/* ======================= Favorite Deleted View ======================= */
+    margin-bottom: 50px;
+}
+.marginTop50{
+
+    margin-top: 50px;
+}
+
+.marginLeft15{
+
+    margin-left: 15px;
+}
+
+.marginBottom15{
+
+    margin-bottom: 15px;
+}
+
+/*.border6BC3D1{*/
+
+    /*border: solid #6BC3D1 2px;*/
+/*}*/
+
+/* ======================= Favorite Deleted  ======================= */
 
 .favoriteDelete{
+
+}
+
+
+.marginTop50{
 
     margin-top: 50px;
 }
@@ -22,8 +51,8 @@ html {
 /* ======================= Footer ======================= */
 
 footer {
-    margin-top: 70px;
 
+    margin-top: 70px;
 }
 
 #footer {
