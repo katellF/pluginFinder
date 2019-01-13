@@ -26,8 +26,9 @@ class FavoritesManager extends Manager
     {
         $db = $this->dbConnect();
         $deleteFavorite = $db->prepare('DELETE FROM favorites WHERE  userId=:userId AND pluginId=:pluginId ');
+        $deleteFavorite->execute(array('userId' => $userId, 'pluginId' => $pluginId ));
 
-        return $deleteFavorite->execute(array('userId' => $userId, 'pluginId' => $pluginId ));
+        return $deleteFavorite;
 
     }
 }
