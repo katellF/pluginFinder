@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Config} from './config.js';
 import './styles/styles.css';
-//import App from './components/App';
-import Hit from './components/Hit';
+import App from './components/App';
+import Content from './components/Content';
 import Sidebar from './components/SideBar';
 import {
     InstantSearch,
@@ -52,47 +52,47 @@ import {
 //         {/*<RefinementList attribute="manufacturer" searchable = {True} withSearchBox/>*/}
 //     </div>
 
-const Content =() =>
-   // console.log( this.props);
-    <div className="content">
-        <div className="info flex justifyContentEnd">
-            <Stats/>
-            <SortBy
-                defaultRefinement="wp_plugins"
-                items={[
-                    { value: 'wp_plugins', label: 'Relevance' },
-                    { value: 'wp_plugins_installs_desc', label: 'Installs desc.' },
-                    { value: 'wp_plugins_rating_desc', label: 'Rating desc.' }
-                ]}
-            />
-        </div>
-        <Hits hitComponent={Hit}/>
-        <div className={"pagination"}>
-            <Pagination showLast/>
-        </div>
-    </div>
+// const Content =() =>
+//    // console.log( this.props);
+//     <div className="content">
+//         <div className="info flex justifyContentEnd">
+//             <Stats/>
+//             <SortBy
+//                 defaultRefinement="wp_plugins"
+//                 items={[
+//                     { value: 'wp_plugins', label: 'Relevance' },
+//                     { value: 'wp_plugins_installs_desc', label: 'Installs desc.' },
+//                     { value: 'wp_plugins_rating_desc', label: 'Rating desc.' }
+//                 ]}
+//             />
+//         </div>
+//         <Hits hitComponent={Hit}/>
+//         <div className={"pagination"}>
+//             <Pagination showLast/>
+//         </div>
+//     </div>
 
-class App extends React.Component {
-    render() {
-         // console.log(this.props);
-        return (
-            <InstantSearch
-                apiKey= {Config.apiKey}
-                appId= {Config.appId}
-                indexName={Config.index}>
-                <header className="header marginBottom50 marginTop50">
-                    <SearchBox translations={{placeholder: 'Search for Plugins'}}/>
-                </header>
-
-
-                <main className="flex">
-                    <Sidebar title="Languages"/>
-                    <Content/>
-                </main>
-            </InstantSearch>
-        );
-    }
-}
+// class App extends React.Component {
+//     render() {
+//          // console.log(this.props);
+//         return (
+//             <InstantSearch
+//                 apiKey= {Config.apiKey}
+//                 appId= {Config.appId}
+//                 indexName={Config.index}>
+//                 <header className="header marginBottom50 marginTop50">
+//                     <SearchBox translations={{placeholder: 'Search for Plugins'}}/>
+//                 </header>
+//
+//
+//                 <main className="flex">
+//                     <Sidebar title="Languages"/>
+//                     <Content/>
+//                 </main>
+//             </InstantSearch>
+//         );
+//     }
+// }
 
 ReactDOM.render(<App />, document.getElementById('app'));
 
