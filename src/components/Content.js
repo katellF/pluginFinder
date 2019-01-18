@@ -7,7 +7,7 @@ import {
     Hits
 } from 'react-instantsearch/dom';
 
-const Content =() =>
+const Content = () =>
 
     <div className="content">
         <div className="info flex justifyContentEnd">

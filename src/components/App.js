@@ -15,7 +15,7 @@
                 apiKey= {Config.apiKey}
                 appId= {Config.appId}
                 indexName={Config.index}>
-                >
+
                 <header className="header marginBottom50 marginTop50">
                     <SearchBox translations={{placeholder: 'Search for Plugins'}}/>
                 </header>
