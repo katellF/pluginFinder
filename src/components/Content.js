@@ -8,7 +8,7 @@ import {
 } from 'react-instantsearch/dom';
 
 const Content =() =>
-    // console.log( this.props);
+
     <div className="content">
         <div className="info flex justifyContentEnd">
             <Stats/>
