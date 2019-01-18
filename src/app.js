@@ -4,7 +4,7 @@ import {Config} from './config.js';
 import './styles/styles.css';
 //import App from './components/App';
 import Hit from './components/Hit';
-
+import Sidebar from './components/SideBar';
 import {
     InstantSearch,
     SearchBox,
@@ -38,19 +38,19 @@ import {
 //         </div>
 //     </div>
 
-const Sidebar = (props) =>
-
-    <div className="aside">
-        <h5>{props.title}</h5>
-
-
-        <RefinementList attribute="lang_labels_tags._tags"/>
-
-        <h5>tags</h5>
-
-        <RefinementList attribute="tags_filter._tags"/>
-        {/*<RefinementList attribute="manufacturer" searchable = {True} withSearchBox/>*/}
-    </div>
+// const Sidebar = (props) =>
+//
+//     <div className="aside">
+//         <h5>{props.title}</h5>
+//
+//
+//         <RefinementList attribute="lang_labels_tags._tags"/>
+//
+//         <h5>tags</h5>
+//
+//         <RefinementList attribute="tags_filter._tags"/>
+//         {/*<RefinementList attribute="manufacturer" searchable = {True} withSearchBox/>*/}
+//     </div>
 
 const Content =() =>
    // console.log( this.props);

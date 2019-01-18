@@ -1,15 +1,5 @@
 import React from 'react';
-//import ReactDOM from 'react-dom';
-import {
-    InstantSearch,
-    SearchBox,
-    Hits,
-    Highlight,
-    Stats,
-    SortBy,
-    Pagination,
-    RefinementList
-} from 'react-instantsearch/dom';
+import {Highlight} from 'react-instantsearch/dom';
 
 const  Hit = ({hit}) =>
     <div className="hit">
