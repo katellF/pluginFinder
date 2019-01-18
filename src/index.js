@@ -1,9 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-//import Config from './config.js';
-import App from './app.js';
-import './styles/styles.css';
-//
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// //import Config from './config.js';
+// import App from './app.js';
+// import './styles/styles.css';
+// //
 // console.log('App.js is running!');
 // const template = <p>THIS IS US</p>;
 //
@@ -11,7 +11,7 @@ import './styles/styles.css';
 
 
 
-ReactDOM.render(<App />, document.getElementById('app'));
+// ReactDOM.render(<App />, document.getElementById('app'));
 //
 // // If you want your app to work offline and load faster, you can change
 // // unregister() to register() below. Note this comes with some pitfalls.

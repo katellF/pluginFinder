@@ -1,6 +1,8 @@
-import React, {Component} from 'react';
+import React from 'react';
+import ReactDOM from 'react-dom';
 import {Config} from './config.js';
-
+import './styles/styles.css';
+//import App from './components/App';
 import {
     InstantSearch,
     SearchBox,
@@ -27,21 +29,29 @@ const Hit = ({hit}) =>
             <button className="hit-favorits">
                 My favorites
             </button>
+            <button className="hit-info">
+                More Info
+            </button>
+
         </div>
     </div>
 
-const Sidebar = () =>
+const Sidebar = (props) =>
+
     <div className="aside">
-        <h5>Languages</h5>
+        <h5>{props.title}</h5>
+
+
         <RefinementList attribute="lang_labels_tags._tags"/>
 
-        <h5>Tags</h5>
+        <h5>tags</h5>
+
         <RefinementList attribute="tags_filter._tags"/>
         {/*<RefinementList attribute="manufacturer" searchable = {True} withSearchBox/>*/}
     </div>
 
-const Content = () =>
-
+const Content =() =>
+   // console.log( this.props);
     <div className="content">
         <div className="info flex justifyContentEnd">
             <Stats/>
@@ -60,8 +70,9 @@ const Content = () =>
         </div>
     </div>
 
-class App extends Component {
+class App extends React.Component {
     render() {
+         // console.log(this.props);
         return (
             <InstantSearch
                 apiKey= {Config.apiKey}
@@ -71,8 +82,9 @@ class App extends Component {
                     <SearchBox translations={{placeholder: 'Search for Plugins'}}/>
                 </header>
 
+
                 <main className="flex">
-                    <Sidebar/>
+                    <Sidebar title="Languages"/>
                     <Content/>
                 </main>
             </InstantSearch>
@@ -80,7 +92,9 @@ class App extends Component {
     }
 }
 
-export default App;
+ReactDOM.render(<App />, document.getElementById('app'));
+
+//export default App;
 
 
 //console.log('App.js is running!');
