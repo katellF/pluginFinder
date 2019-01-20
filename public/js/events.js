@@ -1,7 +1,4 @@
-
-
-console.log("Events is loaded");
-
+// console.log("Events is loaded");
 
 jQuery(document).ready(function() {
 
@@ -9,15 +6,12 @@ jQuery(document).ready(function() {
 
 });
 
+
 function executeAjax( ){
 
-    // console.log(el.id);
-//    console.log();
     var clickedPluginId = jQuery(this).attr("id");
-    console.log(clickedPluginId);
-
-    //console.log(e.attr("id"));
-    console.log("runAjax");
+    // console.log(clickedPluginId);
+    // console.log("runAjax");
 
     jQuery.ajax({
         method: "GET",
@@ -36,19 +30,8 @@ function executeAjax( ){
         error: function(e) {
             console.log(e);
             console.log('ERROR');
-            //called when there is an error
-            //console.log(e.message);
         }        // url: "/projetsoc/pluginFinder/index.php",
-//        dataType: "script"
     })
-        // .done(function( msg ) {
-        //     console.log(msg);
-        //     alert( "Data Saved: " + msg );
-        // });
-
-    // jQuery.get("/projetsoc/pluginFinder/index.php?action=API/add/weglot/weglotname", function(data, status){
-    //     alert("Data: " + data + "\nStatus: " + status);
-    // });
 
 
 

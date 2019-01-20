@@ -17,10 +17,21 @@ class FavoritesManager extends Manager
         //var_dump($req);
 
         return $req;
-
-
-
     }
+
+
+
+    public function getFavoritesIds($userId)
+    {
+        $db = $this->dbConnect();
+
+        $req = $db->prepare('SELECT pluginId FROM favorites WHERE userId=:userId');
+        $req->execute(array('userId' => $userId));
+
+        return $req;
+    }
+
+
 
     public function delete($userId, $pluginId)
     {
