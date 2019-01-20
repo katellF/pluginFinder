@@ -31,4 +31,18 @@ class FavoritesManager extends Manager
         return $deleteFavorite;
 
     }
+    public function add($data)
+    {
+
+        $db = $this->dbConnect();
+        $addFavorite = $db->prepare('INSERT INTO favorites (userId, pluginId, pluginName) VALUES ( :userId, :pluginId, :pluginName  ) ');
+        $addFavorite->execute(array(
+            'userId' => $data['userId'],
+            'pluginId' => $data['pluginId'],
+            'pluginName' => $data['pluginName'],
+        ));
+
+        return $addFavorite;
+
+    }
 }

@@ -9,7 +9,6 @@ if ( is_object($data) ){
     $data = $data->fetchAll();
 
 }
-
 // if $data is a simple array, we turn it into JSON immediately
 $data_json = json_encode($data);
 

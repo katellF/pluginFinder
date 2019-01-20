@@ -65,6 +65,40 @@ class API
 
     }
 
+    public function addFavorite($pluginId , $pluginName)
+    {
+        session_start();
+
+        if ($this->ctrlConnect->isUserConnected()) {
+
+            //echo "Add one favorite";
+
+            $data = [
+                "userId" => $_SESSION['id'],
+                "pluginId" => $pluginId,
+                "pluginName" => $pluginName
+
+            ];
+
+//            var_dump($data);
+//            die();
+
+            $addFavorite = $this->favoritesManager->add($data);
+
+
+            $addFavoriteAPI = array(
+                "action" => "addFavorite",
+                "result" => $addFavorite->rowCount(),
+            );
+
+
+            $view = new View("backend/API");
+            $view->generate(array('data' => $addFavoriteAPI ), 'template_API');
+        } else {
+            throw new Exception('Vous n avez pas acces à cette page!');
+        }
+
+    }
 
 //    public function favoritesList()
 //    {
