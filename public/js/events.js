@@ -5,21 +5,31 @@ console.log("Events is loaded");
 
 jQuery(document).ready(function() {
 
-    jQuery("#weglot").on("click",executeAjax);
+    jQuery(".hit-favorites").on("click",executeAjax);
 
 });
 
-function executeAjax(){
+function executeAjax( ){
 
+    // console.log(el.id);
+//    console.log();
+    var clickedPluginId = jQuery(this).attr("id");
+    console.log(clickedPluginId);
+
+    //console.log(e.attr("id"));
     console.log("runAjax");
 
     jQuery.ajax({
         method: "GET",
         url: "/projetsoc/pluginFinder/index.php",
         dataType: "json",
-        data: 'action=API/addFavorite/weglot9/weglotname',
+        data: 'action=API/addFavorite/'+clickedPluginId+'/weglotname',
         success: function(data) {
+
+            jQuery('#'+clickedPluginId).replaceWith( "<div>Added</div>" );
             console.log(data);
+
+
             //called when successful
             console.log("SUCCESS");
         },
