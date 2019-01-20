@@ -7,7 +7,7 @@
      SearchBox,
  } from 'react-instantsearch/dom';
 
- class App extends React.Component {
+ class HomeSearch extends React.Component {
     render() {
 
         return (
@@ -30,4 +30,4 @@
     }
 }
 
-export default App;
+export default HomeSearch;

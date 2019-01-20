@@ -6,7 +6,7 @@
 // If $data is a PDO object then we fetch the data and we turn it into JSON
 if ( is_object($data) ){
 
-    $data = $data->fetch();
+    $data = $data->fetchAll();
 
 }
 

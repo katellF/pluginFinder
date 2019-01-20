@@ -1,5 +1,16 @@
 
 
+<script type="text/javascript">
+    var currentPage = "mySpaceView"; // "A string here"
+</script>
+
+
+<div id="app"></div>
+
+<script src="public/js/pluginfinder.js"></script>
+
+
+
 <div class="container text-center favorites">
 
     <h1 class="font_size_3 marginTop50 marginBottom50">My Favorites</h1>

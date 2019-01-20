@@ -2,7 +2,9 @@
 <link rel="stylesheet" href="public/css/style.css">
 
 
-
+<script type="text/javascript">
+    var currentPage = "homeView"; // "A string here"
+</script>
 
 <div id="app"></div>
 
