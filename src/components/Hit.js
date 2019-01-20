@@ -1,6 +1,16 @@
 import React from 'react';
 import {Highlight} from 'react-instantsearch/dom';
 
+
+let showFavorite;
+if ( isUserConnected) {
+    showFavorite =  (<button className="hit-favorits" id={hit.id}>Add to Favorites</button>)
+} else {
+    showFavorite = "";
+}
+
+
+
 const  Hit = ({hit}) =>
     <div className="hit">
         <div className="hit-image">
@@ -13,14 +23,11 @@ const  Hit = ({hit}) =>
             <div className="hit-description">
                 <Highlight attribute="short_description" hit={hit}/>
             </div>
-            <button className="hit-favorits">
-                My favorites
-            </button>
-            <button className="hit-info">
-                More Info
-            </button>
+            {showFavorite}
+            <a href={hit.plugin_page_at_source} target="_blank">More Info</a>
 
         </div>
     </div>
 
 export default Hit;
+

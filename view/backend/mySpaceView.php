@@ -2,6 +2,8 @@
 
 <script type="text/javascript">
     var currentPage = "mySpaceView"; // "A string here"
+    var isUserConnected = <?=$isUserConnected ?>; // "A string here"
+
 </script>
 
 

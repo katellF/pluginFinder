@@ -7,12 +7,14 @@ class Member
 {
     private $ctrlConnect;
     private $favoritesManager;
+    private $isUserConnected;
 
     public function __construct()
     {
 
         $this->ctrlConnect = new Connect();
         $this->favoritesManager = new favoritesManager();
+        $this->isUserConnected = ($this->ctrlConnect->isUserConnected()) ? 'true' : 'false';
 
     }
 
@@ -39,7 +41,7 @@ class Member
            // var_dump("toto");
 
             $view = new View("backend/mySpace");
-            $view->generate(array('favorites' => $getFavorites), 'template_mySpace');
+            $view->generate(array('favorites' => $getFavorites , "isUserConnected" => $this->isUserConnected), 'template_mySpace');
 //            if (isset($_POST) && !empty($_POST) && isset($_GET["postid"])) {
 //                $this->statusPost();
 //            }

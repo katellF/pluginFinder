@@ -4,6 +4,9 @@
 
 <script type="text/javascript">
     var currentPage = "homeView"; // "A string here"
+    var isUserConnected = <?=$isUserConnected ?>; // "A string here"
+
+
 </script>
 
 <div id="app"></div>
