@@ -1,15 +1,15 @@
 
 
 <script type="text/javascript">
-    var currentPage = "mySpaceView"; // "A string here"
-    var isUserConnected = <?=$isUserConnected ?>; // "A string here"
+//    var currentPage = "mySpaceView"; // "A string here"
+//    var isUserConnected = <?//=$isUserConnected ?>//; // "A string here"
 
 </script>
 
 
 <div id="app"></div>
 
-<script src="public/js/pluginfinder.js"></script>
+<script src="public/js/app2.pluginfinder.js"></script>
 
 
 
