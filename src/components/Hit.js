@@ -27,7 +27,7 @@ const  Hit = ({hit}) =>
 
             { isUserConnected ? (
                 <button className="hit-favorites" id={hit.id}>Add to Favorites</button>
-            ) : (<a href="index.php?action=connect/redirect">Add to Favorites</a>)
+            ) : (<a href="index.php?action=connect">Add to Favorites</a>)
 
             }
             {/*{showFavorite}*/}

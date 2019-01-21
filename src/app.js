@@ -1,140 +1,162 @@
-import React from 'react';
+//import React from 'react';
+import React, { Component } from "react";
 import ReactDOM from 'react-dom';
 import './styles/styles.css';
 import HomeSearch from './components/HomeSearch';
-
-//let toto;
-
-// const myFavorites = getAPIListFavorites();
+//import MySpace from './components/MySpace';
 
 
 
-
-// const template = (
-//     <div>
-//         <h1>{myFavorites.map((myFavorite) =>{
-//             return <p key={myFavorite.index}>{myFavorite}</p>
-//         })}</h1>
-//     </div>
+//     if ( currentPage && currentPage === "homeView") {
+//     ReactDOM.render(<HomeSearch />, document.getElementById('app'));
+// } else {
 //
-// );
-// const arr = [123,124,125];
+//         getAPIListFavorites().then ( data => {
 //
-// const template = (
-//     <div>
-//         <h1>{arr.map((json1, index) =>{
-//             return <p key={index}>{json1}</p>
-//         })}</h1>
-//     </div>
+//             const template = (
+//                 <div>
+//                     <h1>{data.map((json1, index) =>{
+//                         // return <p key={Math.random()}></p>
+//                         return <p key={index}>{json1.pluginName} --- {json1.pluginId}</p>
+//                         //return <p key={index}>{json1}</p>
+//                     })}</h1>
+//                 </div>
+//             );
 //
-// );
-
-// const template = (
-//     <div>
-//         <h1>{myFavorites.map((json1, index) =>{
-//             return <p key={index}>{json1}</p>
-//         })}</h1>
-//     </div>
+//             ReactDOM.render( template, document.getElementById('app') );
 //
-// );
-//let template = "";
-//const myFavorites = getAPIListFavorites()
-//     .then( data => {
-//
-//     console.log(data)
-//     // template = (<div>TEST</div>)
-//     template = (
-//         <div>
-//             <h1>{data.map((json1, index) =>{
-//                 return <p key={index}>{json1}</p>
-//             })}</h1>
-//         </div>
-//
-//     );
-//         ReactDOM.render( template, document.getElementById('app') )
-//     }
+//         });
 //
 //
-// )
+//     console.log ('no data');
+// }
 
-//console.log(myFavorites);
 
-//const template = (<div>TEST</div>)
-// const template = (<div>{myFavorites}</div>)
 
-    if ( currentPage && currentPage === "homeView") {
-    ReactDOM.render(<HomeSearch />, document.getElementById('app'));
-} else {
+// async function getAPIListFavorites() {
+//
+//    // let test = [1,2,3];
+//     const response = await fetch('/projetsoc/pluginFinder/index.php?action=API/listFavorites');
+//     let json = await response.json();
+//     console.log(json);
+//     // console.log(template);
+//
+//     return json;
+//
+// }
 
-        getAPIListFavorites().then ( data => {
 
-            const template = (
-                <div>
-                    <h1>{data.map((json1, index) =>{
-                        // return <p key={Math.random()}></p>
-                        return <p key={index}>{json1.pluginName} --- {json1.pluginId}</p>
-                        //return <p key={index}>{json1}</p>
-                    })}</h1>
-                </div>
-            );
+class MySpace extends React.Component {
 
-            ReactDOM.render( template, document.getElementById('app') );
+    constructor() {
+        super();
+       // this.getAPIListFavorites =  this.getAPIListFavorites.bind(this);
+    //    // this.pluginName = "test"
+         this.state = {
+             data: [],
+         };
 
-        });
+     }
 
-       // console.log($.fn.jquery);
+   //   getAPIListFavorites () {
+   //
+   //     const res =fetch('/projetsoc/pluginFinder/index.php?action=API/listFavorites')
+   //          .then(res => res.json())
+   //         .then (json =>this.setState((prevState) =>{
+   //           return {
+   //               data: prevState.data
+   //           }}))
+   //
+   // };
 
-//        ReactDOM.render( myFavorites, document.getElementById('app') );
+     componentDidMount(){
+          //console.log("ca fonctionne");
+         fetch('http://localhost:8888/projetsoc/pluginFinder/index.php?action=API/listFavorites')
+             .then(results => results.json())
+             .then(json => this.setState({data:json}));
+     };
 
-        // console.log ( api() );
-//        api() ;
-//    console.log(test);
+             //.then(json => this.setState({ data: json }));
 
-    console.log ('no data');
+         // });
+
+
+
+        // return json
+
+   //  async getAPIListFavorites() {
+   //
+   // const url='/projetsoc/pluginFinder/index.php?action=API/listFavorites';
+   //  const response = await fetch(url);
+   //  console.log(url);
+   //      await response.json();
+   //      this.setState((json) =>{
+   //        return {
+   //             data: json.data
+   //              }
+   //          }
+   //        )
+   //  }
+
+
+    // console.log(json);
+    // // console.log(template);
+//
+//     return json;
+//
+
+
+
+
+
+
+
+    render() {
+
+        //console.log(this.state.data);
+        // const listfav = this.state.data.map((json, index) =>
+        // <p key={index}>{json.pluginName} --- {json.pluginId}</p>);
+        return (
+
+            <div>
+                <h1 >Mes Favoris</h1>
+
+                <p>{this.state.data.map((json, index) =>
+
+                    <p key={index}>{json.pluginName} --- {json.pluginId}</p>
+                )}</p>
+
+            </div>
+        );
+
+    }
 }
+// getAPIListFavorites().then ( data => {
+// //
+//             const template = (
+//                 <div>
+//                     <h1>{data.map((json1, index) =>{
+//                         // return <p key={Math.random()}></p>
+//                         return <p key={index}>{json1.pluginName} --- {json1.pluginId}</p>
+//                         //return <p key={index}>{json1}</p>
+//                     })}</h1>
+//                 </div>
+//             );
+//
+//             ReactDOM.render( template, document.getElementById('app') );
+//
+//         });
+//
+//
+//     console.log ('no data');
+// }
 
 
+//export default MySpace;
+// if ( currentPage && currentPage === "homeView") {
+//   ReactDOM.render(<HomeSearch />, document.getElementById('app'));
+//  } else {
 
-async function getAPIListFavorites() {
-
-   // let test = [1,2,3];
-    const response = await fetch('/projetsoc/pluginFinder/index.php?action=API/listFavorites');
-    let json = await response.json();
-    // const template = (
-    //     <div>
-    //         <h1>{json.map((json1, index) =>{
-    //             // return <p key={Math.random()}></p>
-    //             return <p key={index}>{json1[index]} ---- {index}</p>
-    //             //return <p key={index}>{json1}</p>
-    //         })}</h1>
-    //     </div>
-
-    // const arr = [123,124,125];
-    //
-    // const template = (
-    //     <div>
-    //         <h1>{arr.map((json1, index) =>{
-    //             return <p key={index}>{json1}</p>
-    //         })}</h1>
-    //     </div>
-    //
-    // );
-    // const template = (
-    //     <div>
-    //         <h1>{myFavorites.map((myFavorite) =>{
-    //             return <p key={myFavorite.index}>{myFavorite}</p>
-    //         })}</h1>
-    //     </div>
-    //
-    // );
-    console.log(json);
-    // console.log(template);
-
-    return json;
-
-}
-
-
-
+ReactDOM.render( <MySpace />, document.getElementById('app') );
 
 
