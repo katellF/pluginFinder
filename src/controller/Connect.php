@@ -131,6 +131,14 @@ class Connect
         }
     }
 
+    public function redirect()
+    {
+
+        $view = new View("frontend/redirect");
+        $view->generate(array());
+
+
+    }
     public function isUserConnected()
     {
         if (isset($_SESSION) && isset($_SESSION['pseudo'])) {

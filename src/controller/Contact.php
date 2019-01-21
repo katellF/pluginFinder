@@ -9,7 +9,7 @@ class Contact
     {
 
         $view = new View("frontend/contact");
-        $view->generate(array());
+        $view->generate(array(), "template_member");
 
 
     }

@@ -82,7 +82,7 @@ import HomeSearch from './components/HomeSearch';
 
         });
 
-        console.log($.fn.jquery);
+       // console.log($.fn.jquery);
 
 //        ReactDOM.render( myFavorites, document.getElementById('app') );
 

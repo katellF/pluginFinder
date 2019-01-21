@@ -33,14 +33,15 @@
                     </li>
                     <li class="nav-item active border_nav color_link">
                         <a class="nav-link color_link" href="index.php?action=info">About</a>
+                    </li>
                     <li class="nav-item active">
                         <a class="nav-link color_link" href="index.php?action=contact">Contact</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link color_link" href="index.php?action=connect">Registration</a>
+                        <a class="nav-link color_link" href="index.php?action=member">My Space</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link color_link" href="index.php?action=connect/connection">Login</a>
+                        <a class="nav-link color_link" href="index.php?action=connect/logout">logout</a>
                     </li>
                 </ul>
             </div>

@@ -9,7 +9,7 @@ class Info
     {
 
         $view = new View("frontend/about");
-        $view->generate(array());
+        $view->generate(array(), "template_member");
 
     }
 
