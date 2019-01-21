@@ -46,8 +46,7 @@ class HomeSearch
       // $view = new View("frontend/homeSearch");
       // $listFavoritesIds = ($this->ctrlConnect->isUserConnected()) ? $data : [];
       // $view->generate(array("isUserConnected" => $userConnected , "listFavoritesIds" => $listFavoritesIds));
-       var_dump($userConnected);
-//       $view->generate(array("isUserConnected" => "testme" ));
+////       $view->generate(array("isUserConnected" => "testme" ));
    }
 }
 

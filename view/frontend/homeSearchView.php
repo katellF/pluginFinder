@@ -3,9 +3,9 @@
 
 
 <script type="text/javascript">
-    var currentPage = "homeView"; // "A string here"
-    var isUserConnected = <?=$isUserConnected ?>; // "A string here"
-    var listFavoritesIds = <?php
+    let currentPage = "homeView"; // "A string here"
+    let isUserConnected = <?=$isUserConnected ?>; // "A string here"
+    let listFavoritesIds = <?php
             //We retrieve the list of pluginIds already present in the favorites list of the user
 
         if( $listFavoritesIds ) {
