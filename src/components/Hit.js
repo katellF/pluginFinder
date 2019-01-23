@@ -63,15 +63,14 @@ class Hit extends React.Component {
                     <div className="hit-description">
                         <Highlight attribute="short_description" hit={hit}/>
                     </div>
-                    <button onClick={this.executeAjax} className="hit-favorites" data-id={hit.id} id={hit.id}>Add to Favorites</button>
-                    {/*{console.log(this.executeAjax())}*/}
-                    {/*/!*{ isUserConnected ? (*!/*/}
-                        {/*/!*<button onClick={this.Ajax} className="hit-favorites" id={hit.id}>Add to Favorites</button>*!/*/}
-                    {/*/!*) : (<a href="index.php?action=connect/redirect">Add to Favorites</a>)*!/*/}
 
-                    {/*/!*}*!/*/}
-                    {/*/!*{showFavorite}*!/*/}
-                    {/*<a href={hit.plugin_page_at_source} target="_blank">More Info</a>*/}
+                    { isUserConnected ? (
+                        <button onClick={this.executeAjax} className="hit-favorites" data-id={hit.id} id={hit.id}>Add to Favorites</button>
+                    ) : (<a href="index.php?action=connect/redirect">Add to Favorites</a>)
+
+                    }
+                    {/*{showFavorite}*/}
+                    <a href={hit.plugin_page_at_source} target="_blank">More Info</a>
 
                 </div>
             </div>
