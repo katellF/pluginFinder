@@ -7,9 +7,9 @@ class Hit extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            data: [],
-        };
+        // this.state = {
+        //     data: [],
+        // };
         this.executeAjax = this.executeAjax.bind(this);
 
     }
@@ -19,15 +19,17 @@ class Hit extends React.Component {
     executeAjax(e) {
 
         let clickedPluginId = jQuery(e.currentTarget).data('id');
+        let clickedPluginName = jQuery(e.currentTarget).data('name');
         console.log(e);
 
         console.log(clickedPluginId);
+        console.log(clickedPluginName);
 
     jQuery.ajax({
         method: "GET",
         url: "/projetsoc/pluginFinder/index.php",
         dataType: "json",
-        data: 'action=API/addFavorite/'+clickedPluginId+'/weglotname',
+        data: 'action=API/addFavorite/'+clickedPluginId+'/'+clickedPluginName+'/',
          success: function() {
              $('#'+clickedPluginId).replaceWith( "<div>Added</div>" );
 
@@ -65,7 +67,7 @@ class Hit extends React.Component {
                     </div>
 
                     { isUserConnected ? (
-                        <button onClick={this.executeAjax} className="hit-favorites" data-id={hit.id} id={hit.id}>Add to Favorites</button>
+                        <button onClick={this.executeAjax} className="hit-favorites" data-id={hit.id} data-name={hit.name} id={hit.id}>Add to Favorites</button>
                     ) : (<a href="index.php?action=connect/redirect">Add to Favorites</a>)
 
                     }

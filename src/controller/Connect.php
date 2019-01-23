@@ -135,7 +135,7 @@ class Connect
     {
 
         $view = new View("frontend/redirect");
-        $view->generate(array());
+        $view->generate(array(),"template_redirect");
 
 
     }
