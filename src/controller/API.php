@@ -93,10 +93,11 @@ class API
 
 
             $view = new View("backend/API");
-            $view->generate(array('data' => $addFavoriteAPI ), 'template_API');
-        } else {
-            throw new Exception('Vous n avez pas acces à cette page!');
+            $view->generate(array('data' => $addFavoriteAPI), 'template_API');
         }
+//        } else {
+//            throw new Exception('Vous n avez pas acces à cette page!');
+//        }
 
     }
 
