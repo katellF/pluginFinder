@@ -1,17 +1,64 @@
-//import React from 'react';
 import React, { Component } from "react";
-import Config from '../config.js';
-//import Content from './Content';
-//import Sidebar from './SideBar';
+
 
 
 class MySpace extends React.Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+        this.deletePlugin =  this.deletePlugin.bind(this);
         this.state = {
             data: [],
         };
+
+    }
+
+    // deletePlugin () {
+    //     console.log("it works");
+    //     this.setState(() => {
+    //         return {
+    //             data: []
+    //         };
+    //     });
+    //
+    // }
+
+    deletePlugin (e) {
+        // console.log("it works");
+        // this.setState(() => {
+        //     return {
+        //         data: []
+        //     };
+        // });
+        let clickedPluginId = jQuery(e.currentTarget).data('id');
+       // let clickedPluginName = jQuery(e.currentTarget).data('name');
+        // console.log(e);
+
+        console.log(clickedPluginId);
+       // console.log(clickedPluginName);
+
+        jQuery.ajax({
+            method: "GET",
+            url: "/projetsoc/pluginFinder/index.php",
+            dataType: "json",
+            data: 'action=API/deleteFavorite/'+clickedPluginId+'',
+            success: function() {
+                //console.log("element",e);
+                jQuery('#plugin_'+clickedPluginId).remove();
+                //jQuery('#toto').remove();
+
+
+                //this.render();
+                console.log("SUCCESS");
+                console.log("Ca marche");
+
+            },
+            error: function(e) {
+                console.log(e);
+                console.log('ERROR');
+            }
+        })
+
 
     }
 
@@ -24,17 +71,24 @@ class MySpace extends React.Component {
     };
 
 
-
     render() {
+        //const {fav} =this.props;
+       // console.log(this.props.id);
+
         return (
 
             <div>
-                <h1 >Mes Favoris</h1>
+                <h1 id={"toto"} >My Favorites2</h1>
 
                 <p>{this.state.data.map((json, index) =>
 
-                    <p key={index}>{json.pluginName} --- {json.pluginId}</p>
-                )}</p>
+                    <p key={index} id={`plugin_${json.pluginId}`}>{json.pluginName} --- {json.pluginId}
+                    {/*<button key= button_{json.pluginId} onClick={this.deletePlugin} data-id={this.props.id} data-name={this.props.name} >Delete</button>*/}
+                    <button key={json.pluginId} onClick={this.deletePlugin} data-id={json.pluginId}>Delete</button>
+                    </p>
+
+                       )}</p>
+
             </div>
         );
     }

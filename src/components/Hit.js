@@ -15,7 +15,7 @@ class Hit extends React.Component {
 
         let clickedPluginId = jQuery(e.currentTarget).data('id');
         let clickedPluginName = jQuery(e.currentTarget).data('name');
-        console.log(e);
+       // console.log(e);
 
         console.log(clickedPluginId);
         console.log(clickedPluginName);
