@@ -19,6 +19,7 @@ abstract class Manager
         } else {
             $this->dbpassword = 'root';
         }
+
     }
 
     protected function dbConnect()

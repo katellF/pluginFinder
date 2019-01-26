@@ -28,6 +28,7 @@ class API
 
     public function listFavorites() {
 
+
         session_start();
 
         if ($this->ctrlConnect->isUserConnected()) {

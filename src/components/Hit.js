@@ -9,6 +9,8 @@ class Hit extends React.Component {
         this.executeAjax = this.executeAjax.bind(this);
         //this.reload = this.reload.bind(this);
 
+        // this.base_url = '/projetsoc'; // LOCAL
+        this.base_url = ''; // SERVER
     }
 
 
@@ -23,7 +25,7 @@ class Hit extends React.Component {
 
         jQuery.ajax({
         method: "GET",
-        url: "/projetsoc/pluginFinder/index.php",
+        url: this.base_url + "/pluginfinder/index.php",
         dataType: "json",
         data: 'action=API/addFavorite/'+clickedPluginId+'/'+clickedPluginName+'/',
          success: function() {

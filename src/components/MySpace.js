@@ -5,11 +5,16 @@ import React, { Component } from "react";
 class MySpace extends React.Component {
 
     constructor(props) {
+
         super(props);
         this.deletePlugin =  this.deletePlugin.bind(this);
         this.state = {
             data: [],
         };
+
+        // this.base_url = '/projetsoc'; // LOCAL
+        this.base_url = ''; // SERVER
+
 
     }
 
@@ -39,7 +44,7 @@ class MySpace extends React.Component {
 
         jQuery.ajax({
             method: "GET",
-            url: "/projetsoc/pluginFinder/index.php",
+            url: this.base_url + "/pluginfinder/index.php",
             dataType: "json",
             data: 'action=API/deleteFavorite/'+clickedPluginId+'',
             success: function() {
@@ -65,7 +70,7 @@ class MySpace extends React.Component {
 
     componentDidMount(){
 
-        fetch('http://localhost:8888/projetsoc/pluginFinder/index.php?action=API/listFavorites')
+        fetch(this.base_url +'/pluginfinder/index.php?action=API/listFavorites')
             .then(results => results.json())
             .then(json => this.setState({data:json}));
     };
@@ -74,6 +79,8 @@ class MySpace extends React.Component {
     render() {
         //const {fav} =this.props;
        // console.log(this.props.id);
+
+        // console.log(this.state.data);
 
         return (
 

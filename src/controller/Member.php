@@ -29,16 +29,15 @@ class Member
 
     public function favoritesList()
     {
-        //var_dump("toto");
         session_start();
-       // var_dump("toto");
 
 
         if ($this->ctrlConnect->isUserConnected()) {
 
-            //var_dump("toto");
-            $getFavorites=$this->favoritesManager->getFavorites($_SESSION['id']);
-           // var_dump("toto");
+            $getFavorites = $this->favoritesManager->getFavorites($_SESSION['id']);
+
+
+
 
             $view = new View("backend/mySpace");
             $view->generate(array('favorites' => $getFavorites , "isUserConnected" => $this->isUserConnected), 'template_mySpace');
