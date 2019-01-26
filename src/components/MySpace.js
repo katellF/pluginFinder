@@ -12,8 +12,10 @@ class MySpace extends React.Component {
             data: [],
         };
 
-        // this.base_url = '/projetsoc'; // LOCAL
         this.base_url = ''; // SERVER
+        if( window.location.hostname === 'localhost') {
+            this.base_url = '/projetsoc'; // LOCAL
+        }
 
 
     }
