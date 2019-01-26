@@ -21,12 +21,16 @@ class ComposerStaticInitbfc61e7adde4c02d36908f14e78e0f0f
     );
 
     public static $classMap = array (
+        'Katell\\Controller\\API' => __DIR__ . '/../..' . '/src/controller/API.php',
         'Katell\\Controller\\Connect' => __DIR__ . '/../..' . '/src/controller/Connect.php',
         'Katell\\Controller\\Contact' => __DIR__ . '/../..' . '/src/controller/Contact.php',
         'Katell\\Controller\\HomeSearch' => __DIR__ . '/../..' . '/src/controller/HomeSearch.php',
         'Katell\\Controller\\Info' => __DIR__ . '/../..' . '/src/controller/Info.php',
+        'Katell\\Controller\\Member' => __DIR__ . '/../..' . '/src/controller/Member.php',
         'Katell\\Helpers\\View' => __DIR__ . '/../..' . '/src/helpers/View.php',
+        'Katell\\Model\\FavoritesManager' => __DIR__ . '/../..' . '/src/model/FavoritesManager.php',
         'Katell\\Model\\Manager' => __DIR__ . '/../..' . '/src/model/Manager.php',
+        'Katell\\Model\\UserManager' => __DIR__ . '/../..' . '/src/model/UserManager.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

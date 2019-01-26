@@ -13,7 +13,12 @@ abstract class Manager
         $this->dbname = 'plugins-project5';
         $this->dbhost = 'localhost';
         $this->dbuser = 'root';
-        $this->dbpassword = 'root';
+
+        if( $_SERVER['HTTP_HOST'] === 'www.katellfracassi.com') {
+            $this->dbpassword = '';
+        } else {
+            $this->dbpassword = 'root';
+        }
     }
 
     protected function dbConnect()
