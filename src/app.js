@@ -38,7 +38,7 @@ import MySpace from './components/MySpace';
 // async function getAPIListFavorites() {
 //
 //    // let test = [1,2,3];
-//     const response = await fetch('/projetsoc/pluginFinder/index.php?action=API/listFavorites');
+//     const response = await fetch('/projetsoc/pluginfinder/index.php?action=API/listFavorites');
 //     let json = await response.json();
 //     console.log(json);
 //     // console.log(template);

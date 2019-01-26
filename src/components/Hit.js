@@ -10,6 +10,7 @@ class Hit extends React.Component {
         //this.reload = this.reload.bind(this);
 
         // this.base_url = '/projetsoc'; // LOCAL
+
         this.base_url = ''; // SERVER
     }
 
@@ -49,6 +50,8 @@ class Hit extends React.Component {
     render() {
     const {hit} =this.props;
 
+        console.log(window.location.href);
+        console.log('hello');
 
     // We check if the pluginId is present in the listFavoritesIds and we show/hide the Add button as needed
     let isInFavorites = listFavoritesIds.indexOf(hit.id);
