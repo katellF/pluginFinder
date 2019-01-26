@@ -1,7 +1,7 @@
 //import React from 'react';
 import React, { Component } from "react";
 import ReactDOM from 'react-dom';
-import './styles/styles.css';
+import './styles/styles.scss';
 import HomeSearch from './components/HomeSearch';
 import MySpace from './components/MySpace';
 

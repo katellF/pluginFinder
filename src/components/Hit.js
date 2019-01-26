@@ -7,6 +7,7 @@ class Hit extends React.Component {
     constructor(props) {
         super(props);
         this.executeAjax = this.executeAjax.bind(this);
+        //this.reload = this.reload.bind(this);
 
     }
 
@@ -27,6 +28,7 @@ class Hit extends React.Component {
         data: 'action=API/addFavorite/'+clickedPluginId+'/'+clickedPluginName+'/',
          success: function() {
              $('#'+clickedPluginId).replaceWith( "<div>Added</div>" );
+             listFavoritesIds.push(clickedPluginId);
 
 
 
@@ -40,9 +42,20 @@ class Hit extends React.Component {
 
     }
 
+    //
 
     render() {
     const {hit} =this.props;
+
+
+    // We check if the pluginId is present in the listFavoritesIds and we show/hide the Add button as needed
+    let isInFavorites = listFavoritesIds.indexOf(hit.id);
+    let isFavorite = false;
+
+    if ( isInFavorites > -1) {
+        isFavorite = true;
+    }
+
 
         return (
 
@@ -58,11 +71,12 @@ class Hit extends React.Component {
                         <Highlight attribute="short_description" hit={hit}/>
                     </div>
 
-                    { isUserConnected ? (
-                        <button onClick={this.executeAjax} className="hit-favorites" data-id={hit.id} data-name={hit.name} id={hit.id}>Add to Favorites</button>
-                    ) : (<a href="index.php?action=connect/redirect">Add to Favorites</a>)
-
+                    { isUserConnected
+                        ? ( isFavorite ? ("Added") : (<button onClick={this.executeAjax} className="hit-favorites" data-id={hit.id} data-name={hit.name} id={hit.id}>Add to Favorites</button>)
+                        ) : (<a href="index.php?action=connect/redirect">Add to Favorites</a>)
                     }
+                    {/*{this.reload()}*/}
+
                     {/*{showFavorite}*/}
                     <a href={hit.plugin_page_at_source} target="_blank">More Info</a>
 

@@ -16,14 +16,16 @@
                 appId= {Config.appId}
                 indexName={Config.index}>
 
-                <header className="header marginBottom50 marginTop50">
+                <header className="header marginBottom50 marginTop50 container">
                     <SearchBox translations={{placeholder: 'Search for Plugins'}}/>
                 </header>
 
 
-                <main className="flex">
+                <main>
+                    <div className="main">
                     <Sidebar title="Languages"/>
                     <Content/>
+                    </div>
                 </main>
             </InstantSearch>
         );

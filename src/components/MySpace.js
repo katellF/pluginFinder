@@ -77,8 +77,8 @@ class MySpace extends React.Component {
 
         return (
 
-            <div>
-                <h1 id={"toto"} >My Favorites2</h1>
+            <div className={"content_mySpace"}>
+                <h1>My Favorites</h1>
 
                 <p>{this.state.data.map((json, index) =>
 

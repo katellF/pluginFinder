@@ -9,8 +9,8 @@ import {
 
 const Content = () =>
 
-    <div className="content">
-        <div className="info flex justifyContentEnd">
+    <div className="col">
+        <div className="content">
             <Stats/>
             <SortBy
                 defaultRefinement="wp_plugins"
@@ -21,9 +21,11 @@ const Content = () =>
                 ]}
             />
         </div>
+
         <Hits hitComponent={Hit}/>
-        <div className={"pagination"}>
+        <div className="pagination page_number">
             <Pagination showLast/>
         </div>
+
     </div>
 export default Content;

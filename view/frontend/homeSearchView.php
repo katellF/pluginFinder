@@ -6,9 +6,9 @@
     let currentPage = "homeView"; // "A string here"
     let isUserConnected = <?=$isUserConnected ?>; // "A string here"
     let listFavoritesIds = <?php
-            //We retrieve the list of pluginIds already present in the favorites list of the user
 
-        if( $listFavoritesIds ) {
+
+    if( $listFavoritesIds ) {
             $listIds = $listFavoritesIds->fetchAll(PDO::FETCH_COLUMN,0);
             echo json_encode($listIds);
         } else {
