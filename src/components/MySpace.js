@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Config from '../config.js';
+
 
 
 
@@ -11,12 +13,6 @@ class MySpace extends React.Component {
         this.state = {
             data: [],
         };
-
-        this.base_url = ''; // SERVER
-        if( window.location.hostname === 'localhost') {
-            this.base_url = '/projetsoc'; // LOCAL
-        }
-
 
     }
 
@@ -46,7 +42,7 @@ class MySpace extends React.Component {
 
         jQuery.ajax({
             method: "GET",
-            url: this.base_url + "/pluginfinder/index.php",
+            url: Config.base_url + "/pluginfinder/index.php",
             dataType: "json",
             data: 'action=API/deleteFavorite/'+clickedPluginId+'',
             success: function() {
@@ -72,7 +68,7 @@ class MySpace extends React.Component {
 
     componentDidMount(){
 
-        fetch(this.base_url +'/pluginfinder/index.php?action=API/listFavorites')
+        fetch(Config.base_url +'/pluginfinder/index.php?action=API/listFavorites')
             .then(results => results.json())
             .then(json => this.setState({data:json}));
     };

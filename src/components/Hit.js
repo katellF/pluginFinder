@@ -1,3 +1,4 @@
+import Config from '../config.js';
 import React, { Component } from "react";
 import {Highlight} from 'react-instantsearch/dom';
 
@@ -8,12 +9,6 @@ class Hit extends React.Component {
         super(props);
         this.executeAjax = this.executeAjax.bind(this);
         //this.reload = this.reload.bind(this);
-
-        this.base_url = ''; // SERVER
-        if( window.location.hostname === 'localhost') {
-            this.base_url = '/projetsoc'; // LOCAL
-        }
-
 
     }
 
@@ -29,7 +24,7 @@ class Hit extends React.Component {
 
         jQuery.ajax({
         method: "GET",
-        url: this.base_url + "/pluginfinder/index.php",
+        url: Config.base_url + "/pluginfinder/index.php",
         dataType: "json",
         data: 'action=API/addFavorite/'+clickedPluginId+'/'+clickedPluginName+'/',
          success: function() {
