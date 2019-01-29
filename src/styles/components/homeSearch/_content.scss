@@ -1,11 +1,19 @@
 .content{
+
   display: flex;
   justify-content: space-between;
   margin-bottom: $s-size;
+
 }
 
 .content__pagination{
 
   margin-top: $m-size;
   justify-content: center;
+}
+
+.header{
+
+  margin-top: 50px;
+  margin-bottom: 100px;
 }
