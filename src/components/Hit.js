@@ -8,8 +8,6 @@ class Hit extends React.Component {
     constructor(props) {
         super(props);
         this.executeAjax = this.executeAjax.bind(this);
-        //this.reload = this.reload.bind(this);
-
     }
 
 
@@ -17,7 +15,6 @@ class Hit extends React.Component {
 
         let clickedPluginId = jQuery(e.currentTarget).data('id');
         let clickedPluginName = jQuery(e.currentTarget).data('name');
-       // console.log(e);
 
         console.log(clickedPluginId);
         console.log(clickedPluginName);
@@ -76,9 +73,7 @@ class Hit extends React.Component {
                         ? ( isFavorite ? ("Added") : (<button onClick={this.executeAjax} className="hit-favorites" data-id={hit.id} data-name={hit.name} id={hit.id}>Add to Favorites</button>)
                         ) : (<a href="index.php?action=connect/redirect">Add to Favorites</a>)
                     }
-                    {/*{this.reload()}*/}
 
-                    {/*{showFavorite}*/}
                     <a href={hit.plugin_page_at_source} target="_blank">More Info</a>
 
                 </div>
