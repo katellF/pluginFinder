@@ -22,8 +22,8 @@
 
 <body>
 
-<header class="container">
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+<header>
+    <nav class="navbar nav navbar-expand-lg navbar-dark">
         <div class="container">
 
             <div class=" collapse navbar-collapse row justify-content-end menu_burger" id="navbarTogglerDemo03">

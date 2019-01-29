@@ -20,7 +20,6 @@
                     <SearchBox translations={{placeholder: 'Search for Plugins'}}/>
                 </header>
 
-
                 <main>
                     <div className="main">
                     <Sidebar title="Languages"/>
