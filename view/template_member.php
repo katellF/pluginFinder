@@ -23,7 +23,7 @@
 <body>
 
 <header>
-    <nav class="navbar nav navbar-expand-lg navbar-dark">
+    <nav class="navbar header__nav navbar-expand-lg navbar-dark">
         <div class="container">
 
             <div class=" collapse navbar-collapse row justify-content-end menu_burger" id="navbarTogglerDemo03">

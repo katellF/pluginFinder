@@ -1,7 +1,10 @@
 @import './base/base';
 @import './base/settings';
+@import './components/header';
+@import './components/footer';
 @import './components/mySpace/header';
-@import './components/mySpace/container';
-@import './components/homeSearch/header';
-@import './components/homeSearch/container';
+@import './components/homeSearch/content';
+@import './components/homeSearch/main';
+@import './components/homeSearch/sidebar';
+@import 'components/homeSearch/hit';
 

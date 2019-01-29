@@ -23,7 +23,7 @@ const Content = () =>
         </div>
 
         <Hits hitComponent={Hit}/>
-        <div className="pagination page_number">
+        <div className="pagination content__pagination">
             <Pagination showLast/>
         </div>
 
