@@ -29,8 +29,7 @@ class Hit extends React.Component {
              listFavoritesIds.push(clickedPluginId);
 
 
-
-                 console.log("SUCCESS");
+             console.log("SUCCESS");
         },
         error: function(e) {
             console.log(e);
