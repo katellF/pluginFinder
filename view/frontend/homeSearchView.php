@@ -19,7 +19,7 @@
 
 </script>
 
-<div id="app"></div>
+<div id="app" class="homeSearch_page"></div>
 <script src="public/js/pluginfinder.js"></script>
 
 

@@ -1,7 +1,7 @@
 
 <footer id="footer">
 
-    <nav class="navbar  navbar-expand-lg navbar-dark bg-dark nav_footer">
+    <nav class="navbar  navbar-expand-lg navbar-dark nav_footer">
         <div class="container">
             <div class="navbar-collapse row justify-content-center" id="navbarTogglerDemo03">
                 <ul class="navbar-nav flex_rowR">

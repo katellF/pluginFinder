@@ -1,25 +1,30 @@
 
-html {
+/*html {*/
 
-    height: 100%;
-    padding-top: 50px;
-    font-size: 100%;
-    box-sizing: border-box;
-}
+    /*height: 100%;*/
+    /*!*padding-top: 50px;*!*/
+    /*font-size: 100%;*/
+    /*box-sizing: border-box;*/
+/*}*/
 
-*,
-*:before,
-*:after {
-    box-sizing: inherit;
-}
+/**,*/
+/**:before,*/
+/**:after {*/
+    /*box-sizing: inherit;*/
+/*}*/
 
-body {
-    position: relative;
-    margin: 0;
-    padding-bottom: 6rem;
-    min-height: 100%;
+/*body {*/
+    /*position: relative;*/
+    /*margin: 0;*/
+    /*padding-bottom: 6rem;*/
+    /*min-height: 100%;*/
 
-}
+/*}*/
+
+/* ======================== Nav =============================== */
+/*.navbar{*/
+    /*background: #08192A;*/
+/*}*/
 /* ======================= home search  ======================= */
 /* scss file src/styles/styles*/
 
@@ -65,19 +70,20 @@ body {
     margin-bottom: 50px;
 }
 
-/* ======================= Footer ======================= */
+/*!* ======================= Footer ======================= *!*/
 
-footer {
+/*footer {*/
 
-    margin-top: 70px;
-}
+    /*margin-top: 70px;*/
+/*}*/
 
-#footer {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
+/*#footer {*/
+    /*background: #08192A;*/
+    /*position: absolute;*/
+    /*right: 0;*/
+    /*bottom: 0;*/
+    /*left: 0;*/
+/*}*/
 
 
 
