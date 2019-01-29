@@ -1,4 +1,15 @@
 
+.hitPerso{
+
+}
+
+.hit__namePerso{
+
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: bolder;
+}
+
 .ais-Hits-item{
   background: $white;
 }
@@ -11,14 +22,19 @@
   text-align : center;
 }
 .hit-added {
+//background: #90EE90;
+background: #ADF1D2;
+ // #d4edda
+ // #d4edda
+  //#155724
 
-//color: red;
+  color: #3F584D;
 }
 
 .hit__add {
 
   background: $bleu;
-  border: $bleu;
+
   color: $white;
   margin-top: $l-size;
   padding: $xs-size;
@@ -30,11 +46,29 @@
 }
 
 .hit__moreInfo {
-  background: $darkBlue;
-  border: $darkBlue;
+  //background: $darkBlue;
+
+  background: #4C5E6F;
+ // border: $darkBlue;
   color: $white;
   margin-top: $s-size;
   padding: $xs-size;
   border-radius: $xxs-size;
 
+}
+
+.hit--addLink:hover{
+
+  border: solid 0.07 $bleu;
+  color: $bleu;
+  background: $white;
+
+}
+
+  a.hit--moreInfoLink:hover{
+
+    background: $white;
+    border: solid 0.07rem #4C5E6F;
+    color: #4C5E6F;
+    text-decoration: none;
 }

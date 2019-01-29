@@ -82,7 +82,8 @@ class MySpace extends React.Component {
 
         return (
 
-            <div className={"content_mySpace"}>
+            <div >
+                <div className={"content_mySpace"}>
                 <h1>My Favorites</h1>
 
                 <p>{this.state.data.map((json, index) =>
@@ -93,6 +94,7 @@ class MySpace extends React.Component {
                     </p>
 
                        )}</p>
+                </div>
 
             </div>
         );

@@ -25,7 +25,7 @@ class Hit extends React.Component {
         dataType: "json",
         data: 'action=API/addFavorite/'+clickedPluginId+'/'+clickedPluginName+'/',
          success: function() {
-             $('#'+clickedPluginId).replaceWith( "<p class='hit-added'>Added to favorite</p>");
+             $('#'+clickedPluginId).replaceWith( "<p class='hit-added alert alert-success'>Added to favorite</p>");
              listFavoritesIds.push(clickedPluginId);
 
 
@@ -60,8 +60,8 @@ class Hit extends React.Component {
                 <div className="hit-image">
                     <img width="100" height="100" src={hit.img_thumb} alt="images"/>
                 </div>
-                <div className="hit-content">
-                    <div className="hit-name">
+                <div className="hit-content hitPerso">
+                    <div className="hit-name hit__namePerso">
                         <Highlight attribute="name" hit={hit}/>
                     </div>
                     <div className="hit-description">
@@ -69,11 +69,11 @@ class Hit extends React.Component {
                     </div>
 
                     { isUserConnected
-                        ? ( isFavorite ? (<p className="hit-added alert alert-success">Added to favorite</p>) : (<p className={"hit_center"}><button onClick={this.executeAjax} className="hit-favorites hit__add" data-id={hit.id} data-name={hit.name} id={hit.id}>Add to Favorites</button></p>)
+                        ? ( isFavorite ? (<p className="hit-added alert alert-success">Added to favorite</p>) : (<p className={"hit_center"}><button onClick={this.executeAjax} className="hit-favorites hit__add hit--addLink" data-id={hit.id} data-name={hit.name} id={hit.id}>Add to Favorites</button></p>)
                         ) : (<a href="index.php?action=connect/redirect" className={"hit-add--notConnected"}>Add to Favorites</a>)
                     }
 
-                    <p className="hit_center"><a href={hit.plugin_page_at_source} target="_blank" className="hit__moreInfo">More Info</a></p>
+                    <p className="hit_center"><a href={hit.plugin_page_at_source} target="_blank" className="hit__moreInfo hit--moreInfoLink">More Info</a></p>
 
                 </div>
             </div>
