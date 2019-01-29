@@ -6,3 +6,35 @@
   color: $white;
 }
 
+.hit_center {
+
+  text-align : center;
+}
+.hit-added {
+
+//color: red;
+}
+
+.hit__add {
+
+  background: $bleu;
+  border: $bleu;
+  color: $white;
+  margin-top: $l-size;
+  padding: $xs-size;
+  border-radius: $xxs-size;
+}
+
+.hit-add--notConnected {
+
+}
+
+.hit__moreInfo {
+  background: $darkBlue;
+  border: $darkBlue;
+  color: $white;
+  margin-top: $s-size;
+  padding: $xs-size;
+  border-radius: $xxs-size;
+
+}

@@ -1,8 +1,9 @@
 .sidebar{
 
-  border: solid $black 1px;
+
+  border-radius: 0.1rem;
+  box-shadow: 0.5rem 1rem 1rem $xldarkBlue;
   margin: 2.8rem $s-size auto $s-size;
-  //margin:auto;
   padding: 0 0 $l-size $s-size;
   background: $white;
 }
@@ -11,4 +12,16 @@
 
   margin-top: $m-size;
   margin-bottom: $s-size;
+}
+
+.ais-RefinementList-labelText{
+
+  margin-left: $xs-size;
+}
+
+.ais-RefinementList-count{
+
+  border-radius:0.2rem !important;
+  background: $darkBlue !important;
+  color: $white !important;
 }

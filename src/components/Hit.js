@@ -25,7 +25,7 @@ class Hit extends React.Component {
         dataType: "json",
         data: 'action=API/addFavorite/'+clickedPluginId+'/'+clickedPluginName+'/',
          success: function() {
-             $('#'+clickedPluginId).replaceWith( "<div>Added</div>" );
+             $('#'+clickedPluginId).replaceWith( "<p class='hit-added'>Added to favorite</p>");
              listFavoritesIds.push(clickedPluginId);
 
 
@@ -69,11 +69,11 @@ class Hit extends React.Component {
                     </div>
 
                     { isUserConnected
-                        ? ( isFavorite ? ("Added") : (<button onClick={this.executeAjax} className="hit-favorites" data-id={hit.id} data-name={hit.name} id={hit.id}>Add to Favorites</button>)
-                        ) : (<a href="index.php?action=connect/redirect">Add to Favorites</a>)
+                        ? ( isFavorite ? (<p className="hit-added alert alert-success">Added to favorite</p>) : (<p className={"hit_center"}><button onClick={this.executeAjax} className="hit-favorites hit__add" data-id={hit.id} data-name={hit.name} id={hit.id}>Add to Favorites</button></p>)
+                        ) : (<a href="index.php?action=connect/redirect" className={"hit-add--notConnected"}>Add to Favorites</a>)
                     }
 
-                    <a href={hit.plugin_page_at_source} target="_blank">More Info</a>
+                    <p className="hit_center"><a href={hit.plugin_page_at_source} target="_blank" className="hit__moreInfo">More Info</a></p>
 
                 </div>
             </div>
