@@ -3,6 +3,7 @@
 
   padding: 2rem !important;
   font-size: 2rem !important;
+  margin-left: 0.2rem !important;
   color: $darkBlue !important;
 
 }
@@ -14,4 +15,6 @@
 
   height: 2rem !important;
   width: 2rem !important;
+  -webkit-transform: translateX(-30%) translateY(-50%) !important;
+  transform: translateX(-30%) translateY(-50%) !important;
 }
