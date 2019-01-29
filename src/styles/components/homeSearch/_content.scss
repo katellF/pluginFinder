@@ -1,11 +1,11 @@
 .content{
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1rem;
+  margin-bottom: $s-size;
 }
 
 .content__pagination{
 
-  margin-top: 1.5rem;
+  margin-top: $m-size;
   justify-content: center;
 }
