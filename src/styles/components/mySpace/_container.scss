@@ -13,7 +13,6 @@
 
 .mySpace_list {
 
- //background: $white;
  padding-top: 2rem;
  padding-bottom: 1.5rem;
  width: 50%;
@@ -40,9 +39,9 @@
 .mySpace--moreInfoLink:hover{
 
  background: $white;
- //border: solid 0.07rem #4C5E6F;
+ border: solid 0.07rem #4C5E6F;
  color: #4C5E6F;
- text-decoration: none;
+
 }
 
 .mySpace__delete {
@@ -56,15 +55,22 @@
 
 .mySpace--deleteLink:hover{
 
- border: solid 0.07 $bleu;
+ border: solid 0.07rem $bleu;
  color: $bleu;
  background: $white;
 
 }
 
-.mySpace--moreInfoLink {
+.mySpace--link {
 
  color: white;
+
+}
+
+a.mySpace--link:hover {
+
+ color: #4C5E6F;
+ text-decoration: none;
 }
 
 .mySpace__buttons {

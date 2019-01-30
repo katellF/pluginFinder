@@ -16,29 +16,14 @@ class MySpace extends React.Component {
 
     }
 
-    // deletePlugin () {
-    //     console.log("it works");
-    //     this.setState(() => {
-    //         return {
-    //             data: []
-    //         };
-    //     });
-    //
-    // }
 
     deletePlugin (e) {
-        // console.log("it works");
-        // this.setState(() => {
-        //     return {
-        //         data: []
-        //     };
-        // });
+
         let clickedPluginId = jQuery(e.currentTarget).data('id');
-       // let clickedPluginName = jQuery(e.currentTarget).data('name');
-        // console.log(e);
+
 
         console.log(clickedPluginId);
-       // console.log(clickedPluginName);
+
 
         jQuery.ajax({
             method: "GET",
@@ -46,12 +31,10 @@ class MySpace extends React.Component {
             dataType: "json",
             data: 'action=API/deleteFavorite/'+clickedPluginId+'',
             success: function() {
-                //console.log("element",e);
+
                 jQuery('#plugin_'+clickedPluginId).remove();
-                //jQuery('#toto').remove();
 
 
-                //this.render();
                 console.log("SUCCESS");
                 console.log("Ca marche");
 
@@ -91,10 +74,7 @@ class MySpace extends React.Component {
 
                         <div className="d-flex flex-column justify-content-center mySpace__buttons">
                         <button key={json.pluginId} onClick={this.deletePlugin} data-id={json.pluginId} className="mySpace__delete mySpace--deleteLink">Delete</button>
-                        <button key={json.pluginId} className="mySpace__moreInfo mySpace--moreInfoLink"><a className= "mySpace__link mySpace--moreInfoLink" href="https://wordpress.org/plugins/buddyforms/">More Info</a></button>
-                        {/*<p><a href={hit.plugin_page_at_source} target="_blank" className="hit__moreInfo hit--moreInfoLink">More Info</a></p>*/}
-                        {/*<p><a href=`https://wordpress.org/plugins/${json.pluginId}`target="_blank" className="hit__moreInfo hit--moreInfoLink">More Info</a></p>*/}
-                        {/*<p><a href="#" className="mySpace__moreInfo mySpace--moreInfoLink" >More Info</a></p>*/}
+                        <button key={json.pluginId} className="mySpace__moreInfo mySpace--moreInfoLink"><a className= "mySpace--link" href={"https://wordpress.org/plugins/"+json.pluginId} target="_blank" >More Info</a></button>
                         </div>
                     </div>
 

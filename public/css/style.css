@@ -1,34 +1,36 @@
+html {
+    height: 100%;
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+
+
+
+}
+
+
+/* ========================= homeSearch ========================= */
+
 .hit-added {
 
-    /*color: #155724;*/
+
     color: #3F584D;
-    /*color: white;*/
-    /*color: #F98F5F;*/
-    /*background: #F98F5F;*/
     margin-top: 2rem;
     text-align:center;
 }
-/*html {*/
 
-    /*height: 100%;*/
-    /*!*padding-top: 50px;*!*/
-    /*font-size: 100%;*/
-    /*box-sizing: border-box;*/
-/*}*/
-
-/**,*/
-/**:before,*/
-/**:after {*/
-    /*box-sizing: inherit;*/
-/*}*/
-
-/*body {*/
-    /*position: relative;*/
-    /*margin: 0;*/
-    /*padding-bottom: 6rem;*/
-    /*min-height: 100%;*/
-
-/*}*/
 
 /* ======================== Nav =============================== */
 /*.navbar{*/
@@ -220,14 +222,21 @@
 
 /*}*/
 
-/*.button_logout {*/
+.logout{
 
-    /*border-color: #6BC3D1 !important;*/
-    /*margin-top: 15px;*/
-    /*!*background: linear-gradient(to bottom right, #343a40, #6B6F74, #B5B7B9)!important;*!*/
-    /*background: linear-gradient(to bottom right, #41B2C4, #56BBCB, #6BC3D1) !important;*/
-    /*!*margin-right: 25px;*!*/
-/*}*/
+    margin-top: 3rem;
+
+
+}
+
+.logout__button {
+
+    border-color: #0096db !important;
+    margin-top: 3rem;
+    background: #0096db !important;
+}
+
+
 
 /*.logout {*/
 
@@ -425,12 +434,13 @@
 
 /*}*/
 
-/*#footer {*/
-    /*position: absolute;*/
-    /*right: 0;*/
-    /*bottom: 0;*/
-    /*left: 0;*/
-/*}*/
+#footer {
+    background: #20364B;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
 
 /*!* ============================== Responsif max 992 px ============================= *!*/
 /*@media (max-width: 992px) {*/
