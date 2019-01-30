@@ -24,6 +24,7 @@ body {
 
 .header__nav{
     background: #08192A;
+
 }
 
 /* ========================= homeSearch ========================= */
@@ -440,7 +441,7 @@ body {
 /*}*/
 
 #footer {
-    background: #20364B;
+    background: #08192A;
     position: absolute;
     right: 0;
     bottom: 0;
