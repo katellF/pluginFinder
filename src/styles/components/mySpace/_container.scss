@@ -1,6 +1,73 @@
-.content_mySpace{
+.mySpace {
 
  text-align: center;
- //border: solid white 1px;
- background: white;
+
+}
+
+.mySpace_title {
+
+ background: $white;
+ margin-top: 3rem;
+ margin-bottom: 4rem;
+}
+
+.mySpace_list {
+
+ //background: $white;
+ padding-top: 2rem;
+ padding-bottom: 1.5rem;
+ width: 50%;
+ margin: auto;
+ border-radius: 0.1rem;
+}
+
+.mySpace_favorite {
+
+ background: $white;
+ margin-bottom: 1rem;
+}
+
+.mySpace__moreInfo {
+
+ background: #4C5E6F;
+ color: $white;
+ margin-top: $s-size;
+ margin-bottom: $m-size;
+ padding: $xs-size;
+ border-radius: $xxs-size;
+}
+
+.mySpace--moreInfoLink:hover{
+
+ background: $white;
+ //border: solid 0.07rem #4C5E6F;
+ color: #4C5E6F;
+ text-decoration: none;
+}
+
+.mySpace__delete {
+
+ background: $bleu;
+ color: $white;
+ margin-top: $l-size;
+ padding: $xs-size;
+ border-radius: $xxs-size;
+}
+
+.mySpace--deleteLink:hover{
+
+ border: solid 0.07 $bleu;
+ color: $bleu;
+ background: $white;
+
+}
+
+.mySpace--moreInfoLink {
+
+ color: white;
+}
+
+.mySpace__buttons {
+
+
 }

@@ -75,25 +75,30 @@ class MySpace extends React.Component {
 
 
     render() {
-        //const {fav} =this.props;
-       // console.log(this.props.id);
-
-        // console.log(this.state.data);
 
         return (
 
             <div >
-                <div className={"content_mySpace"}>
-                <h1>My Favorites</h1>
+                <div className="mySpace">
+                <h1 className="mySpace_title">My Favorites Plugins</h1>
 
-                <p>{this.state.data.map((json, index) =>
+                <div className="mySpace_list">{this.state.data.map((json, index) =>
 
-                    <p key={index} id={`plugin_${json.pluginId}`}>{json.pluginName} --- {json.pluginId}
-                    {/*<button key= button_{json.pluginId} onClick={this.deletePlugin} data-id={this.props.id} data-name={this.props.name} >Delete</button>*/}
-                    <button key={json.pluginId} onClick={this.deletePlugin} data-id={json.pluginId}>Delete</button>
-                    </p>
+                    <div key={index} id={`plugin_${json.pluginId}`} className="d-flex justify-content-around mySpace_favorite align-items-center
+">
+                        <h2>{json.pluginId}</h2>
 
-                       )}</p>
+
+                        <div className="d-flex flex-column justify-content-center mySpace__buttons">
+                        <button key={json.pluginId} onClick={this.deletePlugin} data-id={json.pluginId} className="mySpace__delete mySpace--deleteLink">Delete</button>
+                        <button key={json.pluginId} className="mySpace__moreInfo mySpace--moreInfoLink"><a className= "mySpace__link mySpace--moreInfoLink" href="https://wordpress.org/plugins/buddyforms/">More Info</a></button>
+                        {/*<p><a href={hit.plugin_page_at_source} target="_blank" className="hit__moreInfo hit--moreInfoLink">More Info</a></p>*/}
+                        {/*<p><a href=`https://wordpress.org/plugins/${json.pluginId}`target="_blank" className="hit__moreInfo hit--moreInfoLink">More Info</a></p>*/}
+                        {/*<p><a href="#" className="mySpace__moreInfo mySpace--moreInfoLink" >More Info</a></p>*/}
+                        </div>
+                    </div>
+
+                       )}</div>
                 </div>
 
             </div>
