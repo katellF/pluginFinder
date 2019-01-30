@@ -77,7 +77,6 @@ class Connect
 
 
         $view = new View("frontend/register");
-        //$view = new View("backend/registration");
         $view->generate(array());
     }
 

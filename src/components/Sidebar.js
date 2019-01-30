@@ -13,7 +13,6 @@ const Sidebar = (props) =>
         <h5 className="sidebar__tags">tags</h5>
 
         <RefinementList attribute="tags_filter._tags"/>
-        {/*<RefinementList attribute="manufacturer" searchable = {True} withSearchBox/>*/}
     </div>
 
 export default Sidebar;
