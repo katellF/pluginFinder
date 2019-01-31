@@ -1,10 +1,10 @@
 <?php $this->title = 'Qui sommes nous';
 ?>
 
-<h2 class="text-center ligne_top ligne_bottom">Qui Sommes Nous?</h2>
+<h1 class="text-center about__title">About us?</h1>
 
 <div class="container">
-    <h3> The Team </h3>
+    <h2 class="about__subtitle"> The Team </h2>
     <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt utLorem ipsum dolor sit amet, consectetur adipiscing elit,
         sed do eiusmod tempor incididunt ut.
@@ -19,7 +19,7 @@
         dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     </p>
 
-    <h3> Our goals </h3>
+    <h2 class="about__subtitle"> Our goals </h2>
     <p>
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit

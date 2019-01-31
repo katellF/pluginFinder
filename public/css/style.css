@@ -30,14 +30,84 @@ body {
 /* ========================= homeSearch ========================= */
 
 .hit-added {
-
-
     color: #3F584D;
     margin-top: 2rem;
     text-align:center;
 }
 
 
+
+/* ========================= About ========================= */
+
+.about__title {
+    margin-top: 2rem;
+
+}
+
+.about__subtitle {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+
+}
+
+
+
+/* ========================= Contact ========================= */
+
+.title {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+
+}
+
+.send {
+    margin-top: 3rem;
+}
+
+.buttonForm {
+    background: #0096db !important;
+    border: solid 0.07rem #0096db;
+
+}
+
+.buttonForm:hover {
+
+    background: white !important;
+    color: #0096db !important;
+    border: solid 0.07rem #0096db !important;
+}
+
+/* ========================= Register ========================= */
+
+.title {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+
+}
+
+.send {
+    margin-top: 3rem;
+}
+
+.buttonForm {
+    background: #0096db !important;
+    border: solid 0.07rem #0096db;
+
+}
+
+.buttonForm:hover {
+
+    background: white !important;
+    color: #0096db !important;
+    border: solid 0.07rem #0096db !important;
+}
+
+/* ========================= Connect ========================= */
+
+.title{
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+}
 /* ======================== Nav =============================== */
 /*.navbar{*/
     /*background: #08192A;*/

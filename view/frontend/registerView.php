@@ -5,7 +5,7 @@ $this->title = htmlspecialchars('Inscription');
 
 <div class="container connect">
 
-    <h2 class="text-center">Register</h2>
+    <h1 class="text-center title">Register</h1>
 
 
     <form action="index.php?action=connect/registration" method="post" class="form-connect">
@@ -34,8 +34,8 @@ $this->title = htmlspecialchars('Inscription');
             <label for="confirmPassword" class="margin-bottom15">Confirm the Password</label>
             <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" name="confirmPassword" >
         </div>
-        <div>
-            <input type="submit" class="btn btn-primary btn-lg btn-block active button-form" value="Register"/>
+        <div class="send">
+            <input type="submit" class="btn btn-primary btn-lg btn-block active buttonForm" value="Register"/>
         </div>
     </form>
 

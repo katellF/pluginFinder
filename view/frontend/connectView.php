@@ -6,7 +6,7 @@ $this->title = htmlspecialchars('Se connecter');
 
 <div class="container connect">
 
-    <h2 class="text-center">Login</h2>
+    <h1 class="text-center title">Login</h1>
 
 
     <form action="index.php?action=connect/connection" method="post" class="form-connect">
@@ -18,8 +18,8 @@ $this->title = htmlspecialchars('Se connecter');
             <label for="password" class="margin-bottom15">Password</label>
             <input type="password" class="form-control" id="passwordConnect" placeholder="Password" name="passwordConnect" >
         </div>
-        <div>
-            <input type="submit" class="btn btn-primary btn-lg btn-block active button-form" value="login"/>
+        <div class="send">
+            <input type="submit" class="btn btn-primary btn-lg btn-block active buttonForm" value="login"/>
         </div>
     </form>
 
