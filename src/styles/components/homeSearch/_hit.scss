@@ -23,49 +23,55 @@
 }
 .hit-added {
 
-background: #ADF1D2;
-
-
+  background: #ADF1D2;
   color: #3F584D;
 }
 
 .hit__add {
 
   background: $bleu;
-
   color: $white;
-  margin-top: $l-size;
   padding: $xs-size;
   border-radius: $xxs-size;
 }
 
-.hit-add--notConnected {
+a.hit__add:hover{
+
+  border: solid 0.07rem $bleu;
+  background: $white;
+  color: $bleu;
+  text-decoration: none;
+
 
 }
+
 
 .hit__moreInfo {
 
 
   background: #4C5E6F;
   color: $white;
-  margin-top: $s-size;
+
   padding: $xs-size;
   border-radius: $xxs-size;
 
 }
 
-.hit--addLink:hover{
-
-  border: solid 0.07 $bleu;
-  color: $bleu;
-  background: $white;
-
-}
-
-  a.hit--moreInfoLink:hover{
+a.hit--moreInfoLink:hover {
 
     background: $white;
     border: solid 0.07rem #4C5E6F;
     color: #4C5E6F;
     text-decoration: none;
+}
+
+
+.hit_buttonGrey{
+
+  margin-top: $m-size;
+}
+
+.hit_buttonBlue{
+
+  margin-top: $l-size;
 }

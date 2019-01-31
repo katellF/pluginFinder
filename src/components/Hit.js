@@ -70,10 +70,10 @@ class Hit extends React.Component {
 
                     { isUserConnected
                         ? ( isFavorite ? (<p className="hit-added alert alert-success">Added to favorite</p>) : (<p className={"hit_center"}><button onClick={this.executeAjax} className="hit-favorites hit__add hit--addLink" data-id={hit.id} data-name={hit.name} id={hit.id}>Add to Favorites</button></p>)
-                        ) : (<a href="index.php?action=connect/redirect" className={"hit-add--notConnected"}>Add to Favorites</a>)
+                        ) : (<p className="hit_center hit_buttonBlue"><a href="index.php?action=connect/redirect" className={"hit__add"}>Add to Favorites</a></p>)
                     }
 
-                    <p className="hit_center"><a href={hit.plugin_page_at_source} target="_blank" className="hit__moreInfo hit--moreInfoLink">More Info</a></p>
+                    <p className="hit_center hit_buttonGrey"><a href={hit.plugin_page_at_source} target="_blank" className="hit__moreInfo hit--moreInfoLink">More Info</a></p>
 
                 </div>
             </div>
