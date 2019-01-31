@@ -52,12 +52,17 @@ body {
 
 
 
-/* ========================= Contact/Register/logout ========================= */
+/* ========================= Contact/Register/logout/redirect ========================= */
 
 .title {
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
 
+}
+
+.subtitle {
+    margin-bottom: 1.5rem;
+    font-weight: 500;
 }
 
 .send {

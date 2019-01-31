@@ -1,10 +1,11 @@
 
-<div class="container text-center logout">
+<div class="container text-center">
 
-    <h2 class="font_size_3">You have to register or to login in order to add the plugin as favorite</h2>
+    <h1 class="title"> Register or Login </h1>
+    <p class="subtitle">You have to register or login in order to add the plugin as favorite</p>
 
-    <a href="index.php?action=connect/registration" class="btn btn-info btn-lg active button_logout margin-right15">Register <span class="sr-only">(current)</span></a>
-    <a href="index.php?action=connect/connection" class="btn btn-info btn-lg active button_logout margin-left15">Login</a>
-    <a href="index.php" class="btn btn-info btn-lg active button_logout margin-left15">back to Home</a>
+    <a href="index.php?action=connect/registration" class="btn btn-info btn-lg active buttonForm">Register <span class="sr-only">(current)</span></a>
+    <a href="index.php?action=connect/connection" class="btn btn-info btn-lg active buttonForm">Login</a>
+    <a href="index.php" class="btn btn-info btn-lg active buttonForm">back to Home</a>
 
 </div>
