@@ -20,22 +20,15 @@ class HomeSearch
         session_start();
         $data = "";
         $view = new View("frontend/homeSearch");
-        //var_dump($data);
 
         $userConnected = ($this->ctrlConnect->isUserConnected()) ? 'true' : 'false';
-        //var_dump($userConnected);
+
 
         if ($this->ctrlConnect->isUserConnected()) {
 
             $listFavoritesIds = $this->favoritesManager->getFavoritesIds($_SESSION["id"]);
             $view->generate(array("isUserConnected" => $userConnected, "listFavoritesIds" => $listFavoritesIds), "template_member");
 
-//           $view = new View("frontend/homeSearch");
-            //$view->generate( 'template_mySpace');
-
-            // var_dump($data);
-//           $view = new View("frontend/homeSearch");
-//           $view->generate(array(), 'template_mySpace');
         } else if (!$this->ctrlConnect->isUserConnected()) {
 
             $listFavoritesIds = ($this->ctrlConnect->isUserConnected()) ? $data : [];
@@ -43,11 +36,6 @@ class HomeSearch
             $view->generate(array("isUserConnected" => $userConnected, "listFavoritesIds" => $listFavoritesIds));
 
         }
-
-        // $view = new View("frontend/homeSearch");
-        // $listFavoritesIds = ($this->ctrlConnect->isUserConnected()) ? $data : [];
-        // $view->generate(array("isUserConnected" => $userConnected , "listFavoritesIds" => $listFavoritesIds));
-////       $view->generate(array("isUserConnected" => "testme" ));
     }
 
 }

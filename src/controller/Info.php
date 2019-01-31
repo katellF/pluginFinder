@@ -10,20 +10,21 @@ class Info
 
     public function __construct()
     {
-
         $this->ctrlConnect = new Connect();
-
     }
+
     public function index()
     {
+        session_start();
+        $view = new View("frontend/about");
+
         if ($this->ctrlConnect->isUserConnected()) {
-        $view = new View("frontend/about");
+
         $view->generate(array(), "template_member");
+
+        }else{
+            $view->generate(array());
         }
-
-        $view = new View("frontend/about");
-        $view->generate(array());
-
     }
 
 }

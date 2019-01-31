@@ -17,13 +17,19 @@ class Contact
     }
     public function index()
     {
+        session_start();
+        $view = new View("frontend/contact");
+
         if ($this->ctrlConnect->isUserConnected()) {
-            $view = new View("frontend/contact");
+
             $view->generate(array(), "template_member");
+        }else{
+
+           // $view = new View("frontend/contact");
+            $view->generate(array());
         }
 
-        $view = new View("frontend/contact");
-        $view->generate(array());
+
 
     }
 
