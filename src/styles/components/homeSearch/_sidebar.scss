@@ -2,10 +2,11 @@
 
 
   border-radius: 0.1rem;
-  box-shadow: 0.5rem 1rem 1rem $xldarkBlue;
   margin: 2.8rem $s-size auto $s-size;
   padding: 0 0 $l-size $s-size;
   background: $white;
+  border: 1px solid #c4c8d8;
+  box-shadow: 0 2px 5px 0 #e3e5ec;
 }
 
 .sidebar__tags{
@@ -22,6 +23,8 @@
 .ais-RefinementList-count{
 
   border-radius:0.2rem !important;
-  background: #4C5E6F !important;
+  //background: #4C5E6F !important;
+  background: #3a4570 !important;
+  opacity:0.7 !important;
   color: $white !important;
 }

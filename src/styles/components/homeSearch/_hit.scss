@@ -14,7 +14,11 @@
   background: $white;
 }
 .ais-Stats-text{
-  color: $white;
+  //color: #08192A;
+}
+
+.ais-SortBy-select{
+  color:#3a4570 !important;
 }
 
 .hit_center {
@@ -48,10 +52,9 @@ a.hit__add:hover{
 
 .hit__moreInfo {
 
-
-  background: #4C5E6F;
+  background: #7D808A;
+  opacity:0.8;
   color: $white;
-
   padding: $xs-size;
   border-radius: $xxs-size;
 
