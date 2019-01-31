@@ -37,7 +37,7 @@ class Member
 
 
             $view = new View("backend/mySpace");
-            $view->generate(array('favorites' => $getFavorites , "isUserConnected" => $this->isUserConnected), 'template_mySpace');
+            $view->generate(array('favorites' => $getFavorites , "isUserConnected" => $this->isUserConnected), 'template_member');
 
         } else {
             throw new Exception('Vous n avez pas acces à cette page!');
