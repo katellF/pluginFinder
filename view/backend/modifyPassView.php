@@ -5,7 +5,7 @@ $this->title = htmlspecialchars('Change password');
 ?>
 
 <p class="margin-top50 margin-bottom25 margin-left15"><a class="btn btn-primary bg-6BC3D1"
-                                                         href="index.php?action=admin">Retour au tableau de bord</a></p>
+                                                         href="index.php?action=connect/connection">Back to Connect</a></p>
 
 
     <?php
@@ -23,21 +23,21 @@ if (isset ($_POST) && !empty($_POST)  && $password ) {
 
 <div class="container connect">
 
-    <h2 class="text-center">Changer le mot de passe</h2>
+    <h2 class="text-center">Modify your password</h2>
 
 
-    <form action="index.php?action=modifypass" method="post" class="form-connect">
+    <form action="index.php?action=connect/modifypassword" method="post" class="form-connect">
         <div class="form-group margin-bottom15">
             <label for="pseudo">pseudo</label><br/>
             <strong class="font-weight-bold"><?=$_SESSION['pseudo']?></strong>
 
-       </div>
+        </div>
         <div class="form-group margin-bottom25">
-            <label for="password" class="margin-bottom15">Insérer votre nouveau mot de passe</label>
+            <label for="password" class="margin-bottom15">Enter your new password</label>
             <input type="password" class="form-control" id="passwordConnect" placeholder="Password" name="passwordConnect">
         </div>
         <div class="form-group margin-bottom25">
-            <label for="passwordConfirm" class="margin-bottom15">Confirmation du mot de passe</label>
+            <label for="passwordConfirm" class="margin-bottom15">Confirm your new password</label>
             <input type="password" class="form-control" id="passwordConfirm" placeholder="Password" name="passwordConfirm">
         </div>
 

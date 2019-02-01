@@ -10,11 +10,9 @@ class FavoritesManager extends Manager
     {
 
         $db = $this->dbConnect();
-
         $req = $db->prepare('SELECT userId, pluginId, pluginName FROM favorites WHERE userId=:userId');
-        //var_dump('toto');
         $req->execute(array('userId' => $userId));
-        //var_dump($req);
+
 
         return $req;
     }
@@ -24,7 +22,6 @@ class FavoritesManager extends Manager
     public function getFavoritesIds($userId)
     {
         $db = $this->dbConnect();
-
         $req = $db->prepare('SELECT pluginId FROM favorites WHERE userId=:userId');
         $req->execute(array('userId' => $userId));
 

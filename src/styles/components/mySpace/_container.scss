@@ -28,7 +28,9 @@
 
 .mySpace__moreInfo {
 
- background: #4C5E6F;
+ //background: #4C5E6F;
+ background: #7D808A;
+ opacity:0.8;
  color: $white;
  margin-top: $s-size;
  margin-bottom: $m-size;
@@ -69,7 +71,7 @@
 
 a.mySpace--link:hover {
 
- color: #4C5E6F;
+ color: #7D808A;
  text-decoration: none;
 }
 

@@ -63,17 +63,17 @@ class MySpace extends React.Component {
 
             <div >
                 <div className="mySpace">
-                <h1 className="mySpace_title">My Favorites Plugins</h1>
+                    <h1 className="mySpace_title">My Favorites Plugins</h1>
+                    <div className="mySpace_list">{this.state.data.map((json, index) =>
 
-                <div className="mySpace_list">{this.state.data.map((json, index) =>
-
-                    <div key={index} id={`plugin_${json.pluginId}`} className="d-flex justify-content-around mySpace_favorite align-items-center">
-                        <h2>{json.pluginId}</h2>
-                        <div className="d-flex flex-column justify-content-center mySpace__buttons">
-                        <button key={json.pluginId} onClick={this.deletePlugin} data-id={json.pluginId} className="mySpace__delete mySpace--deleteLink">Delete</button>
-                        <button key={json.pluginId} className="mySpace__moreInfo mySpace--moreInfoLink"><a className= "mySpace--link" href={"https://wordpress.org/plugins/"+json.pluginId} target="_blank" >More Info</a></button>
+                        <div key={index} id={`plugin_${json.pluginId}`} className="d-flex justify-content-around mySpace_favorite align-items-center">
+                            <h2>{json.pluginId}</h2>
+                            <div className="d-flex flex-column justify-content-center mySpace__buttons">
+                            <button key={json.pluginId} onClick={this.deletePlugin} data-id={json.pluginId} className="mySpace__delete mySpace--deleteLink">Delete</button>
+                            <button key={json.pluginId} className="mySpace__moreInfo mySpace--moreInfoLink"><a className= "mySpace--link" href={"https://wordpress.org/plugins/"+json.pluginId} target="_blank" >More Info</a></button>
+                            </div>
                         </div>
-                    </div>
+
 
                        )}</div>
                 </div>

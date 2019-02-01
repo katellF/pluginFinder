@@ -38,10 +38,13 @@
                         <a class="nav-link color_link" href="index.php?action=contact">Contact</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link color_link" href="index.php?action=member">My Space</a>
+                        <a class="nav-link color_link" href="index.php?action=member">Favorites</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link color_link" href="index.php?action=connect/logout">logout</a>
+                        <a class="nav-link color_link" href="index.php?action=connect/modifypassword">Account</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link color_link" href="index.php?action=connect/logout">Logout</a>
                     </li>
                 </ul>
             </div>
