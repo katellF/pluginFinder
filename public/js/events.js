@@ -2,12 +2,12 @@
 
 // jQuery(document).ready(function() {
 //
-//     jQuery(".hit-favorites").on("click",executeAjax);
+//     jQuery(".hit-favorites").on("click",addFavorite);
 //
 // });
 //
 //
-// function executeAjax( ){
+// function addFavorite( ){
 //
 //     var clickedPluginId = jQuery(this).attr("id");
 //     // console.log(clickedPluginId);

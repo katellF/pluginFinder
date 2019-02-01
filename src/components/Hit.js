@@ -7,11 +7,11 @@ class Hit extends React.Component {
 
     constructor(props) {
         super(props);
-        this.executeAjax = this.executeAjax.bind(this);
+        this.addFavorite = this.addFavorite.bind(this);
     }
 
 
-    executeAjax(e) {
+    addFavorite(e) {
 
         let clickedPluginId = jQuery(e.currentTarget).data('id');
         let clickedPluginName = jQuery(e.currentTarget).data('name');
@@ -25,7 +25,7 @@ class Hit extends React.Component {
         dataType: "json",
         data: 'action=API/addFavorite/'+clickedPluginId+'/'+clickedPluginName+'/',
          success: function() {
-             $('#'+clickedPluginId).replaceWith( "<p class='hit-added alert alert-success'>Added to favorite</p>");
+             $('#'+clickedPluginId).replaceWith( "<p class=\"hit_center\"><button onclick=\"this.removeFavorite\" class=\"hit-favorites hit__add hit--addLink\" data-id="+clickedPluginId+" data-name="+clickedPluginName+" id="+clickedPluginId+">Remove</button></p>");
              listFavoritesIds.push(clickedPluginId);
 
 
@@ -36,8 +36,39 @@ class Hit extends React.Component {
              console.log('ERROR');
          }
     })
-
     }
+
+    removeFavorite (e) {
+
+        let clickedPluginId = jQuery(e.currentTarget).data('id');
+        let clickedPluginName = jQuery(e.currentTarget).data('name');
+
+
+        console.log(clickedPluginId);
+
+
+        jQuery.ajax({
+            method: "GET",
+            url: Config.base_url + "/pluginfinder/index.php",
+            dataType: "json",
+            data: 'action=API/deleteFavorite/'+clickedPluginId+'/'+clickedPluginName+'/',
+            success: function() {
+                jQuery('#'+clickedPluginId).replaceWith( "<p class=\"hit_center\"><button onclick=\"this.addFavorite\" class=\"hit-favorites hit__add hit--addLink\" data-id="+clickedPluginId+" data-name="+clickedPluginName+" id="+clickedPluginId+">Remove</button></p>");
+                // listFavoritesIds.reverse(clickedPluginId);
+                console.log("Ca marche");
+
+
+                console.log("SUCCESS");
+
+
+            },
+            error: function(e) {
+                console.log(e);
+                console.log('ERROR');
+            }
+        })
+    }
+
 
     //
 
@@ -69,7 +100,8 @@ class Hit extends React.Component {
                     </div>
 
                     { isUserConnected
-                        ? ( isFavorite ? (<p className="hit-added alert alert-success">Added to favorite</p>) : (<p className={"hit_center"}><button onClick={this.executeAjax} className="hit-favorites hit__add hit--addLink" data-id={hit.id} data-name={hit.name} id={hit.id}>Add to Favorites</button></p>)
+                        ? ( isFavorite ? (<p className={"hit_center"}><button onClick={this.removeFavorite} className="hit-favorites hit__add hit--addLink" data-id={hit.id} data-name={hit.name} id={hit.id}>Remove</button></p>)
+                                : (<p className={"hit_center"}><button onClick={this.addFavorite} className="hit-favorites hit__add hit--addLink" data-id={hit.id} data-name={hit.name} id={hit.id}>Add to Favorites</button></p>)
                         ) : (<p className="hit_center hit_buttonBlue"><a href="index.php?action=connect/redirect" className={"hit__add"}>Add to Favorites</a></p>)
                     }
 
