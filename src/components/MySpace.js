@@ -67,6 +67,7 @@ class MySpace extends React.Component {
                     <div className="mySpace_list">{this.state.data.map((json, index) =>
 
                         <div key={index} id={`plugin_${json.pluginId}`} className="d-flex justify-content-around mySpace_favorite align-items-center">
+                            <img width="100" height="100" src={"https://ps.w.org/"+json.pluginId+"/assets/icon-256x256.png"} alt="images"/>
                             <h2>{json.pluginId}</h2>
                             <div className="d-flex flex-column justify-content-center mySpace__buttons">
                             <button key={json.pluginId} onClick={this.deletePlugin} data-id={json.pluginId} className="mySpace__delete mySpace--deleteLink">Delete</button>
