@@ -7,30 +7,37 @@ class Hit extends React.Component {
 
     constructor(props) {
         super(props);
-        this.addFavorite = this.addFavorite.bind(this);
+        //this.addFavorite = this.addFavorite.bind(this);
+       // this.removeFavorite = this.removeFavorite.bind(this);
+        // this.state = {
+        //     data: [],
+        // };
     }
 
 
     addFavorite(e) {
 
+        console.log("favortie from hit component");
         let clickedPluginId = jQuery(e.currentTarget).data('id');
         let clickedPluginName = jQuery(e.currentTarget).data('name');
-
         console.log(clickedPluginId);
         console.log(clickedPluginName);
+        //console.log(this.removeFavorite);
 
         jQuery.ajax({
         method: "GET",
         url: Config.base_url + "/pluginfinder/index.php",
         dataType: "json",
         data: 'action=API/addFavorite/'+clickedPluginId+'/'+clickedPluginName+'/',
-         success: function() {
-             $('#'+clickedPluginId).replaceWith( "<p class=\"hit_center\"><button onclick=\"this.removeFavorite\" class=\"hit-favorites hit__add hit--addLink\" data-id="+clickedPluginId+" data-name="+clickedPluginName+" id="+clickedPluginId+">Remove</button></p>");
+         success:
+             function() {
+             $('#'+clickedPluginId).replaceWith( "<p class=\"hit_center\"><button class=\"hit-favorites hit__add hit--addLink\" onclick=\"this.removeFavorite\" data-id="+clickedPluginId+" data-name="+clickedPluginName+" id="+clickedPluginId+">Remove</button></p>");
              listFavoritesIds.push(clickedPluginId);
-
-
-             console.log("SUCCESS");
-        },
+         console.log("Ca marche addFavorite");
+             console.log("this",this);
+             console.log("SUCCESSssssss");
+        }
+        ,
         error: function(e) {
             console.log(e);
              console.log('ERROR');
@@ -38,7 +45,25 @@ class Hit extends React.Component {
     })
     }
 
+    // addFavorite(){
+    //
+    //     this.componentDidMount();
+    // }
+    //
+    // componentDidMount(){
+    //
+    //    // let clickedPluginId = jQuery(e.currentTarget).data('id');
+    //    // let clickedPluginName = jQuery(e.currentTarget).data('name');
+    //
+    //     fetch(Config.base_url +'/pluginfinder/index.php?action=API/addFavorite'+this.props.id+'/'+this.props.name)
+    //         .then(results => results.json())
+    //         .then(json => this.setState({data:json}));
+    // };
+
     removeFavorite (e) {
+
+        console.log("REMOVE from hit component");
+
 
         let clickedPluginId = jQuery(e.currentTarget).data('id');
         let clickedPluginName = jQuery(e.currentTarget).data('name');
@@ -52,16 +77,17 @@ class Hit extends React.Component {
             url: Config.base_url + "/pluginfinder/index.php",
             dataType: "json",
             data: 'action=API/deleteFavorite/'+clickedPluginId+'/'+clickedPluginName+'/',
-            success: function() {
-                jQuery('#'+clickedPluginId).replaceWith( "<p class=\"hit_center\"><button onclick=\"this.addFavorite\" class=\"hit-favorites hit__add hit--addLink\" data-id="+clickedPluginId+" data-name="+clickedPluginName+" id="+clickedPluginId+">Remove</button></p>");
-                // listFavoritesIds.reverse(clickedPluginId);
-                console.log("Ca marche");
+            success:
+
+                function() {
+                    jQuery('#' + clickedPluginId).replaceWith("<p class=\"hit_center\"><button onclick=\"this.addFavorite\" class=\"hit-favorites hit__add hit--addLink\" data-id=" + clickedPluginId + " data-name=" + clickedPluginName + " id=" + clickedPluginId + ">Remove</button></p>");
+                    // listFavoritesIds.reverse(clickedPluginId);
+                    console.log("Ca marche removeFavorite");
 
 
-                console.log("SUCCESS");
+                    console.log("SUCCESS");
+                },
 
-
-            },
             error: function(e) {
                 console.log(e);
                 console.log('ERROR');
@@ -70,12 +96,11 @@ class Hit extends React.Component {
     }
 
 
-    //
 
     render() {
     const {hit} =this.props;
 
-
+//console.log("this",this);
     // We check if the pluginId is present in the listFavoritesIds and we show/hide the Add button as needed
     let isInFavorites = listFavoritesIds.indexOf(hit.id);
     let isFavorite = false;
@@ -106,6 +131,7 @@ class Hit extends React.Component {
                     }
 
                     <p className="hit_center hit_buttonGrey"><a href={hit.plugin_page_at_source} target="_blank" className="hit__moreInfo hit--moreInfoLink">More Info</a></p>
+
 
                 </div>
             </div>
