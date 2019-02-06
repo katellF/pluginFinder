@@ -9,10 +9,13 @@ class Hit extends React.Component {
         super(props);
         this.addFavorite = this.addFavorite.bind(this);
         this.removeFavorite = this.removeFavorite.bind(this);
+       this.isInFavorites = this.isInFavorites.bind(this);
         //this.apiAddFavorite = this.apiAddFavorite.bind(this);
         this.state = {
              isFavorite: false,
          };
+
+
     }
 
 
@@ -57,45 +60,43 @@ class Hit extends React.Component {
         //  });
 
         const {hit} =this.props;
-
-        console.log(hit.id);
-
-        // console.log(hit.id);
-        console.log(hit.name);
+        console.log(this.state.isFavorite);
 
         fetch(Config.base_url +'/pluginfinder/index.php?action=API/addFavorite'+'/'+ hit.id+'/'+ hit.name)
             .then(results => results.json())
-           // .then(console.log("results",results))
             .then(() => {
                 this.setState((prevState) => {
+                    // to add the favorite from the array
+                listFavoritesIds.push(hit.id);
                     return {
                         isFavorite: !prevState.isFavorite
-
                     };
-
                 });
             })
             .catch((error) => console.error(error));
+        console.log(this.state.isFavorite);
     }
 
     removeFavorite(){
         const {hit} =this.props;
-        this.setState((prevState) => {
-            return {
-                isFavorite: !prevState.isFavorite
-            }
+        console.log(this.state.isFavorite);
+        let isInFavorites = listFavoritesIds.indexOf(hit.id);
 
-        });
+        console.log('totp',isInFavorites);
+        //console.log(this.state.isFavorite);
         fetch(Config.base_url +'/pluginfinder/index.php?action=API/deleteFavorite'+'/'+ hit.id+'/'+ hit.name)
             .then(results => results.json())
             .then(() => {
                 this.setState((prevState) => {
+                    // to remove the favorite from the array
+                    listFavoritesIds.splice(isInFavorites,1);
                     return {
                         isFavorite: !prevState.isFavorite
                     };
                 });
             })
             .catch((error) => console.error(error));
+        console.log(this.state.isFavorite);
     }
 
 
@@ -190,24 +191,39 @@ class Hit extends React.Component {
 //         );
 //     }
 //
+    isInFavorites (){
+        const {hit} =this.props;
+        let isInFavorites = listFavoritesIds.indexOf(hit.id);
+        if ( isInFavorites > -1) {
+             this.state.isFavorite = true;
+            //
+        }
+        console.log(this.state.isFavorite);
+        console.log(isInFavorites);
+}
 
 
     render() {
 
-        console.log(this.state.isFavorite);
+
+
     const {hit} =this.props;
         //console.log(hit.id);
 
 //console.log("this",this);
    // We check if the pluginId is present in the listFavoritesIds and we show/hide the Add isFavorite as needed
-    let isInFavorites = listFavoritesIds.indexOf(hit.id);
-   // let isFavorite = false;
+   //  let isInFavorites = listFavoritesIds.indexOf(hit.id);
+   //let isFavorite = false;
+       // console.log(isInFavorites);
+       // console.log(listFavoritesIds.indexOf(hit.name));
 
-    if ( isInFavorites > -1) {
-        this.state.isFavorite = true;
-    }
+    // if ( isInFavorites > -1) {
+    //     // this.state.isFavorite = !this.state.isFavorite;
+    //     console.log(this.state.isFavorite);
+    // }
 
-
+       // console.log(isInFavorites);
+        this.isInFavorites();
         return (
 
             <div className="hit">
@@ -226,9 +242,7 @@ class Hit extends React.Component {
                         ? ( this.state.isFavorite ? (<p className={"hit_center"}>
                                     <button onClick={this.removeFavorite} className="hit-favorites hit__add hit--addLink" data-id={hit.id} data-name={hit.name} id={hit.id}>Remove</button></p>)
                                 : (<p className={"hit_center"}>
-                                    <button onClick={this.addFavorite} className="hit-favorites hit__add hit--addLink" data-id={hit.id} data-name={hit.name} id={hit.id}>
-                                        Add to favorites
-                                </button>
+                                    <button onClick={this.addFavorite} className="hit-favorites hit__add hit--addLink" data-id={hit.id} data-name={hit.name} id={hit.id}>Add to favorites</button>
                                 </p>)
                         ) : (<p className="hit_center hit_buttonBlue"><a href="index.php?action=connect/redirect" className={"hit__add"}>Add to Favorites</a></p>)
                     }
