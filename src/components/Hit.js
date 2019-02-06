@@ -48,29 +48,59 @@ class Hit extends React.Component {
 
     addFavorite(){
 
-        this.setState((prevState) => {
-            return {
-                isFavorite: !prevState.isFavorite
+        // this.setState((prevState) => {
+        //     return {
+        //         isFavorite: !prevState.isFavorite
+        //
+        //     };
+        //
+        //  });
 
-            };
+        const {hit} =this.props;
 
-         });
+        console.log(hit.id);
 
-        console.log(this.state.isFavorite);
+        // console.log(hit.id);
+        console.log(hit.name);
+
+        fetch(Config.base_url +'/pluginfinder/index.php?action=API/addFavorite'+'/'+ hit.id+'/'+ hit.name)
+            .then(results => results.json())
+           // .then(console.log("results",results))
+            .then(() => {
+                this.setState((prevState) => {
+                    return {
+                        isFavorite: !prevState.isFavorite
+
+                    };
+
+                });
+            })
+            .catch((error) => console.error(error));
     }
 
     removeFavorite(){
-
+        const {hit} =this.props;
         this.setState((prevState) => {
             return {
                 isFavorite: !prevState.isFavorite
             }
 
         });
-
-        console.log(this.state.isFavorite);
+        fetch(Config.base_url +'/pluginfinder/index.php?action=API/deleteFavorite'+'/'+ hit.id+'/'+ hit.name)
+            .then(results => results.json())
+            .then(() => {
+                this.setState((prevState) => {
+                    return {
+                        isFavorite: !prevState.isFavorite
+                    };
+                });
+            })
+            .catch((error) => console.error(error));
     }
-    //
+
+
+
+
 
 
     // apiAddFavorite(){
@@ -116,20 +146,65 @@ class Hit extends React.Component {
     //     })
     // }
 
+//     render() {
+//
+//         console.log(this.state.isFavorite);
+//         const {hit} =this.props;
+//
+// //console.log("this",this);
+//         // We check if the pluginId is present in the listFavoritesIds and we show/hide the Add isFavorite as needed
+//         // let isInFavorites = listFavoritesIds.indexOf(hit.id);
+//         // let isFavorite = false;
+//         //
+//         // if ( isInFavorites > -1) {
+//         //     isFavorite = true;
+//         // }
+//
+//
+//         return (
+//
+//             <div className="hit">
+//                 <div className="hit-image">
+//                     <img width="100" height="100" src={hit.img_thumb} alt="images"/>
+//                 </div>
+//                 <div className="hit-content hitPerso">
+//                     <div className="hit-name hit__namePerso">
+//                         <Highlight attribute="name" hit={hit}/>
+//                     </div>
+//                     <div className="hit-description">
+//                         <Highlight attribute="short_description" hit={hit}/>
+//                     </div>
+//
+//                     { isUserConnected
+//                         ? ( this.state.isFavorite ? (<RemoveFavorite/>)
+//                                 : (<AddFavorite/>)
+//                         ) : (<p className="hit_center hit_buttonBlue"><a href="index.php?action=connect/redirect" className={"hit__add"}>Add to Favorites</a></p>)
+//                     }
+//
+//                     <p className="hit_center hit_buttonGrey"><a href={hit.plugin_page_at_source} target="_blank" className="hit__moreInfo hit--moreInfoLink">More Info</a></p>
+//
+//
+//                 </div>
+//             </div>
+//
+//         );
+//     }
+//
 
 
     render() {
 
         console.log(this.state.isFavorite);
     const {hit} =this.props;
+        //console.log(hit.id);
 
 //console.log("this",this);
    // We check if the pluginId is present in the listFavoritesIds and we show/hide the Add isFavorite as needed
     let isInFavorites = listFavoritesIds.indexOf(hit.id);
-    let isFavorite = false;
+   // let isFavorite = false;
 
     if ( isInFavorites > -1) {
-        isFavorite = true;
+        this.state.isFavorite = true;
     }
 
 
@@ -148,7 +223,8 @@ class Hit extends React.Component {
                     </div>
 
                     { isUserConnected
-                        ? ( this.state.isFavorite ? (<p className={"hit_center"}><button onClick={this.removeFavorite} className="hit-favorites hit__add hit--addLink" data-id={hit.id} data-name={hit.name} id={hit.id}>Remove</button></p>)
+                        ? ( this.state.isFavorite ? (<p className={"hit_center"}>
+                                    <button onClick={this.removeFavorite} className="hit-favorites hit__add hit--addLink" data-id={hit.id} data-name={hit.name} id={hit.id}>Remove</button></p>)
                                 : (<p className={"hit_center"}>
                                     <button onClick={this.addFavorite} className="hit-favorites hit__add hit--addLink" data-id={hit.id} data-name={hit.name} id={hit.id}>
                                         Add to favorites
@@ -167,50 +243,7 @@ class Hit extends React.Component {
     }
 
 
-//     render() {
-//         console.log(this.state.isFavorite);
-//         const {hit} =this.props;
-//
-//
-//         // We check if the pluginId is present in the listFavoritesIds and we show/hide the Add isFavorite as needed
-//         let isInFavorites = listFavoritesIds.indexOf(hit.id);
-//         let isFavorite = false;
-//
-//         if ( isInFavorites > -1) {
-//             isFavorite = true;
-//         }
-//
-//
-//         return (
-//
-//             <div className="hit">
-//                 <div className="hit-image">
-//                     <img width="100" height="100" src={hit.img_thumb} alt="images"/>
-//                 </div>
-//                 <div className="hit-content hitPerso">
-//                     <div className="hit-name hit__namePerso">
-//                         <Highlight attribute="name" hit={hit}/>
-//                     </div>
-//                     <div className="hit-description">
-//                         <Highlight attribute="short_description" hit={hit}/>
-//                     </div>
-//
-//                     { isUserConnected
-//                         ? (<p className={"hit_center"}><isFavorite onClick={this.addFavorite} className="hit-favorites hit__add hit--addLink" data-id={hit.id} data-name={hit.name} id={hit.id}>
-//                     {this.state.isFavorite ? 'remove' : 'add to favorites'}
-//                             </isFavorite></p>
-//                         ) : (<p className="hit_center hit_buttonBlue"><a href="index.php?action=connect/redirect" className={"hit__add"}>Add to Favorites</a></p>)
-//                     }
-//
-//                     <p className="hit_center hit_buttonGrey"><a href={hit.plugin_page_at_source} target="_blank" className="hit__moreInfo hit--moreInfoLink">More Info</a></p>
-//
-//
-//                 </div>
-//             </div>
-//
-//
-//         );
-//     }
+
 }
 
 export default Hit;
