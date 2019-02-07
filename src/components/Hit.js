@@ -18,7 +18,6 @@ class Hit extends React.Component {
 
 
     addFavorite() {
-
         const {hit} = this.props;
         console.log(this.state.isFavorite);
 
@@ -67,8 +66,6 @@ class Hit extends React.Component {
 
 
     render() {
-
-
         const {hit} = this.props;
 
         this.isInFavorites();
