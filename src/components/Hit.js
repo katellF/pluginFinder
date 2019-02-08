@@ -39,7 +39,7 @@ class Hit extends React.Component {
     removeFavorite() {
         const {hit} = this.props;
         let isInFavorites = listFavoritesIds.indexOf(hit.id);
-
+console.log(hit.id);
         fetch(Config.base_url + '/pluginfinder/index.php?action=API/deleteFavorite' + '/' + hit.id + '/' + hit.name)
             .then(results => results.json())
             .then(() => {
