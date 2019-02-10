@@ -75,16 +75,15 @@ class MySpace extends React.Component {
                                  src={"https://ps.w.org/" + json.pluginId + "/assets/icon-256x256.png"} alt="images"/>
 
                                 <h2>{json.pluginId.substring(0,20)}</h2>
-                            {/*<p>{this.shortName(json.pluginName)}</p>*/}
+                            {/*fix for algolia badly encoded descriptions*/}
                             <p dangerouslySetInnerHTML={{ __html: this.shortName(json.pluginName)}}></p>
                             <div className="d-flex flex-column justify-content-center mySpace__buttons">
-                                {this.state.isDeleted ? (<p> rien </p>) :
-                                    <button key={'del_' + json.pluginId} onClick={(e) => {
+                                <button key={'del_' + json.pluginId} onClick={(e) => {
                                         this.deletePlugin(json.pluginId);
                                     }} data-id={json.pluginId} className="mySpace__delete mySpace--deleteLink"
                                             id={json.pluginId}>
                                         Delete
-                                    </button>}
+                                    </button>
                                 <button key={'info_' + json.pluginId}
                                         className="mySpace__moreInfo mySpace--moreInfoLink"><a className="mySpace--link" href={"https://wordpress.org/plugins/" + json.pluginId} target="_blank">More
                                     Info</a></button>
