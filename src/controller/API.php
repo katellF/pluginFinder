@@ -25,6 +25,7 @@ class API
     }
 
 
+
     public function listFavorites() {
 
 
@@ -70,6 +71,7 @@ class API
         session_start();
 
         if ($this->ctrlConnect->isUserConnected()) {
+
 
             $data = [
                 "userId" => $_SESSION['id'],

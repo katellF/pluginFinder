@@ -20,6 +20,17 @@ class Contact
         session_start();
         $view = new View("frontend/contact");
 
+        if (isset($_POST) && !empty($_POST)) {
+
+            $email_sent = $this->sendContactMessage($_POST);
+            if ($email_sent){
+                // echo la view du succes
+            } else {
+                // echo message non envoye...
+            }
+        }
+
+
         if ($this->ctrlConnect->isUserConnected()) {
 
             $view->generate(array(), "template_member");
@@ -32,5 +43,22 @@ class Contact
 
 
     }
+
+    public function sendContactMessage ($data){
+
+
+//        http://rockstarninja.labak.xyz/gandisimple-hosting-envoie-de-mail-par-le-smtp-de-gandi
+
+
+            $headers = 'From: '.$data['email'] . "\r\n" .
+                'Reply-To: '.$data['email'] . "\r\n" .
+                'X-Mailer: PHP/' . phpversion();
+
+            $result = mail("katell@katellfracassi.com","Message from " . $data['email'], $data['message'], $headers);
+
+            return $result;
+
+    }
+
 
 }

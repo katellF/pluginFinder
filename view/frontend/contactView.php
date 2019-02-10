@@ -12,11 +12,11 @@
         </div><div class="form-group">
 
             <label for="email">Email</label><br/>
-            <input type="text" class="form-control" id="email" name="email"/>
+            <input type="email" class="form-control" id="email" name="email"/>
         </div>
         <div class="form-group">
-            <label for="content">Your Request</label><br/>
-            <textarea class="form-control" id="content" name="content"></textarea>
+            <label for="message">Your Message</label><br/>
+            <textarea class="form-control" id="message" name="message"></textarea>
         </div>
         <div class="row no-gutters justify-content-center send">
             <input type="submit" class="btn btn-primary btn-lg btn-block active buttonForm" value="Send"/>
