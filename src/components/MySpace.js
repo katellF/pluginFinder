@@ -12,7 +12,7 @@ class MySpace extends React.Component {
         this.deletePlugin =  this.deletePlugin.bind(this);
         this.state = {
             data: [],
-            isDeleted: false,
+           // isDeleted: false,
         };
 
     }
@@ -129,22 +129,29 @@ class MySpace extends React.Component {
             fetch(Config.base_url + '/pluginfinder/index.php?action=API/deleteFavorite' + '/' + favoriteToRemove )
                 .then(results =>results.json())
                 .then (() => {
-                    const newFavorite = this.state.data.filter(favorite => {
-                                return favorite !== favoriteToRemove;
-                             });
-                    this.setState(() => {
-                        //console.log(newFavorite);
 
-                        return {
-                            data:[...newFavorite]
-                        };
+                    this.state.data.map( i => {
+                        if( i.pluginId === favoriteToRemove ) {
+                            console.log("Remove" , favoriteToRemove);
+                                this.setState((prevState) => {
+                                    this.state.data.splice(i, 1);
+                                    return {
+                                        data : prevState.data
+                                    }
+                                });
+                            }
+
+                        }
+
+                    );
+
                         })
 
                     //this.state.data.splice(isIndexOf,1);
 
 
 
-                    })
+                   // })
 
 
         }
@@ -156,6 +163,36 @@ class MySpace extends React.Component {
     //         this.state.data = true;
     //     }
     // }
+
+//     deletePlugin(favoriteToRemove){
+//         const newFavorite = this.state.data.filter(favorite => {
+//             return favorite !== favoriteToRemove;
+//         });
+// console.log(newFavorite);
+// console.log(favoriteToRemove);
+//         this.setState(() => {
+//
+//                             return {
+//                                 data:[...newFavorite]
+//                             };
+//                              })
+//
+//
+//     }
+
+//     deletePlugin(favoriteToRemove){
+//         //let isIndexOf = this.state.data.indexOf(favoriteToRemove);
+// //console.log(isIndexOf);
+// console.log(this.state.data);
+//
+//
+//         console.log(this.state.data[0].pluginId);
+//
+//
+//
+//
+//
+//     }
 
 
 
@@ -172,11 +209,11 @@ class MySpace extends React.Component {
     render() {
         //console.log(this.deletePlugin(json.pluginId));
 
-        let isIndexOf = this.state.data.indexOf(this.state.data.id);
-        console.log(isIndexOf);
-        if (isIndexOf !== -1) {
-            this.state.isDeleted = true;
-        }
+        // let isIndexOf = this.state.data.indexOf(this.state.data.id);
+        // console.log(isIndexOf);
+        // if (isIndexOf !== -1) {
+        //     this.state.isDeleted = true;
+        // }
         return (
 
             <div >
@@ -188,10 +225,10 @@ class MySpace extends React.Component {
                             <h2>{json.pluginId}</h2>
                             <div className="d-flex flex-column justify-content-center mySpace__buttons">
                                 { this.state.isDeleted ? (<p> rien </p>) :
-                            <button key={json.pluginId} onClick={(e) =>{this.deletePlugin(json.pluginId);}} data-id={json.pluginId} className="mySpace__delete mySpace--deleteLink" id={json.pluginId}>
+                            <button key={'del_'+json.pluginId} onClick={(e) =>{this.deletePlugin(json.pluginId);}} data-id={json.pluginId} className="mySpace__delete mySpace--deleteLink" id={json.pluginId}>
                                 Delete
                             </button>}
-                            <button key={json.pluginId} className="mySpace__moreInfo mySpace--moreInfoLink"><a className= "mySpace--link" href={"https://wordpress.org/plugins/"+json.pluginId} target="_blank" >More Info</a></button>
+                            <button key={'info_'+json.pluginId} className="mySpace__moreInfo mySpace--moreInfoLink"><a className= "mySpace--link" href={"https://wordpress.org/plugins/"+json.pluginId} target="_blank" >More Info</a></button>
                             </div>
                         </div>
 
