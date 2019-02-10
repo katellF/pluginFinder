@@ -21,7 +21,7 @@ class Hit extends React.Component {
         const {hit} = this.props;
         console.log(this.state.isFavorite);
 
-        fetch(Config.base_url + '/pluginfinder/index.php?action=API/addFavorite' + '/' + hit.id + '/' + hit.name)
+        fetch(Config.base_url + '/pluginfinder/index.php?action=API/addFavorite' + '/' + hit.id + '/' + encodeURIComponent(hit.name))
             .then(results => results.json())
             .then(() => {
                 this.setState((prevState) => {
@@ -80,13 +80,14 @@ console.log(hit.id);
                         <Highlight attribute="name" hit={hit}/>
                     </div>
                     <div className="hit-description">
-                        <Highlight attribute="short_description" hit={hit}/>
+                        <div dangerouslySetInnerHTML={{ __html: hit.short_description }}></div>
+                        {/*<Highlight attribute="short_description" hit={hit}/>*/}
                     </div>
 
                     {isUserConnected
                         ? ( this.state.isFavorite ? (<p className={"hit_center"}>
                                     <button onClick={this.removeFavorite} className="hit-favorites hit__add hit--addLink"
-                                            data-id={hit.id} data-name={hit.name} id={hit.id}>Remove
+                                            data-id={hit.id} data-name={encodeURIComponent(hit.name)} id={hit.id}>Remove
                                     </button>
                                 </p>)
                                 : (<p className={"hit_center"}>

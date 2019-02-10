@@ -50,8 +50,9 @@ class MySpace extends React.Component {
 
         let stringLength = name.length;
 
-        if ( stringLength > 20 ){
-            return name.substring(0,20)+'...';
+        if ( stringLength > 50 ){
+
+            return name.substring(0,50)+'...';
         } else {
           return name;
         }
@@ -70,10 +71,12 @@ class MySpace extends React.Component {
                     <div className="mySpace_list">{this.state.data.map((json, index) =>
                             <div key={index} id={`plugin_${json.pluginId}`}
                              className="d-flex justify-content-around mySpace_favorite align-items-center">
-                            <img width="100" height="100"
+                            <img className={"imageFav"} width="100" height="100"
                                  src={"https://ps.w.org/" + json.pluginId + "/assets/icon-256x256.png"} alt="images"/>
+
                                 <h2>{json.pluginId.substring(0,20)}</h2>
-                            <p>{this.shortName(json.pluginName)}</p>
+                            {/*<p>{this.shortName(json.pluginName)}</p>*/}
+                            <p dangerouslySetInnerHTML={{ __html: this.shortName(json.pluginName)}}></p>
                             <div className="d-flex flex-column justify-content-center mySpace__buttons">
                                 {this.state.isDeleted ? (<p> rien </p>) :
                                     <button key={'del_' + json.pluginId} onClick={(e) => {
@@ -83,9 +86,7 @@ class MySpace extends React.Component {
                                         Delete
                                     </button>}
                                 <button key={'info_' + json.pluginId}
-                                        className="mySpace__moreInfo mySpace--moreInfoLink"><a className="mySpace--link"
-                                                                                               href={"https://wordpress.org/plugins/" + json.pluginId}
-                                                                                               target="_blank">More
+                                        className="mySpace__moreInfo mySpace--moreInfoLink"><a className="mySpace--link" href={"https://wordpress.org/plugins/" + json.pluginId} target="_blank">More
                                     Info</a></button>
                             </div>
                         </div>

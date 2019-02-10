@@ -79,3 +79,15 @@ a.mySpace--link:hover {
 
 
 }
+
+// image
+
+ .imageFav:before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  //background-color: red;
+  background-image: url("/projetsoc/pluginfinder/public/img/plugin_icon_default.jpg");
+ }

@@ -87,8 +87,11 @@ class Router
 
             // split URL
             $url = trim($_GET['action'], '/');
-            $url = filter_var($url, FILTER_SANITIZE_URL);
+            //$url = filter_var($url, FILTER_SANITIZE_URL);
+            $url = filter_var($url);
+
             $url = explode('/', $url);
+
 
             // Put URL parts into according properties
             // By the way, the syntax here is just a short form of if/else, called "Ternary Operators"
