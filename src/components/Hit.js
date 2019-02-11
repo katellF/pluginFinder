@@ -80,8 +80,8 @@ console.log(hit.id);
                         <Highlight attribute="name" hit={hit}/>
                     </div>
                     <div className="hit-description">
-                        <div dangerouslySetInnerHTML={{ __html: hit.short_description }}></div>
-                        {/*<Highlight attribute="short_description" hit={hit}/>*/}
+                        {/*<div dangerouslySetInnerHTML={{ __html: hit.short_description }}></div>*/}
+                        <Highlight attribute="short_description" hit={hit}/>
                     </div>
 
                     {isUserConnected
@@ -103,8 +103,6 @@ console.log(hit.id);
                     <p className="hit_center hit_buttonGrey"><a href={hit.plugin_page_at_source} target="_blank"
                                                                 className="hit__moreInfo hit--moreInfoLink">More
                         Info</a></p>
-
-
                 </div>
             </div>
 
