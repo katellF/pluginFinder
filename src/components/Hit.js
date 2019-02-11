@@ -39,7 +39,7 @@ class Hit extends React.Component {
     removeFavorite() {
         const {hit} = this.props;
         let isInFavorites = listFavoritesIds.indexOf(hit.id);
-console.log(hit.id);
+        console.log(hit.id);
         fetch(Config.base_url + '/pluginfinder/index.php?action=API/deleteFavorite' + '/' + hit.id + '/' + hit.name)
             .then(results => results.json())
             .then(() => {
@@ -71,27 +71,32 @@ console.log(hit.id);
         this.isInFavorites();
         return (
 
-            <div className="hit">
-                <div className="hit-image">
-                    <img width="100" height="100" src={hit.img_thumb} alt="images"/>
+            <div className="hit hitPerso">
+                <div className="d-flex">
+                    <div className="hit-image">
+                        <img width="100" height="100" src={hit.img_thumb} alt="images"/>
+                    </div>
+                    <div className="hit-content hitPerso">
+                        <div className="hit-name hit__namePerso">
+                            <Highlight attribute="name" hit={hit}/>
+                        </div>
+                        <div className="hit-description hit-descriptionPerso">
+                            {/*<div dangerouslySetInnerHTML={{ __html: hit.short_description }}></div>*/}
+                            <Highlight attribute="short_description" hit={hit}/>
+                        </div>
+                    </div>
                 </div>
-                <div className="hit-content hitPerso">
-                    <div className="hit-name hit__namePerso">
-                        <Highlight attribute="name" hit={hit}/>
-                    </div>
-                    <div className="hit-description">
-                        {/*<div dangerouslySetInnerHTML={{ __html: hit.short_description }}></div>*/}
-                        <Highlight attribute="short_description" hit={hit}/>
-                    </div>
-
+                <div className="d-flex justify-content-end">
                     {isUserConnected
                         ? ( this.state.isFavorite ? (<p className={"hit_center"}>
-                                    <button onClick={this.removeFavorite} className="hit-favorites hit__add hit--addLink"
+                                    <button onClick={this.removeFavorite}
+                                            className="hit__add hit--addLink"
                                             data-id={hit.id} data-name={encodeURIComponent(hit.name)} id={hit.id}>Remove
                                     </button>
                                 </p>)
                                 : (<p className={"hit_center"}>
-                                    <button onClick={this.addFavorite} className="hit-favorites hit__add hit--addLink"
+                                    <button onClick={this.addFavorite}
+                                            className="hit__add hit--addLink"
                                             data-id={hit.id} data-name={hit.name} id={hit.id}>Add to favorites
                                     </button>
                                 </p>)
@@ -104,6 +109,7 @@ console.log(hit.id);
                                                                 className="hit__moreInfo hit--moreInfoLink">More
                         Info</a></p>
                 </div>
+
             </div>
 
         );

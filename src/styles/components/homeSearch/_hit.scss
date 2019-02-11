@@ -1,80 +1,179 @@
+/* ================================= DEVICES OVER 600PX ================================== */
+@media (min-width: 600px) {
+  .hitPerso {
+    // display: flex;
+    // justify-content: space-between;
+  }
+  .hit-descriptionPerso {
+    display: none;
+    margin-top: 2rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
 
-.hitPerso{
+  }
+  .hit__namePerso {
 
-}
+    //display:none;
 
-.hit__namePerso{
+    margin-top: 2rem;
+    //margin-bottom: 1rem;
+    margin-left: 2rem;
+    // margin-right: 5rem;
+    //text-align: center;
+    // margin-right: 8rem;
+    font-weight: bolder;
+  }
+  .ais-Hits-list {
+    display: block !important;
+  }
+  .ais-Hits-item {
+    background: $white;
+    width: 100% !important;
+  }
+  .ais-Stats-text {
+    //color: #08192A;
+  }
 
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  font-weight: bolder;
-}
+  .ais-SortBy-select {
+    color: #3a4570 !important;
+  }
 
-.ais-Hits-item{
-  background: $white;
-}
-.ais-Stats-text{
-  //color: #08192A;
-}
+  .hit-added {
 
-.ais-SortBy-select{
-  color:#3a4570 !important;
-}
+    background: #ADF1D2;
+    color: #3F584D;
+  }
 
-.hit_center {
+  .hit__add {
 
-  text-align : center;
-}
-.hit-added {
+    background: $bleu;
+    color: $white;
+    padding: 1rem;
+    border-radius: $xxs-size;
+  }
 
-  background: #ADF1D2;
-  color: #3F584D;
-}
+  a.hit__add:hover {
 
-.hit__add {
+    border: solid 0.07rem $bleu;
+    background: $white;
+    color: $bleu;
+    text-decoration: none;
 
-  background: $bleu;
-  color: $white;
-  padding: $xs-size;
-  border-radius: $xxs-size;
-}
+  }
 
-a.hit__add:hover{
+  .hit__moreInfo {
 
-  border: solid 0.07rem $bleu;
-  background: $white;
-  color: $bleu;
-  text-decoration: none;
+    background: #7D808A;
+    opacity: 0.8;
+    color: $white;
+    padding: 1rem;
+    border-radius: $xxs-size;
 
+  }
 
-}
-
-
-.hit__moreInfo {
-
-  background: #7D808A;
-  opacity:0.8;
-  color: $white;
-  padding: $xs-size;
-  border-radius: $xxs-size;
-
-}
-
-a.hit--moreInfoLink:hover {
+  a.hit--moreInfoLink:hover {
 
     background: $white;
     border: solid 0.07rem #4C5E6F;
     color: #4C5E6F;
     text-decoration: none;
+  }
+
+  .hit_buttonGrey {
+
+    margin-top: 0.9rem;
+    margin-left: 0.5rem;
+  }
+
+  .hit_buttonBlue {
+
+    //margin-top: $l-size;
+  }
+
 }
 
 
-.hit_buttonGrey{
+/* ================================= DEVICES OVER 1000PX ================================== */
+@media (min-width: 1000px) {
+  .hit__namePerso{
 
-  margin-top: $m-size;
-}
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bolder;
+  }
+  .ais-Hits-list {
+    //responsif
+    // display: block!important;
+  }
+  .ais-Hits-item{
+    background: $white;
+    //responsif
+    // width: 100%;
+  }
+  .ais-Stats-text{
+    //color: #08192A;
+  }
 
-.hit_buttonBlue{
+  .ais-SortBy-select{
+    color:#3a4570 !important;
+  }
 
-  margin-top: $l-size;
+  .hit_center {
+
+    text-align : center;
+  }
+  .hit-added {
+
+    background: #ADF1D2;
+    color: #3F584D;
+  }
+
+  .hit__add {
+
+    background: $bleu;
+    color: $white;
+    padding: $xs-size;
+    border-radius: $xxs-size;
+  }
+
+  a.hit__add:hover{
+
+    border: solid 0.07rem $bleu;
+    background: $white;
+    color: $bleu;
+    text-decoration: none;
+
+
+  }
+
+
+  .hit__moreInfo {
+
+    background: #7D808A;
+    opacity:0.8;
+    color: $white;
+    padding: $xs-size;
+    border-radius: $xxs-size;
+
+  }
+
+  a.hit--moreInfoLink:hover {
+
+    background: $white;
+    border: solid 0.07rem #4C5E6F;
+    color: #4C5E6F;
+    text-decoration: none;
+  }
+
+
+  .hit_buttonGrey{
+
+    margin-top: $m-size;
+  }
+
+  .hit_buttonBlue{
+
+    margin-top: $l-size;
+  }
+
 }

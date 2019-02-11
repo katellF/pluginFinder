@@ -79,7 +79,7 @@ a.mySpace--link:hover {
 
 .mySpace__buttons {
 
-
+margin-right: $s-size;
 }
 
 // image
@@ -90,6 +90,11 @@ a.mySpace--link:hover {
   position: absolute;
   height: 100px;
   width: 100px;
-  //background-color: red;
+  margin-left: $s-size;
   background-image: url("/pluginfinder/public/img/plugin_icon_default.jpg");
+ }
+
+ .imageFav {
+  margin-left: 1rem;
+
  }

@@ -62,7 +62,6 @@ class MySpace extends React.Component {
 
     render() {
 
-
         return (
 
             <div>
@@ -70,7 +69,7 @@ class MySpace extends React.Component {
                     <h1 className="mySpace_title">My Favorites Plugins</h1>
                     <div className="mySpace_list">{this.state.data.map((json, index) =>
                             <div key={index} id={`plugin_${json.pluginId}`}
-                             className="d-flex justify-content-around mySpace_favorite align-items-center">
+                             className="d-flex justify-content-between mySpace_favorite align-items-center">
                             <img className={"imageFav"} width="100" height="100"
                                  src={"https://ps.w.org/" + json.pluginId + "/assets/icon-256x256.png"} alt="images"/>
                                 <div>
