@@ -72,11 +72,11 @@ class Hit extends React.Component {
         return (
 
             <div className="hit hitPerso">
-                <div className="d-flex">
+                <div className="hit__details">
                     <div className="hit-image">
                         <img width="100" height="100" src={hit.img_thumb} alt="images"/>
                     </div>
-                    <div className="hit-content hitPerso">
+                    <div className="hit-content">
                         <div className="hit-name hit__namePerso">
                             <Highlight attribute="name" hit={hit}/>
                         </div>
@@ -86,7 +86,7 @@ class Hit extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className="d-flex justify-content-end">
+                <div className={"buttons_block d-flex flex-column align-items-center"}>
                     {isUserConnected
                         ? ( this.state.isFavorite ? (<p className={"hit_center"}>
                                     <button onClick={this.removeFavorite}

@@ -1,179 +1,442 @@
-/* ================================= DEVICES OVER 600PX ================================== */
-@media (min-width: 600px) {
-  .hitPerso {
-    // display: flex;
-    // justify-content: space-between;
-  }
-  .hit-descriptionPerso {
-    display: none;
-    margin-top: 2rem;
-    margin-right: 1rem;
-    margin-left: 1rem;
+//.hitPerso {
+//  // display: flex;
+//  // justify-content: space-between;
+//}
+//
+//.hit__details{
+//
+//}
+//
+//.hit-descriptionPerso {
+//  display: none;
+//}
+//.hit__namePerso {
+//  //margin-left: 2rem;
+//  margin-top: 2rem;
+//  font-weight: bolder;
+//}
+//
+//.ais-Hits-list {
+//  display: block !important;
+//}
+//
+//.ais-Hits-item {
+//  background: $white;
+//  width: 80% !important;
+//}
+//
+////.ais-Stats-text {
+////  //color: #08192A;
+////}
+//
+//.ais-SortBy-select {
+//  color: #3a4570 !important;
+//}
+//
+//.hit-added {
+//  background: #ADF1D2;
+//  color: #3F584D;
+//}
+//
+//.hit__add {
+//  background: $bleu;
+//  color: $white;
+//  padding: 1rem;
+//  border-radius: $xxs-size;
+//  margin-top:1rem;
+//}
+//
+//a.hit__add:hover {
+//  border: solid 0.07rem $bleu;
+//  background: $white;
+//  color: $bleu;
+//  text-decoration: none;
+//
+//}
+//
+//.hit__moreInfo {
+//  background: #7D808A;
+//  opacity: 0.8;
+//  color: $white;
+//  padding: 1rem;
+//  border-radius: $xxs-size;
+//
+//}
+//
+//a.hit--moreInfoLink:hover {
+//  background: $white;
+//  border: solid 0.07rem #4C5E6F;
+//  color: #4C5E6F;
+//  text-decoration: none;
+//}
+//
+//.hit_buttonGrey {
+//  margin-top: 1.9rem;
+//  margin-left: 0.5rem;
+//}
 
-  }
-  .hit__namePerso {
+//.hit_buttonBlue {
+//
+//  //margin-top: $l-size;
+//}
+//
+//
+//
+//
+///* ================================= DEVICES OVER 550PX ================================== */
+//@media (min-width: 550px) {
+//
+//  .hit__details{
+//
+//    display: flex
+//  }
+//  //.hitPerso {
+//  //   display: flex;
+//  //   justify-content: space-between;
+//  //}
+//  .hit-descriptionPerso {
+//    display: none;
+//
+//  }
+//  .hit__namePerso {
+//
+//    //display:none;
+//
+//    margin-top: 2rem;
+//    //margin-bottom: 1rem;
+//    margin-left: 2rem;
+//    // margin-right: 5rem;
+//    //text-align: center;
+//    // margin-right: 8rem;
+//    font-weight: bolder;
+//  }
+//  //.ais-Hits-list {
+//  //  display: block !important;
+//  //}
+//  .ais-Hits-item {
+//    width: 100% !important;
+//  }
+//  .ais-Stats-text {
+//    //color: #08192A;
+//  }
+//
+//  .ais-SortBy-select {
+//    color: #3a4570 !important;
+//  }
+//
+//  .hit-added {
+//
+//    background: #ADF1D2;
+//    color: #3F584D;
+//  }
+//
+//  .hit__add {
+//
+//    background: $bleu;
+//    color: $white;
+//    padding: 1rem;
+//    border-radius: $xxs-size;
+//  }
+//
+//  a.hit__add:hover {
+//
+//    border: solid 0.07rem $bleu;
+//    background: $white;
+//    color: $bleu;
+//    text-decoration: none;
+//
+//  }
+//
+//  .hit__moreInfo {
+//
+//    background: #7D808A;
+//    opacity: 0.8;
+//    color: $white;
+//    padding: 1rem;
+//    border-radius: $xxs-size;
+//
+//  }
+//
+//  a.hit--moreInfoLink:hover {
+//
+//    background: $white;
+//    border: solid 0.07rem #4C5E6F;
+//    color: #4C5E6F;
+//    text-decoration: none;
+//  }
+//
+//  .hit_buttonGrey {
+//
+//    margin-left: 0.5rem;
+//  }
+//
+//  .hit_buttonBlue {
+//
+//    //margin-top: $l-size;
+//  }
+//
+//}
+//
+//
+/* ================================= DEVICES OVER 1000PX ================================== */
+//@media (min-width: 1000px) {
+//  //.hit__namePerso{
+//  //
+//  //  margin-top: 2rem;
+//  //  margin-bottom: 1rem;
+//  //  font-weight: bolder;
+//  //}
+//  .hit__namePerso {
+//    margin-left: 2rem;
+//  }
+//
+//
+//  .hit-descriptionPerso {
+//    display: block;
+//  }
+//
+//  .ais-Hits-list {
+//    margin-top: -1rem;
+//    /* margin-left: -1rem; */
+//    display: -webkit-box;
+//    display: -ms-flexbox;
+//    display: flex!important;
+//    -ms-flex-wrap: wrap;
+//    flex-wrap: wrap!important;
+//  }
+//  .ais-Hits-item{
+//    background: $white;
+//    //responsif
+//    // width: 100%;
+//  }
+//
+//
+//  .ais-Stats-text{
+//    //color: #08192A;
+//  }
+//
+//  .ais-SortBy-select{
+//    color:#3a4570 !important;
+//  }
+//
+//  .hit_center {
+//
+//    text-align : center;
+//  }
 
-    //display:none;
+  //.hit_buttonBlue{
+  //
+  //  margin-top: $l-size;
+  //}
 
-    margin-top: 2rem;
-    //margin-bottom: 1rem;
-    margin-left: 2rem;
-    // margin-right: 5rem;
-    //text-align: center;
-    // margin-right: 8rem;
-    font-weight: bolder;
+//}
+
+/* ================================= On recommence  en laptop first================================== */
+
+/* ================================= DEVICES OVER 1000PX ================================== */
+.hitPerso{
+ // position: relative;
+ // max-height:31rem;
+}
+.hit-descriptionPerso {
+  margin-top: 1rem;
+}
+.hit__namePerso {
+  margin-left: 2rem;
+  margin-top: 1.5rem;
+  font-weight: bolder;
+}
+
+//.ais-Hits-list {
+//  display: block !important;
+//}
+
+.ais-Hits-item {
+  background: $white;
+ // width: 80% !important;
+}
+
+//.ais-Stats-text {
+//  //color: #08192A;
+//}
+
+.ais-SortBy-select {
+  color: #3a4570 !important;
+}
+
+
+.hit-added {
+  background: #ADF1D2;
+  color: #3F584D;
+}
+
+.hit__add {
+  background: $bleu;
+  color: $white;
+  padding: $xs-size;
+  border-radius: $xxs-size;
+}
+
+a.hit__add:hover{
+  border: solid 0.07rem $bleu;
+  background: $white;
+  color: $bleu;
+  text-decoration: none;
+}
+
+
+.hit__moreInfo {
+  background: #7D808A;
+  opacity:0.8;
+  color: $white;
+  padding: $xs-size;
+  border-radius: $xxs-size;
+}
+
+a.hit--moreInfoLink:hover {
+  background: $white;
+  border: solid 0.07rem #4C5E6F;
+  color: #4C5E6F;
+  text-decoration: none;
+}
+
+.buttons_block {
+  margin-top: 1rem;
+  //display:flex;
+  //flex-direction: column;
+  //align-items: center;
+ // position:absolute;
+ // bottom:0;
+ // left: 50%;
+ //-webkit-transform: translateX(-50%);
+ // -moz-transform: translateX(-50%);
+ //  transform: translateX(-50%);
+  //top: 0.2rem;
+  //margin-top: 1rem;
+
+}
+
+.hit_buttonGrey {
+  //margin-top: 1rem;
+}
+
+//.hit_center{
+//  text-align: center;
+//}
+
+.hit_buttonBlue {
+
+  margin-top: $l-size;
+}
+
+//.hit-added {
+//  background: #ADF1D2;
+//  color: #3F584D;
+//}
+
+//.hit__add {
+//  background: $bleu;
+//  color: $white;
+//  padding: 1rem;
+//  border-radius: $xxs-size;
+//  margin-top:1rem;
+//}
+
+//a.hit__add:hover {
+//  border: solid 0.07rem $bleu;
+//  background: $white;
+//  color: $bleu;
+//  text-decoration: none;
+//
+//}
+
+//.hit__moreInfo {
+//  background: #7D808A;
+//  opacity: 0.8;
+//  color: $white;
+//  padding: 1rem;
+//  border-radius: $xxs-size;
+//
+//}
+
+//a.hit--moreInfoLink:hover {
+//  background: $white;
+//  border: solid 0.07rem #4C5E6F;
+//  color: #4C5E6F;
+//  text-decoration: none;
+//}
+//
+//.hit_buttonGrey {
+//  margin-top: 1.9rem;
+//  margin-left: 0.5rem;
+//}
+
+///* ================================= DEVICES Max 1000PX ================================== */
+@media (max-width: 1000px) {
+
+  .hit_details {
+    display: flex;
+    justify-content: space-between;
   }
+
   .ais-Hits-list {
     display: block !important;
   }
   .ais-Hits-item {
-    background: $white;
     width: 100% !important;
   }
-  .ais-Stats-text {
-    //color: #08192A;
-  }
 
-  .ais-SortBy-select {
-    color: #3a4570 !important;
-  }
+  .buttons_block {
+    margin-top: 1rem;
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: center;
 
-  .hit-added {
-
-    background: #ADF1D2;
-    color: #3F584D;
-  }
-
-  .hit__add {
-
-    background: $bleu;
-    color: $white;
-    padding: 1rem;
-    border-radius: $xxs-size;
-  }
-
-  a.hit__add:hover {
-
-    border: solid 0.07rem $bleu;
-    background: $white;
-    color: $bleu;
-    text-decoration: none;
-
-  }
-
-  .hit__moreInfo {
-
-    background: #7D808A;
-    opacity: 0.8;
-    color: $white;
-    padding: 1rem;
-    border-radius: $xxs-size;
-
-  }
-
-  a.hit--moreInfoLink:hover {
-
-    background: $white;
-    border: solid 0.07rem #4C5E6F;
-    color: #4C5E6F;
-    text-decoration: none;
   }
 
   .hit_buttonGrey {
-
-    margin-top: 0.9rem;
     margin-left: 0.5rem;
   }
 
-  .hit_buttonBlue {
-
-    //margin-top: $l-size;
-  }
-
-}
-
-
-/* ================================= DEVICES OVER 1000PX ================================== */
-@media (min-width: 1000px) {
-  .hit__namePerso{
-
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    font-weight: bolder;
-  }
-  .ais-Hits-list {
-    //responsif
-    // display: block!important;
-  }
-  .ais-Hits-item{
-    background: $white;
-    //responsif
-    // width: 100%;
-  }
-  .ais-Stats-text{
-    //color: #08192A;
-  }
-
-  .ais-SortBy-select{
-    color:#3a4570 !important;
-  }
-
-  .hit_center {
-
-    text-align : center;
-  }
-  .hit-added {
-
-    background: #ADF1D2;
-    color: #3F584D;
-  }
-
   .hit__add {
-
-    background: $bleu;
-    color: $white;
-    padding: $xs-size;
-    border-radius: $xxs-size;
+    padding: 1rem;
   }
-
-  a.hit__add:hover{
-
-    border: solid 0.07rem $bleu;
-    background: $white;
-    color: $bleu;
-    text-decoration: none;
-
-
-  }
-
 
   .hit__moreInfo {
-
-    background: #7D808A;
-    opacity:0.8;
-    color: $white;
-    padding: $xs-size;
-    border-radius: $xxs-size;
-
-  }
-
-  a.hit--moreInfoLink:hover {
-
-    background: $white;
-    border: solid 0.07rem #4C5E6F;
-    color: #4C5E6F;
-    text-decoration: none;
+    padding: 1rem;
   }
 
 
-  .hit_buttonGrey{
+}
 
-    margin-top: $m-size;
+///* ================================= DEVICES MAX 550PX ================================== */
+@media (max-width: 550px) {
+
+
+  .ais-Hits-item {
+    width: 80% !important;
   }
 
-  .hit_buttonBlue{
+  .buttons_block {
+    margin-top: 1rem;
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
 
-    margin-top: $l-size;
+  }
+
+
+  .hit__add {
+    padding: 0.2rem;
+  }
+
+  .hit__moreInfo {
+    padding: 0.2rem;
+  }
+
+  .hit-descriptionPerso {
+    display: none;
   }
 
 }
+
