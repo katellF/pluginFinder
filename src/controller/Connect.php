@@ -39,24 +39,27 @@ class Connect
 
             } else {
 
-                echo('On a dejà ce pseudo');
+                throw new \Exception('this pseudo exist already');
                 $errorCounter++;
             }
 
             if (strlen(htmlspecialchars($_POST['password'])) < 6) {
 
-                echo('Mdp trop court,  il faut au moins 6 chars...');
+
+                throw new \Exception('Password too short. At least 6 characters are necessary');
                 $errorCounter++;
             }
 
             if (htmlspecialchars($_POST['password']) !== htmlspecialchars($_POST['confirmPassword'])) {
 
-                echo('Vos 2 mots de passe doivent etre identiques');
+
+                throw new \Exception('the two passwords have to be identical');
                 $errorCounter++;
             }
             if (filter_var(htmlspecialchars($_POST['email']), FILTER_VALIDATE_EMAIL) === false) {
 
                 echo('ecriture email fausse');
+                throw new \Exception('this pseudo exist already');
                 $errorCounter++;
             }
 
@@ -86,7 +89,7 @@ class Connect
 
             if (empty (htmlspecialchars($_POST['passwordConnect'])) || empty (htmlspecialchars($_POST['pseudoConnect']))) {
 
-                throw new \Exception('Tous les champs doivent être remplis');
+                throw new \Exception('All fields must be completed');
             }
 
             $res = $this->UserConnect->userConnect($_POST['pseudoConnect']);
@@ -94,7 +97,7 @@ class Connect
             $isPasswordCorrect = password_verify(htmlspecialchars($_POST['passwordConnect']), $res['password']);
             if (!$res) {
 
-                throw new \Exception('Mauvais identifiant ou mot de passe');
+                throw new \Exception('Wrong pseudo or password');
 
             } else {
                 if ($isPasswordCorrect) {
@@ -106,7 +109,7 @@ class Connect
                     header('Location: index.php?action=member');
 
                 } else {
-                    throw new \Exception('Mauvais identifiant ou mot de passe');
+                    throw new \Exception('Wrong pseudo or password');
                 }
             }
         }
@@ -138,6 +141,7 @@ class Connect
 
 
     }
+
     public function isUserConnected()
     {
         if (isset($_SESSION) && isset($_SESSION['pseudo'])) {
@@ -162,12 +166,12 @@ class Connect
 
                 if (strlen(htmlspecialchars($_POST['passwordConnect'])) < 6) {
 
-                    throw new \Exception('Mot de passe trop court,  il faut au moins 6 caractères...');
+                    throw new \Exception('Password too short. At least 6 characters are necessary');
                 }
 
                 if ($_POST['passwordConnect'] !== $_POST['passwordConfirm']) {
 
-                    throw new \Exception('Les 2 mots de passe doivent etre identiques');
+                    throw new \Exception('the two passwords have to be identical');
                 }
 
                 $view = new View("backend/modifyPass");
@@ -181,7 +185,7 @@ class Connect
             }
         }else {
 
-           throw new \Exception('Vous n avez pas acces à cette page!');
+           throw new \Exception('Sorry, you do not have access to this page!');
        }
     }
 }

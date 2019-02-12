@@ -27,7 +27,7 @@ class MySpace extends React.Component {
                 this.state.data.map(i => {
                         if (i.pluginId === favoriteToRemove) {
                             console.log("Remove", favoriteToRemove);
-                            const response = confirm("Etes vous sûr de vouloir le supprimer? ");
+                            const response = confirm("Do you want to delete this plugin from your favorites ");
 
                             if (response) {
                                 console.log('ok');

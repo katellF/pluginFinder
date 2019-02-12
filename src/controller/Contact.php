@@ -23,6 +23,7 @@ class Contact
         if (isset($_POST) && !empty($_POST)) {
 
             $email_sent = $this->sendContactMessage($_POST);
+
             if ($email_sent){
                 $view = new View("frontend/MessageSent");
             } else {
@@ -36,7 +37,6 @@ class Contact
             $view->generate(array(), "template_member");
         }else{
 
-           // $view = new View("frontend/contact");
             $view->generate(array());
         }
 
@@ -47,8 +47,9 @@ class Contact
     public function sendContactMessage ($data){
 
 
-//        http://rockstarninja.labak.xyz/gandisimple-hosting-envoie-de-mail-par-le-smtp-de-gandi
+    //http://rockstarninja.labak.xyz/gandisimple-hosting-envoie-de-mail-par-le-smtp-de-gandi
 
+    //works only for local
 
             $headers = 'From: '.$data['email'] . "\r\n" .
                 'Reply-To: '.$data['email'] . "\r\n" .
