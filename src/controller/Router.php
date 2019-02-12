@@ -37,48 +37,109 @@ class Router
         $this->helperView = new View("frontend/homeSearch");
         $this->splitUrl();
 
-
-       // var_dump($this->url_controller);
-
-
-        if (!$this->url_controller) {
-
-            $page = $this->ctrlHomeSearch;
-
-            $page->index();
-
-        } elseif (class_exists(   'Katell\Controller\\'.$this->url_controller )) {
-
-            $url_controller='Katell\Controller\\'.$this->url_controller;
-            $this->url_controller = new $url_controller();
-
-            // check for method: does such a method exist in the controller ?
-
-
-            if (method_exists($url_controller, $this->url_action)) {
-
-                if (!empty($this->url_params)) {
-                    // Call the method and pass arguments to it
-                    call_user_func_array(array($this->url_controller, $this->url_action), $this->url_params);
-                } else {
-                    // If no parameters are given, just call the method without parameters, like $this->home->method();
-                    $this->url_controller->{$this->url_action}();
-                }
-
-            } else {
-                if (strlen($this->url_action) == 0) {
-                    // no action defined: call the default index() method of a selected controller
-                    $this->url_controller->index();
-                }
-                else {
-                    header('location: ' . URL . 'problem');
-                }
-            }
-        } else {
-            header('location: ' . URL . 'problem');
-        }
     }
 
+    // var_dump($this->url_controller);
+
+
+
+//    public function routerRequest()
+//    {
+//        try {
+//            if (!$this->url_controller) {
+//
+//                $page = $this->ctrlHomeSearch;
+//
+//                $page->index();
+//
+//            } elseif (class_exists('Katell\Controller\\' . $this->url_controller)) {
+//
+//                $url_controller = 'Katell\Controller\\' . $this->url_controller;
+//                $this->url_controller = new $url_controller();
+//
+//                // check for method: does such a method exist in the controller ?
+//
+//
+//                if (method_exists($url_controller, $this->url_action)) {
+//
+//                    if (!empty($this->url_params)) {
+//                        // Call the method and pass arguments to it
+//                        call_user_func_array(array($this->url_controller, $this->url_action), $this->url_params);
+//                    } else {
+//                        // If no parameters are given, just call the method without parameters, like $this->home->method();
+//                        $this->url_controller->{$this->url_action}();
+//                    }
+//
+//                } else {
+//                    if (strlen($this->url_action) == 0) {
+//                        // no action defined: call the default index() method of a selected controller
+//                        $this->url_controller->index();
+//                    } else {
+//                        header('location: ' . URL . 'problem');
+//                    }
+//                }
+//            } else {
+//                header('location: ' . URL . 'problem');
+//            }
+//        } catch (Exception $e) {
+//
+//            $this->error($e->getMessage());
+//        }
+//    }
+
+    public function routerRequest()
+    {
+        try {
+            if (!$this->url_controller) {
+
+                $page = $this->ctrlHomeSearch;
+
+                $page->index();
+
+            } elseif (class_exists('Katell\Controller\\' . $this->url_controller)) {
+
+                $url_controller = 'Katell\Controller\\' . $this->url_controller;
+                $this->url_controller = new $url_controller();
+
+                // check for method: does such a method exist in the controller ?
+
+
+                if (method_exists($url_controller, $this->url_action)) {
+
+                    if (!empty($this->url_params)) {
+                        // Call the method and pass arguments to it
+                        call_user_func_array(array($this->url_controller, $this->url_action), $this->url_params);
+                    } else {
+                        // If no parameters are given, just call the method without parameters, like $this->home->method();
+                        $this->url_controller->{$this->url_action}();
+                    }
+
+                } else {
+                    if (strlen($this->url_action) == 0) {
+                        // no action defined: call the default index() method of a selected controller
+                        $this->url_controller->index();
+                    } else {
+                        header('location: ' . URL . 'problem');
+                    }
+                }
+            } else {
+                header('location: ' . URL . 'problem');
+            }
+        } catch (Exception $e) {
+
+            $this->error($e->getMessage());
+
+        }
+
+       // var_dump( $this->error($e->getMessage()));
+    }
+
+
+    private function error($msgError)
+    {
+        $view = new View("frontend/error");
+        $view->generate(array('msgError' => $msgError));
+    }
 
     private function splitUrl()
     {
@@ -108,8 +169,8 @@ class Router
 
             // for debugging. uncomment this if you have problems with the URL
             //echo 'Controller: ' . $this->url_controller . '<br>';
-           // echo 'Action: ' . $this->url_action . '<br>';
-           // echo 'Parameters: ' . print_r($this->url_params, true) . '<br>';
+            // echo 'Action: ' . $this->url_action . '<br>';
+            // echo 'Parameters: ' . print_r($this->url_params, true) . '<br>';
         }
     }
 

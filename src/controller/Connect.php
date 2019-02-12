@@ -86,7 +86,7 @@ class Connect
 
             if (empty (htmlspecialchars($_POST['passwordConnect'])) || empty (htmlspecialchars($_POST['pseudoConnect']))) {
 
-                throw new Exception('Tous les champs doivent être remplis');
+                throw new \Exception('Tous les champs doivent être remplis');
             }
 
             $res = $this->UserConnect->userConnect($_POST['pseudoConnect']);
@@ -94,7 +94,7 @@ class Connect
             $isPasswordCorrect = password_verify(htmlspecialchars($_POST['passwordConnect']), $res['password']);
             if (!$res) {
 
-                throw new Exception('Mauvais identifiant ou mot de passe');
+                throw new \Exception('Mauvais identifiant ou mot de passe');
 
             } else {
                 if ($isPasswordCorrect) {
@@ -106,7 +106,7 @@ class Connect
                     header('Location: index.php?action=member');
 
                 } else {
-                    throw new Exception('Mauvais identifiant ou mot de passe');
+                    throw new \Exception('Mauvais identifiant ou mot de passe');
                 }
             }
         }

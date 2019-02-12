@@ -36,7 +36,7 @@ class API
             $view = new View("backend/API");
             $view->generate(array('data' => $getFavorites), 'template_API');
         } else {
-            throw new Exception('Vous n avez pas acces à cette page!');
+            throw new \Exception('Vous n avez pas acces à cette page!');
         }
 
 
@@ -60,7 +60,7 @@ class API
             $view = new View("backend/API");
             $view->generate(array('data' => $deleteFavoriteAPI ), 'template_API');
         } else {
-            throw new Exception('Vous n avez pas acces à cette page!');
+            throw new \Exception('Vous n avez pas acces à cette page!');
         }
 
 
@@ -76,7 +76,7 @@ class API
             $data = [
                 "userId" => $_SESSION['id'],
                 "pluginId" => $pluginId,
-                "pluginName" => $pluginName
+                "pluginName" => html_entity_decode($pluginName)
 
             ];
 

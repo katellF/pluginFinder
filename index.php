@@ -34,4 +34,5 @@ require('src/controller/Router.php');
 
 
 $router = new Router();
+$router->routerRequest();
 //$routeur->routerRequest();
