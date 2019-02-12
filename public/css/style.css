@@ -28,6 +28,10 @@ body {
 
 }
 
+.menu{
+   justify-content: flex-end ;
+}
+
 /* ========================= homeSearch ========================= */
 
 .hit-added {
@@ -42,13 +46,11 @@ body {
 
 .about__title {
     margin-top: 2rem;
-
 }
 
 .about__subtitle {
     margin-top: 2rem;
     margin-bottom: 1.5rem;
-
 }
 
 
@@ -77,7 +79,6 @@ body {
 }
 
 .buttonForm:hover {
-
     background: white !important;
     color: #0096db !important;
     border: solid 0.07rem #0096db !important;
@@ -99,9 +100,11 @@ body {
 
 @media (max-width: 1000px) {
 
-    .menu_burger {
+    .menu {
+    justify-content: flex-start !important;
+    }
 
-        justify-content: start !important;
+    .menu_burger {
         font-size: 1.2em;
     }
 

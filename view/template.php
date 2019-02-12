@@ -31,7 +31,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class=" collapse navbar-collapse row justify-content-end menu_burger" id="navbarTogglerDemo03">
+            <div class=" collapse navbar-collapse row menu menu_burger" id="navbarTogglerDemo03">
                 <ul class="navbar-nav mt-2 mt-lg-0">
                     <li class="nav-item active border_nav color_link">
                         <a class="nav-link color_link" href="index.php">Home <span class="sr-only">(current)</span></a>

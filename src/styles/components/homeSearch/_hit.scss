@@ -1,4 +1,3 @@
-
 /* ================================= DEVICES OVER 1000PX ================================== */
 
 .ais-Stats-text {
@@ -12,23 +11,20 @@
 .hit-descriptionPerso {
   margin-top: 1rem;
 }
+
 .hit__namePerso {
   margin-left: 2rem;
   margin-top: 1.5rem;
   font-weight: bolder;
 }
 
-
-
 .ais-Hits-item {
   background: $white;
 }
 
-
 .ais-SortBy-select {
   color: #3a4570 !important;
 }
-
 
 .hit-added {
   background: #ADF1D2;
@@ -42,7 +38,7 @@
   border-radius: $xxs-size;
 }
 
-a.hit__add:hover{
+a.hit__add:hover {
   border: solid 0.07rem $bleu;
   background: $white;
   color: $bleu;
@@ -51,7 +47,7 @@ a.hit__add:hover{
 
 .hit__moreInfo {
   background: #7D808A;
-  opacity:0.8;
+  opacity: 0.8;
   color: $white;
   padding: $xs-size;
   border-radius: $xxs-size;
@@ -102,7 +98,7 @@ a.hit--moreInfoLink:hover {
 
   .hit_buttonGrey {
     margin-left: 0.5rem;
-    margin-top: 2rem;
+
   }
 
   .hit__add {
@@ -123,9 +119,6 @@ a.hit--moreInfoLink:hover {
 ///* ================================= DEVICES MAX 550PX ================================== */
 @media (max-width: 550px) {
 
-
-
-
   .buttons_block {
     margin-top: 1rem;
     flex-direction: column !important;
@@ -133,10 +126,15 @@ a.hit--moreInfoLink:hover {
     align-items: center;
   }
 
-
   .hit-descriptionPerso {
     display: none;
   }
+
+  .hit_buttonGrey {
+    margin-top: 0.5rem;
+
+  }
+
 
 }
 

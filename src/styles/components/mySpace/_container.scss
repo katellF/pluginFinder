@@ -1,90 +1,90 @@
 .mySpace {
 
- text-align: center;
+  text-align: center;
 
 }
 
 .mySpace_title {
 
- background: $white;
- margin-top: 3rem;
- margin-bottom: 4rem;
+  background: $white;
+  margin-top: 3rem;
+  margin-bottom: 4rem;
 }
 
 .mySpace_list {
 
- padding-top: 2rem;
- padding-bottom: 1.5rem;
- width: 50%;
- margin: auto;
- border-radius: 0.1rem;
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
+  width: 50%;
+  margin: auto;
+  border-radius: 0.1rem;
 }
 
 .mySpace_favorite {
 
- background: $white;
- margin-bottom: 1rem;
- border: 1px solid #c4c8d8;
- box-shadow: 0 2px 5px 0 #e3e5ec;
+  background: $white;
+  margin-bottom: 1rem;
+  border: 1px solid #c4c8d8;
+  box-shadow: 0 2px 5px 0 #e3e5ec;
 }
 
 .mySpace__moreInfo {
 
- //background: #4C5E6F;
- background: #7D808A;
- opacity:0.8;
- color: $white;
- margin-top: $s-size;
- margin-bottom: $m-size;
- padding: $xs-size;
- border-radius: $xxs-size;
+  //background: #4C5E6F;
+  background: #7D808A;
+  opacity: 0.8;
+  color: $white;
+  margin-top: $s-size;
+  margin-bottom: $m-size;
+  padding: $xs-size;
+  border-radius: $xxs-size;
 }
 
-.mySpace--moreInfoLink:hover{
+.mySpace--moreInfoLink:hover {
 
- background: $white;
- border: solid 0.07rem #4C5E6F;
- color: #4C5E6F;
+  background: $white;
+  border: solid 0.07rem #4C5E6F;
+  color: #4C5E6F;
 
 }
 
 .mySpace__delete {
 
- background: $bleu;
- color: $white;
- margin-top: $l-size;
- padding: $xs-size;
- border-radius: $xxs-size;
+  background: $bleu;
+  color: $white;
+  margin-top: $l-size;
+  padding: $xs-size;
+  border-radius: $xxs-size;
 }
 
-.mySpace--deleteLink:hover{
+.mySpace--deleteLink:hover {
 
- border: solid 0.07rem $bleu;
- color: $bleu;
- background: $white;
+  border: solid 0.07rem $bleu;
+  color: $bleu;
+  background: $white;
 
 }
 
 .mySpace--link {
 
- color: white;
+  color: white;
 
 }
 
 a.mySpace--link:hover {
 
- color: #7D808A;
- text-decoration: none;
+  color: #7D808A;
+  text-decoration: none;
 }
 
 .mySpace__buttons {
 
-margin-right: $s-size;
+  margin-right: $s-size;
 }
 
 // image
 
- .imageFav:before {
+.imageFav:before {
   content: ' ';
   display: block;
   position: absolute;
@@ -92,31 +92,23 @@ margin-right: $s-size;
   width: 100px;
   margin-left: $s-size;
   background-image: url("/pluginfinder/public/img/plugin_icon_default.jpg");
- }
+}
 
- .imageFav {
+.imageFav {
   margin-left: 1rem;
 
- }
+}
 
 ///* ================================= DEVICES Max 1000PX ================================== */
 @media (max-width: 1000px) {
 
- .mySpace_list {
-  width: 90%;
- }
-
-
+  .mySpace_list {
+    width: 90%;
+  }
 
 }
 
 ///* ================================= DEVICES MAX 550PX ================================== */
 @media (max-width: 550px) {
-
-
-
-
-
-
 
 }

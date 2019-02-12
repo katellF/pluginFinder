@@ -27,6 +27,15 @@ class MySpace extends React.Component {
                 this.state.data.map(i => {
                         if (i.pluginId === favoriteToRemove) {
                             console.log("Remove", favoriteToRemove);
+                            const response = confirm("Etes vous sûr de vouloir le supprimer? ");
+
+                            if (response) {
+                                console.log('ok');
+                            } else {
+                                console.log('cancel');
+                                event.preventDefault();
+                            }
+
                             this.setState((prevState) => {
                                 this.state.data.splice(i, 1);
                                 return {
@@ -58,7 +67,6 @@ class MySpace extends React.Component {
         }
 
     }
-
 
     render() {
 
