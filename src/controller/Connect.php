@@ -162,12 +162,12 @@ class Connect
 
                 if (strlen(htmlspecialchars($_POST['passwordConnect'])) < 6) {
 
-                    throw new Exception('Mot de passe trop court,  il faut au moins 6 caractères...');
+                    throw new \Exception('Mot de passe trop court,  il faut au moins 6 caractères...');
                 }
 
                 if ($_POST['passwordConnect'] !== $_POST['passwordConfirm']) {
 
-                    throw new Exception('Les 2 mots de passe doivent etre identiques');
+                    throw new \Exception('Les 2 mots de passe doivent etre identiques');
                 }
 
                 $view = new View("backend/modifyPass");
@@ -181,7 +181,7 @@ class Connect
             }
         }else {
 
-           throw new Exception('Vous n avez pas acces à cette page!');
+           throw new \Exception('Vous n avez pas acces à cette page!');
        }
     }
 }

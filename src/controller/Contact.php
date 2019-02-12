@@ -24,9 +24,9 @@ class Contact
 
             $email_sent = $this->sendContactMessage($_POST);
             if ($email_sent){
-                // echo la view du succes
+                $view = new View("frontend/MessageSent");
             } else {
-                // echo message non envoye...
+                throw new \Exception('Message non envoyé') ;
             }
         }
 
