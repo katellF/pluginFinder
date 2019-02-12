@@ -85,7 +85,6 @@ body {
 }
 
 
-
 /* ========== footer ========== */
 
 #footer {
@@ -100,6 +99,7 @@ body {
 
 
 /* ========== Nav responsif ========== */
+
 @media (max-width: 1000px) {
 
     .menu_burger {
@@ -107,6 +107,20 @@ body {
         justify-content: start !important;
         font-size: 1.2em;
     }
+
+    #footer {
+
+
+    }
+
+    .footer_r {
+        flex-direction: row !important;
+    }
+
+    .marginLeft_r {
+        margin-left: 1rem;
+    }
+
 
 }
 
