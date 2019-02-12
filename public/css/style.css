@@ -99,5 +99,14 @@ body {
 }
 
 
+/* ========== Nav responsif ========== */
+@media (max-width: 1000px) {
 
+    .menu_burger {
+
+        justify-content: start !important;
+        font-size: 1.2em;
+    }
+
+}
 
