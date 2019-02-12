@@ -23,7 +23,6 @@ body {
 /* ========================= headerNav ========================= */
 
 .header__nav{
-    /*background: #3a4570;*/
     background: #161A29;
     font-size: 1.1rem;
 
@@ -88,8 +87,6 @@ body {
 /* ========== footer ========== */
 
 #footer {
-    /*background: #08192A;*/
-    /*background: #3a4570;*/
     background: #161A29;
     position: absolute;
     right: 0;
