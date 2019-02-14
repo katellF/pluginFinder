@@ -1,7 +1,7 @@
 <?php
 
 //session_start();
-$this->title = htmlspecialchars('Change password');
+$this->title = htmlspecialchars('Modify password');
 ?>
 
 <p class="margin-top50 margin-bottom25 margin-left15"><a class="btn btn-primary bg-6BC3D1"

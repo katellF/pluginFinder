@@ -1,6 +1,6 @@
 <?php
 session_start();
-$this->title = htmlspecialchars('Inscription');
+$this->title = htmlspecialchars('Register');
 ?>
 
 <div class="container connect">
@@ -11,11 +11,11 @@ $this->title = htmlspecialchars('Inscription');
     <form action="index.php?action=connect/registration" method="post" class="form-connect">
         <div class="form-group margin-bottom25">
             <label for="lastname" class="margin-bottom15">Name</label><br/>
-            <input type="text" class="form-control" id="lastname" placeholder="Nom" name="lastname">
+            <input type="text" class="form-control" id="lastname" placeholder="Name" name="lastname">
         </div>
         <div class="form-group margin-bottom25">
             <label for="firstname" class="margin-bottom15">Firstname</label><br/>
-            <input type="text" class="form-control" id="firstname" placeholder="Prenom" name="firstname">
+            <input type="text" class="form-control" id="firstname" placeholder="Firstname" name="firstname">
         </div>
         <div class="form-group margin-bottom25">
             <label for="email" class="margin-bottom15">Email</label><br/>
@@ -32,7 +32,7 @@ $this->title = htmlspecialchars('Inscription');
         </div>
         <div class="form-group margin-bottom25">
             <label for="confirmPassword" class="margin-bottom15">Confirm the Password</label>
-            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" name="confirmPassword" >
+            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your Password" name="confirmPassword" >
         </div>
         <div class="send">
             <input type="submit" class="btn btn-primary btn-lg btn-block active buttonForm" value="Register"/>

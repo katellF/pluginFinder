@@ -1,3 +1,9 @@
+<?php
+
+//session_start();
+$this->title = htmlspecialchars('Home');
+?>
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.0.0/themes/algolia-min.css">
 <link rel="stylesheet" href="public/css/style.css">
 

@@ -1,3 +1,8 @@
+<?php
+
+//session_start();
+$this->title = htmlspecialchars('Redirect');
+?>
 
 <div class="container text-center">
 

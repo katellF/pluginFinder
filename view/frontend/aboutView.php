@@ -1,4 +1,4 @@
-<?php $this->title = 'Qui sommes nous';
+<?php $this->title = 'About Us';
 ?>
 
 <h1 class="text-center about__title">About us?</h1>

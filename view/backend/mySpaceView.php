@@ -1,4 +1,8 @@
+<?php
 
+//session_start();
+$this->title = htmlspecialchars('My Favorites');
+?>
 
 <script type="text/javascript">
     var currentPage = "mySpaceView"; // "A string here"

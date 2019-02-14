@@ -1,4 +1,8 @@
+<?php
 
+//session_start();
+$this->title = htmlspecialchars('Plugin Deleted');
+?>
 
 <div class="container">
 

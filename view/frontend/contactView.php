@@ -1,3 +1,9 @@
+<?php
+
+//session_start();
+$this->title = htmlspecialchars('Contact');
+?>
+
 <div class="container">
     <h1 class="text-center title">Contact Us</h1>
 

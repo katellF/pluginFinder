@@ -11,25 +11,24 @@ html {
 }
 
 body {
+    font-family: Helvetica, Arial, sans-serif !important;
     position: relative;
     margin: 0;
     padding-bottom: 6rem;
     min-height: 100%;
-
-
-
+    color:#3a4570 !important;
 }
+
 
 /* ========================= headerNav ========================= */
 
-.header__nav{
+.header__nav {
     background: #161A29;
     font-size: 1.1rem;
-
 }
 
-.menu{
-   justify-content: flex-end ;
+.menu {
+    justify-content: flex-end;
 }
 
 /* ========================= homeSearch ========================= */
@@ -37,7 +36,33 @@ body {
 .hit-added {
     color: #3F584D;
     margin-top: 2rem;
-    text-align:center;
+    text-align: center;
+}
+
+/* ========================= error/logout ========================= */
+.body_background {
+    background: aliceblue;
+}
+
+.message_content{
+    background: white;
+    width:50%;
+    margin:auto;
+    border: 1px solid #c4c8d8;
+    box-shadow: 0 2px 5px 0 #e3e5ec;
+    padding: 1rem;
+    border-radius: 0.1rem;
+}
+
+.back {
+    margin-top: 1rem;
+    margin-left: 0.3rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
+.logout{
+
+    margin-top: 3rem;
 }
 
 
@@ -53,11 +78,11 @@ body {
     margin-bottom: 1.5rem;
 }
 
-
-
 /* ========================= Contact/Register/logout/redirect ========================= */
 
 .title {
+    font-size: 3rem;
+    font-weight:500 ;
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
 
@@ -74,7 +99,7 @@ body {
 
 .buttonForm {
     background: #0096db !important;
-    border: solid 0.07rem #0096db;
+    border: solid 0.07rem #0096db !important;
 
 }
 
@@ -95,13 +120,12 @@ body {
     left: 0;
 }
 
-
 /* ========== Nav responsif ========== */
 
 @media (max-width: 1000px) {
 
     .menu {
-    justify-content: flex-start !important;
+        justify-content: flex-start !important;
     }
 
     .menu_burger {
@@ -109,7 +133,6 @@ body {
     }
 
     #footer {
-
 
     }
 
@@ -120,7 +143,6 @@ body {
     .marginLeft_r {
         margin-left: 1rem;
     }
-
 
 }
 

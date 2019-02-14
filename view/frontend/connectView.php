@@ -1,7 +1,7 @@
 
 <?php
 session_start();
-$this->title = htmlspecialchars('Se connecter');
+$this->title = htmlspecialchars('Login');
 ?>
 
 <div class="container connect">

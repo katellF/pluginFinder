@@ -30,7 +30,9 @@
                     aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
+            <div>
+                <img src="../pluginfinder/public/img/logo_1.png" alt="logo" height="100" width="100"/>
+            </div>
             <div class=" collapse navbar-collapse row menu menu_burger" id="navbarTogglerDemo03">
                 <ul class="navbar-nav mt-2 mt-lg-0">
                     <li class="nav-item active border_nav color_link">
