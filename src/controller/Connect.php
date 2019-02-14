@@ -25,13 +25,10 @@ class Connect
     {
         if (isset ($_POST) && !empty($_POST)) {
 
-            var_dump($_POST);
 
             $post_pseudo = htmlspecialchars($_POST['pseudo']);
 
             $user = $this->UserConnect->getUser($post_pseudo);
-
-            $errorCounter = 0;
 
             if ($user->rowCount() === 0) {
 
@@ -39,49 +36,47 @@ class Connect
 
             } else {
 
-                throw new \Exception('this pseudo exist already');
-                $errorCounter++;
+                throw new \Exception('this pseudo already exist ');
+
             }
 
             if (strlen(htmlspecialchars($_POST['password'])) < 6) {
 
 
                 throw new \Exception('Password too short. At least 6 characters are necessary');
-                $errorCounter++;
+
             }
 
             if (htmlspecialchars($_POST['password']) !== htmlspecialchars($_POST['confirmPassword'])) {
 
 
-                throw new \Exception('the two passwords have to be identical');
-                $errorCounter++;
+                throw new \Exception('the passwords have to be identical');
+
             }
             if (filter_var(htmlspecialchars($_POST['email']), FILTER_VALIDATE_EMAIL) === false) {
 
                 echo('ecriture email fausse');
-                throw new \Exception('this pseudo exist already');
-                $errorCounter++;
+                throw new \Exception('The email was not written correctly');
+
             }
 
-            if ($errorCounter === 0) {
-                session_start();
 
+                session_start();
 
                 $this->UserConnect->registerUser($_POST);
                 $connect = $this->UserConnect->userConnect($_POST['pseudo']);
-
-
-                $_SESSION['id'] = $connect['id'];
                 $_SESSION['pseudo'] = $connect['pseudo'];
 
+
                 header('Location: index.php?action=member');
-            }
+
         }
 
 
         $view = new View("frontend/register");
         $view->generate(array());
     }
+
 
     public function connection()
     {
@@ -188,4 +183,6 @@ class Connect
            throw new \Exception('Sorry, you do not have access to this page!');
        }
     }
+
+
 }

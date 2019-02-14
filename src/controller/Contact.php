@@ -22,12 +22,25 @@ class Contact
 
         if (isset($_POST) && !empty($_POST)) {
 
+            if (filter_var(htmlspecialchars($_POST['email']), FILTER_VALIDATE_EMAIL) === false) {
+
+            throw new \Exception('The email was not written correctly');
+
+        }
+
+        if (empty ($_POST['content']) || empty ($_POST['lastname']) || empty ($_POST['firstname'])) {
+
+            throw new \Exception('All fields must be completed');
+
+        }
+
+
             $email_sent = $this->sendContactMessage($_POST);
 
             if ($email_sent){
                 $view = new View("frontend/MessageSent");
             } else {
-                throw new \Exception('Message non envoyé') ;
+                throw new \Exception('Message not sent') ;
             }
         }
 
@@ -35,6 +48,7 @@ class Contact
         if ($this->ctrlConnect->isUserConnected()) {
 
             $view->generate(array(), "template_member");
+
         }else{
 
             $view->generate(array());
@@ -60,6 +74,4 @@ class Contact
             return $result;
 
     }
-
-
 }
