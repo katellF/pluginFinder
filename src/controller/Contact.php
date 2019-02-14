@@ -28,7 +28,7 @@ class Contact
 
         }
 
-        if (empty ($_POST['content']) || empty ($_POST['lastname']) || empty ($_POST['firstname'])) {
+        if (empty (htmlspecialchars($_POST['content'])) || empty (htmlspecialchars($_POST['lastname'])) || empty (htmlspecialchars($_POST['firstname']))) {
 
             throw new \Exception('All fields must be completed');
 

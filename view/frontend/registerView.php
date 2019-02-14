@@ -19,7 +19,7 @@ $this->title = htmlspecialchars('Inscription');
         </div>
         <div class="form-group margin-bottom25">
             <label for="email" class="margin-bottom15">Email</label><br/>
-            <input type="text" class="form-control" id="email" placeholder="Email" name="email">
+            <input type="email" class="form-control" id="email" placeholder="Email" name="email">
         </div>
 
         <div class="form-group margin-bottom25">

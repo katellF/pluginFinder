@@ -5,7 +5,7 @@ $this->title = htmlspecialchars('Change password');
 ?>
 
 <p class="margin-top50 margin-bottom25 margin-left15"><a class="btn btn-primary bg-6BC3D1"
-                                                         href="index.php?action=connect/connection">Back to Connect</a></p>
+                                                         href="index.php?action=homeSearch">Back to Home</a></p>
 
 
     <?php
@@ -14,8 +14,8 @@ if (isset ($_POST) && !empty($_POST)  && $password ) {
 
 ?>
 <div class="container margin-top50 text-center border_notif">
-    <h1 class="margin-bottom25">Mot de passe modifié</h1>
-    <p>Votre mot de passe a bien été changé.</p>
+    <h1 class="margin-bottom25">Change your password</h1>
+    <p>Your password has been changed.</p>
     </div>
 <?php
 } else {

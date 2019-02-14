@@ -30,11 +30,12 @@ class Connect
 
             $user = $this->UserConnect->getUser($post_pseudo);
 
-            if ($user->rowCount() === 0) {
+            if (empty (htmlspecialchars($_POST['password'])) || empty (htmlspecialchars($_POST['pseudo'])) || empty (htmlspecialchars($_POST['lastname'])) || empty (htmlspecialchars($_POST['firstname'])) || empty (htmlspecialchars($_POST['pseudo']))) {
 
-                echo 'on peut ajouter pseudo';
+                throw new \Exception('All fields must be completed');
+            }
 
-            } else {
+            if ($user->rowCount() !== 0) {
 
                 throw new \Exception('this pseudo already exist ');
 
@@ -55,7 +56,6 @@ class Connect
             }
             if (filter_var(htmlspecialchars($_POST['email']), FILTER_VALIDATE_EMAIL) === false) {
 
-                echo('ecriture email fausse');
                 throw new \Exception('The email was not written correctly');
 
             }
@@ -66,6 +66,7 @@ class Connect
                 $this->UserConnect->registerUser($_POST);
                 $connect = $this->UserConnect->userConnect($_POST['pseudo']);
                 $_SESSION['pseudo'] = $connect['pseudo'];
+                $_SESSION['id'] = $connect['id'];
 
 
                 header('Location: index.php?action=member');
@@ -155,7 +156,7 @@ class Connect
         if ($this->isuserconnected()) {
                 if (isset($_POST) && !empty($_POST)) {
 
-                $pass_hache = password_hash($_POST['passwordConnect'], PASSWORD_DEFAULT);
+                $pass_hache = password_hash((htmlspecialchars($_POST['passwordConnect'])), PASSWORD_DEFAULT);
                 $modifyPassword = $this->UserConnect->setPassword($_SESSION['pseudo'], $pass_hache);
 
 
@@ -164,9 +165,9 @@ class Connect
                     throw new \Exception('Password too short. At least 6 characters are necessary');
                 }
 
-                if ($_POST['passwordConnect'] !== $_POST['passwordConfirm']) {
+                if ((htmlspecialchars($_POST['passwordConnect'])) !== (htmlspecialchars($_POST['passwordConfirm']))) {
 
-                    throw new \Exception('the two passwords have to be identical');
+                    throw new \Exception('the passwords have to be identical');
                 }
 
                 $view = new View("backend/modifyPass");
