@@ -18,3 +18,12 @@
   -webkit-transform: translateX(-30%) translateY(-50%) !important;
   transform: translateX(-30%) translateY(-50%) !important;
 }
+
+
+@media (max-width: 1000px) {
+
+  .ais-SearchBox {
+
+    width:100% !important;
+  }
+}

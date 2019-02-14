@@ -84,14 +84,14 @@ a.mySpace--link:hover {
 
 // image
 
-.imageFav:before {
+.imageFav:after {
   content: ' ';
   display: block;
   position: absolute;
   height: 100px;
   width: 100px;
   margin-left: $s-size;
-  background-image: url("/pluginfinder/public/img/wordpress-plugin-2.jpg");
+  background-image: url("/pluginfinder/public/img/logo_2.png");
 }
 
 .imageFav {
