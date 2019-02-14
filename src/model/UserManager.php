@@ -66,20 +66,4 @@ class UserManager extends Manager
         return $modifyPassword;
     }
 
-
-//    public function setPassword($dataPasswordAPI)
-//    {
-//        $db = $this->dbConnect();
-//
-//        $updatePassword = $db->prepare('UPDATE users SET  password=:password WHERE  pseudo=:pseudo ');
-//        $modifyPassword = $updatePassword->execute(array(
-//            'pseudo' => $dataPasswordAPI['pseudo'],
-//            'password' => $dataPasswordAPI['password'],
-//
-//            ));
-//
-//        return $modifyPassword;
-//    }
-
-
 }

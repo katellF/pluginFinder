@@ -18,7 +18,6 @@ class FavoritesManager extends Manager
     }
 
 
-
     public function getFavoritesIds($userId)
     {
         $db = $this->dbConnect();
@@ -27,7 +26,6 @@ class FavoritesManager extends Manager
 
         return $req;
     }
-
 
 
     public function delete($userId, $pluginId)
@@ -39,6 +37,7 @@ class FavoritesManager extends Manager
         return $deleteFavorite;
 
     }
+
     public function add($data)
     {
 

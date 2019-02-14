@@ -1,5 +1,7 @@
 <?php
+
 namespace Katell\Controller;
+
 use Katell\Model\FavoritesManager;
 use Katell\Model\UserManager;
 use Katell\Helpers\View;
@@ -12,7 +14,6 @@ class API
 
     public function __construct()
     {
-
         $this->ctrlConnect = new Connect();
         $this->favoritesManager = new FavoritesManager();
         $this->userManager = new UserManager();
@@ -25,9 +26,8 @@ class API
     }
 
 
-
-    public function listFavorites() {
-
+    public function listFavorites()
+    {
 
         session_start();
 
@@ -43,12 +43,13 @@ class API
     }
 
 
-    public function deleteFavorite($pluginId) {
+    public function deleteFavorite($pluginId)
+    {
 
         session_start();
 
         if ($this->ctrlConnect->isUserConnected()) {
-            $deleteFavorite = $this->favoritesManager->delete($_SESSION['id'],$pluginId);
+            $deleteFavorite = $this->favoritesManager->delete($_SESSION['id'], $pluginId);
 
 
             $deleteFavoriteAPI = array(
@@ -58,15 +59,13 @@ class API
 
 
             $view = new View("backend/API");
-            $view->generate(array('data' => $deleteFavoriteAPI ), 'template_API');
+            $view->generate(array('data' => $deleteFavoriteAPI), 'template_API');
         } else {
             throw new \Exception('Vous n avez pas acces à cette page!');
         }
-
-
     }
 
-    public function addFavorite($pluginId , $pluginName)
+    public function addFavorite($pluginId, $pluginName)
     {
         session_start();
 
@@ -101,7 +100,7 @@ class API
 
         if ($this->ctrlConnect->isuserconnected()) {
 
-            $dataPasswordAPI= [
+            $dataPasswordAPI = [
                 "pseudo" => $_SESSION['pseudo'],
                 "password" => $password
             ];
@@ -113,12 +112,10 @@ class API
             );
 
             $view = new View("backend/API");
-            $view->generate(array('dataPasswordAPI' => $modifyPassword ), 'template_API');
+            $view->generate(array('dataPasswordAPI' => $modifyPassword), 'template_API');
 
 
         }
-
-
     }
 
 

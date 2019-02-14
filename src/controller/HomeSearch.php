@@ -12,7 +12,6 @@ class HomeSearch
     {
         $this->ctrlConnect = new Connect();
         $this->favoritesManager = new FavoritesManager();
-
     }
 
     public function index()
@@ -37,7 +36,6 @@ class HomeSearch
 
         }
     }
-
 }
 
 

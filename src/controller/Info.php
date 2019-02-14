@@ -1,12 +1,12 @@
 <?php
 
 namespace Katell\Controller;
+
 use Katell\Helpers\View;
 
 class Info
 {
     private $ctrlConnect;
-
 
     public function __construct()
     {
@@ -20,9 +20,9 @@ class Info
 
         if ($this->ctrlConnect->isUserConnected()) {
 
-        $view->generate(array(), "template_member");
+            $view->generate(array(), "template_member");
 
-        }else{
+        } else {
             $view->generate(array());
         }
     }

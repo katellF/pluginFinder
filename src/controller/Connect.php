@@ -1,5 +1,7 @@
 <?php
+
 namespace Katell\Controller;
+
 use Katell\Model\UserManager;
 use Katell\Helpers\View;
 
@@ -61,18 +63,17 @@ class Connect
             }
 
 
-                session_start();
+            session_start();
 
-                $this->UserConnect->registerUser($_POST);
-                $connect = $this->UserConnect->userConnect($_POST['pseudo']);
-                $_SESSION['pseudo'] = $connect['pseudo'];
-                $_SESSION['id'] = $connect['id'];
+            $this->UserConnect->registerUser($_POST);
+            $connect = $this->UserConnect->userConnect($_POST['pseudo']);
+            $_SESSION['pseudo'] = $connect['pseudo'];
+            $_SESSION['id'] = $connect['id'];
 
 
-                header('Location: index.php?action=member');
+            header('Location: index.php?action=member');
 
         }
-
 
         $view = new View("frontend/register");
         $view->generate(array());
@@ -133,20 +134,9 @@ class Connect
     {
 
         $view = new View("frontend/redirect");
-        $view->generate(array(),"template_redirect");
+        $view->generate(array(), "template_redirect");
 
 
-    }
-
-    public function isUserConnected()
-    {
-        if (isset($_SESSION) && isset($_SESSION['pseudo'])) {
-
-            return true;
-
-        } else {
-            return false;
-        }
     }
 
     public function modifyPassword()
@@ -154,7 +144,7 @@ class Connect
         session_start();
 
         if ($this->isuserconnected()) {
-                if (isset($_POST) && !empty($_POST)) {
+            if (isset($_POST) && !empty($_POST)) {
 
                 $pass_hache = password_hash((htmlspecialchars($_POST['passwordConnect'])), PASSWORD_DEFAULT);
                 $modifyPassword = $this->UserConnect->setPassword($_SESSION['pseudo'], $pass_hache);
@@ -171,19 +161,28 @@ class Connect
                 }
 
                 $view = new View("backend/modifyPass");
-                $view->generate(array('password' => $modifyPassword),'template_member');
+                $view->generate(array('password' => $modifyPassword), 'template_member');
 
             } else {
 
                 $view = new View("backend/modifyPass");
-                $view->generate(array(),'template_member');
+                $view->generate(array(), 'template_member');
 
             }
-        }else {
+        } else {
 
-           throw new \Exception('Sorry, you do not have access to this page!');
-       }
+            throw new \Exception('Sorry, you do not have access to this page!');
+        }
     }
 
+    public function isUserConnected()
+    {
+        if (isset($_SESSION) && isset($_SESSION['pseudo'])) {
 
+            return true;
+
+        } else {
+            return false;
+        }
+    }
 }

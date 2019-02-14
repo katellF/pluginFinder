@@ -39,53 +39,6 @@ class Router
 
     }
 
-    // var_dump($this->url_controller);
-
-
-
-//    public function routerRequest()
-//    {
-//        try {
-//            if (!$this->url_controller) {
-//
-//                $page = $this->ctrlHomeSearch;
-//
-//                $page->index();
-//
-//            } elseif (class_exists('Katell\Controller\\' . $this->url_controller)) {
-//
-//                $url_controller = 'Katell\Controller\\' . $this->url_controller;
-//                $this->url_controller = new $url_controller();
-//
-//                // check for method: does such a method exist in the controller ?
-//
-//
-//                if (method_exists($url_controller, $this->url_action)) {
-//
-//                    if (!empty($this->url_params)) {
-//                        // Call the method and pass arguments to it
-//                        call_user_func_array(array($this->url_controller, $this->url_action), $this->url_params);
-//                    } else {
-//                        // If no parameters are given, just call the method without parameters, like $this->home->method();
-//                        $this->url_controller->{$this->url_action}();
-//                    }
-//
-//                } else {
-//                    if (strlen($this->url_action) == 0) {
-//                        // no action defined: call the default index() method of a selected controller
-//                        $this->url_controller->index();
-//                    } else {
-//                        header('location: ' . URL . 'problem');
-//                    }
-//                }
-//            } else {
-//                header('location: ' . URL . 'problem');
-//            }
-//        } catch (Exception $e) {
-//
-//            $this->error($e->getMessage());
-//        }
-//    }
 
     public function routerRequest()
     {
@@ -130,8 +83,6 @@ class Router
             $this->error($e->getMessage());
 
         }
-
-       // var_dump( $this->error($e->getMessage()));
     }
 
 
@@ -155,8 +106,6 @@ class Router
 
 
             // Put URL parts into according properties
-            // By the way, the syntax here is just a short form of if/else, called "Ternary Operators"
-            // @see http://davidwalsh.name/php-shorthand-if-else-ternary-operators
             $this->url_controller = isset($url[0]) ? $url[0] : null;
             $this->url_action = isset($url[1]) ? $url[1] : null;
 

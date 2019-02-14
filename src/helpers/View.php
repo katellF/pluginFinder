@@ -1,4 +1,5 @@
 <?php
+
 namespace Katell\Helpers;
 
 class View
@@ -8,17 +9,16 @@ class View
 
     public function __construct($action)
     {
-        $this->file = "view/".$action."View.php";
+        $this->file = "view/" . $action . "View.php";
 
 
     }
 
-    public function generate($datas, $template='template')
+    public function generate($datas, $template = 'template')
     {
         $content = $this->generateFile($this->file, $datas);
-        $view = $this->generateFile('view/'.$template.'.php',
+        $view = $this->generateFile('view/' . $template . '.php',
             array('title' => $this->title, 'content' => $content));
-        // Renvoi de la vue au navigateur
         echo $view;
     }
 
