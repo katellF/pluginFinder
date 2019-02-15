@@ -1,5 +1,6 @@
 import Config from '../config.js';
 import React, {Component} from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {Highlight} from 'react-instantsearch/dom';
 
 
@@ -125,6 +126,31 @@ class Hit extends React.Component {
                 <div className="hit__details">
                     <div className="hit-image">
                         <img width="100" height="100" src={hit.img_thumb} alt="images"/>
+                        {isUserConnected
+                            ? ( this.state.isFavorite ? (<p className={"hit_center"}>
+                                        <button onClick={this.removeFavorite}
+                                                className="hit__add hit--addLink" type="button" data-toggle="tooltip" data-placement="right"  data-html="true" title="Remove from your favorite"
+                                                data-id={hit.id} data-name={encodeURIComponent(hit.name)} id={hit.id}>
+                                            <FontAwesomeIcon className={'button_heartRemove fa-2x'}
+                                                             icon="heart"/>
+                                        </button>
+                                    </p>)
+                                    : (<p className={"hit_center"}>
+                                        <button onClick={this.addFavorite}
+                                                className="hit__add hit--addLink" type="button" data-toggle="tooltip" data-placement="right" data-html="true" title="Add to your favorite"
+                                                data-id={hit.id} data-name={hit.name} id={hit.id}>
+                                            <FontAwesomeIcon className={'button_heartAdd fa-2x'}
+                                                             icon="heart"
+                                            />
+                                        </button>
+                                    </p>)
+                            ) : (<p><a type="button" data-toggle="tooltip" data-placement="right" data-html="true" title="add to your favorite" href="index.php?action=connect/redirect">
+                                <FontAwesomeIcon className={'icon_heart'}
+                                                 icon="heart"
+                                />
+                            </a>
+                            </p>)
+                        }
                     </div>
                     <div className="hit-content">
                         <div className="hit-name hit__namePerso">
@@ -137,28 +163,12 @@ class Hit extends React.Component {
                     </div>
                 </div>
                 <div className={"buttons_block d-flex flex-column align-items-center"}>
-                    {isUserConnected
-                        ? ( this.state.isFavorite ? (<p className={"hit_center"}>
-                                    <button onClick={this.removeFavorite}
-                                            className="hit__add hit--addLink"
-                                            data-id={hit.id} data-name={encodeURIComponent(hit.name)} id={hit.id}>Remove
-                                    </button>
-                                </p>)
-                                : (<p className={"hit_center"}>
-                                    <button onClick={this.addFavorite}
-                                            className="hit__add hit--addLink"
-                                            data-id={hit.id} data-name={hit.name} id={hit.id}>Add to favorites
-                                    </button>
-                                </p>)
-                        ) : (<p><a title="add to your favorite"href="index.php?action=connect/redirect">
+                    <p className="hit_center hit_buttonGrey">
+                        <a href={hit.plugin_page_at_source} target="_blank" className="hit__moreInfo hit--moreInfoLink">More Info</a>
+                    </p>
 
-                        </a>
-                        </p>)
-                    }
 
-                    <p className="hit_center hit_buttonGrey"><a href={hit.plugin_page_at_source} target="_blank"
-                                                                className="hit__moreInfo hit--moreInfoLink">More
-                        Info</a></p>
+
                 </div>
 
             </div>

@@ -1,5 +1,17 @@
 /* ================================= DEVICES OVER 1000PX ================================== */
+.hit-image{
+  display: flex;
+  justify-content: space-around;
+}
 
+.button_heartAdd{
+  //color: red;
+  color:  $bleu;
+}
+
+.button_heartRemove{
+  color: red;
+}
 
 .hit-descriptionPerso {
   margin-top: 1rem;
@@ -25,10 +37,10 @@
 }
 
 .hit__add {
-  background: $bleu;
-  color: $white;
-  padding: $xs-size;
-  border-radius: $xxs-size;
+  background: $white;
+  //color: $white;
+  //padding: $xs-size;
+  border: none;
 }
 
 a.hit__add:hover {
