@@ -1,7 +1,6 @@
 /* ================================= DEVICES OVER 1000PX ================================== */
 
 
-
 .hit-descriptionPerso {
   margin-top: 1rem;
 }
@@ -59,9 +58,10 @@ a.hit--moreInfoLink:hover {
 }
 
 .hit_buttonBlue {
-
   margin-top: $l-size;
 }
+
+
 
 ///* ================================= DEVICES Max 1000PX ================================== */
 @media (max-width: 1000px) {
@@ -75,7 +75,7 @@ a.hit--moreInfoLink:hover {
     display: block !important;
   }
   .ais-Hits-item {
-    width: 100% !important;
+    width: 98% !important;
   }
 
   .buttons_block {
@@ -88,7 +88,7 @@ a.hit--moreInfoLink:hover {
 
   .hit_buttonGrey {
     margin-left: 0.5rem;
-    margin-top:1rem;
+    margin-top:2rem;
 
   }
 
@@ -98,11 +98,6 @@ a.hit--moreInfoLink:hover {
 
   .hit__moreInfo {
     padding: 1rem;
-  }
-
-  .buttons_block {
-    margin-top: 0.5rem;
-
   }
 
 }
@@ -123,7 +118,12 @@ a.hit--moreInfoLink:hover {
 
   .hit_buttonGrey {
     margin-top: 1.2rem;
+    margin-left: 0;
 
+  }
+
+  .ais-Hits-item {
+    width: 95% !important;
   }
 
 

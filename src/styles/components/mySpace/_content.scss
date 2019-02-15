@@ -1,18 +1,15 @@
 .mySpace {
-
   text-align: center;
 
 }
 
 .mySpace_title {
-
   background: $white;
   margin-top: 3rem;
   margin-bottom: 4rem;
 }
 
 .mySpace_list {
-
   padding-top: 2rem;
   padding-bottom: 1.5rem;
   width: 50%;
@@ -21,7 +18,6 @@
 }
 
 .mySpace_favorite {
-
   background: $white;
   margin-bottom: 1rem;
   border: 1px solid #c4c8d8;
@@ -29,8 +25,6 @@
 }
 
 .mySpace__moreInfo {
-
-  //background: #4C5E6F;
   background: #7D808A;
   opacity: 0.8;
   color: $white;
@@ -41,15 +35,12 @@
 }
 
 .mySpace--moreInfoLink:hover {
-
   background: $white;
   border: solid 0.07rem #4C5E6F;
   color: #4C5E6F;
-
 }
 
 .mySpace__delete {
-
   background: $bleu;
   color: $white;
   margin-top: $l-size;
@@ -58,27 +49,21 @@
 }
 
 .mySpace--deleteLink:hover {
-
   border: solid 0.07rem $bleu;
   color: $bleu;
   background: $white;
-
 }
 
 .mySpace--link {
-
   color: white;
-
 }
 
 a.mySpace--link:hover {
-
   color: #7D808A;
   text-decoration: none;
 }
 
 .mySpace__buttons {
-
   margin-right: $s-size;
 }
 
@@ -104,7 +89,6 @@ a.mySpace--link:hover {
   .mySpace_list {
     width: 90%;
   }
-
 }
 
 ///* ================================= DEVICES MAX 550PX ================================== */
