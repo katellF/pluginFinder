@@ -2,8 +2,6 @@
 
   display: flex;
   justify-content: space-between;
-  margin-bottom: $s-size;
-
 }
 
 .content__pagination{
@@ -16,4 +14,14 @@
 
   margin-top: 50px;
   margin-bottom: 100px;
+}
+
+.ais-Stats-text {
+  color: #08192A;
+}
+
+.ais-SortBy-select {
+  color: #3a4570 !important;
+  margin-bottom: 1rem;
+
 }
