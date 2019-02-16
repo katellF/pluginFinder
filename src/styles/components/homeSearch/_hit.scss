@@ -19,7 +19,28 @@
   color: #3a4570 !important;
 }
 
+.hit__buttonsBlock {
+  margin-top: 1rem;
+}
 
+.hit_buttonBlue {
+  margin-top: $l-size;
+}
+
+.hit-remove {
+  //background: #FF4545;
+  background: #ff8888;
+  color: $white;
+  padding: $xs-size;
+  border-radius: $xxs-size;
+}
+
+.hit-remove:hover {
+  border: solid 0.07rem #ff8888;
+  background: $white;
+  color: #ff8888;
+  text-decoration: none;
+}
 
 ///* ================================= DEVICES Max 1000PX ================================== */
 @media (max-width: 1000px) {
@@ -32,9 +53,23 @@
   .ais-Hits-list {
     display: block !important;
   }
+
   .ais-Hits-item {
     width: 98% !important;
   }
+
+  .hit__buttonsBlock {
+    margin-top: 1rem;
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .hit__moreInfo {
+    padding: 1rem;
+  }
+
 
 
 }
@@ -54,6 +89,17 @@
     width: 95% !important;
   }
 
+  .hit__buttonsBlock {
+    margin-top: 1rem;
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+  }
 
+  .hit_buttonGrey {
+    margin-top: 1.2rem;
+    margin-left: 0;
+
+  }
 }
 

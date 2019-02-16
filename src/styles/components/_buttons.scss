@@ -1,8 +1,5 @@
 
-.hit-added {
-  background: #ADF1D2;
-  color: #3F584D;
-}
+
 
 .button_blue {
   background: $bleu;
@@ -25,7 +22,7 @@ a.button_blue:hover {
   text-decoration: none;
 }
 
-.hit__moreInfo {
+.button_grey {
   background: #7D808A;
   opacity: 0.8;
   color: $white;
@@ -33,35 +30,22 @@ a.button_blue:hover {
   border-radius: $xxs-size;
 }
 
-a.hit--moreInfoLink:hover {
+a.button_grey:hover {
   background: $white;
   border: solid 0.07rem #4C5E6F;
   color: #4C5E6F;
   text-decoration: none;
 }
 
-.buttons_block {
-  margin-top: 1rem;
-}
 
-.hit_buttonBlue {
-  margin-top: $l-size;
-}
 
 
 
 
 ///* ================================= DEVICES Max 1000PX ================================== */
 @media (max-width: 1000px) {
-  .buttons_block {
-    margin-top: 1rem;
-    flex-direction: row !important;
-    justify-content: center;
-    align-items: center;
 
-  }
-
-  .hit-added {
+  .hit-remove {
     background: #ADF1D2;
     color: #3F584D;
   }
@@ -76,9 +60,6 @@ a.hit--moreInfoLink:hover {
     padding: 1rem;
   }
 
-  .hit__moreInfo {
-    padding: 1rem;
-  }
 
 }
 
@@ -86,16 +67,5 @@ a.hit--moreInfoLink:hover {
 ///* ================================= DEVICES MAX 550PX ================================== */
 @media (max-width: 550px) {
 
-  .buttons_block {
-    margin-top: 1rem;
-    flex-direction: column !important;
-    justify-content: center;
-    align-items: center;
-  }
 
-  .hit_buttonGrey {
-    margin-top: 1.2rem;
-    margin-left: 0;
-
-  }
 }

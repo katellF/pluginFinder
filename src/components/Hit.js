@@ -85,17 +85,17 @@ class Hit extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className={"buttons_block d-flex flex-column align-items-center"}>
+                <div className={"hit__buttonsBlock d-flex flex-column align-items-center"}>
                     {isUserConnected
                         ? ( this.state.isFavorite ? (<p className={"hit_center"}>
                                     <button onClick={this.removeFavorite}
-                                            className="button_blue hit--addLink"
+                                            className="hit-remove"
                                             data-id={hit.id} data-name={encodeURIComponent(hit.name)} id={hit.id}>Remove
                                     </button>
                                 </p>)
                                 : (<p className={"hit_center"}>
                                     <button onClick={this.addFavorite}
-                                            className="button_blue hit--addLink"
+                                            className="button_blue"
                                             data-id={hit.id} data-name={hit.name} id={hit.id}>Add to favorites
                                     </button>
                                 </p>)
@@ -105,7 +105,7 @@ class Hit extends React.Component {
                     }
 
                     <p className="hit_center hit_buttonGrey">
-                        <a href={hit.plugin_page_at_source} target="_blank" className="hit__moreInfo hit--moreInfoLink">More Info</a>
+                        <a href={hit.plugin_page_at_source} target="_blank" className="button_grey">More Info</a>
                     </p>
                 </div>
 
