@@ -82,7 +82,6 @@ class Hit extends React.Component {
                         </div>
                         <div className="hit-description hit-descriptionPerso">
                             <div dangerouslySetInnerHTML={{ __html: hit.short_description }}></div>
-                            
                         </div>
                     </div>
                 </div>
