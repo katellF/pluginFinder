@@ -154,19 +154,22 @@ body {
     .header__nav {
         background: #161A29;
         font-size: 1.1rem;
-       height: auto;
+        height: auto;
+
     }
 
     .bar{
         border-bottom: 1px solid #0096db;
-        padding:  1.7rem 0.2rem 1rem 0.2rem;
     }
 
     .bar:hover{
         border-top: unset;
         border-bottom: 1px solid white;
-        padding:  1.7rem 0.2rem 1rem 0.2rem;
+        padding: 1.7rem 0.2rem 1rem 0.2rem;
+    }
 
+    .nav_linkR{
+        margin-left: 1rem;
     }
 
 
