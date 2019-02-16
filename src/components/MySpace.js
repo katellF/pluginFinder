@@ -82,8 +82,7 @@ class MySpace extends React.Component {
                                  src={"https://ps.w.org/" + json.pluginId + "/assets/icon-256x256.png"} alt="images"/>
                                 <div>
                                 <h2>{json.pluginId.substring(0,20)}</h2>
-                            {/*fix for algolia badly encoded descriptions*/}
-                            {/*<p dangerouslySetInnerHTML={{ __html: this.shortName(json.pluginName)}}></p>*/}
+                            
                             <p>{this.shortName(json.pluginName)}</p>
                                 </div>
                             <div className="d-flex flex-column justify-content-center mySpace__buttons">
