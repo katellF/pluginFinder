@@ -81,20 +81,20 @@ class MySpace extends React.Component {
                             <img className={"imageFav"} width="100" height="100"
                                  src={"https://ps.w.org/" + json.pluginId + "/assets/icon-256x256.png"} alt="images"/>
                                 <div>
-                                <h2>{json.pluginId.substring(0,20)}</h2>
-                            
-                            <p>{this.shortName(json.pluginName)}</p>
+                                    <h2>{json.pluginId.substring(0,20)}</h2>
+                                    <p>{this.shortName(json.pluginName)}</p>
                                 </div>
                             <div className="d-flex flex-column justify-content-center mySpace__buttons">
                                 <button key={'del_' + json.pluginId} onClick={(e) => {
                                         this.deletePlugin(json.pluginId);
-                                    }} data-id={json.pluginId} className="mySpace__delete mySpace--deleteLink"
+                                    }} data-id={json.pluginId} className="button_blue mySpace__delete"
                                             id={json.pluginId}>
                                         Delete
                                     </button>
                                 <button key={'info_' + json.pluginId}
-                                        className="mySpace__moreInfo mySpace--moreInfoLink"><a className="mySpace--link" href={"https://wordpress.org/plugins/" + json.pluginId} target="_blank">More
-                                    Info</a></button>
+                                        className="mySpace__moreInfo mySpace--moreInfoLink">
+                                    <a className="mySpace--link" href={"https://wordpress.org/plugins/" + json.pluginId} target="_blank">More Info</a>
+                                </button>
                             </div>
                         </div>
                     )}</div>

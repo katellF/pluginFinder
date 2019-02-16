@@ -41,18 +41,15 @@
 }
 
 .mySpace__delete {
-  background: $bleu;
-  color: $white;
-  margin-top: $l-size;
-  padding: $xs-size;
-  border-radius: $xxs-size;
-}
 
-.mySpace--deleteLink:hover {
-  border: solid 0.07rem $bleu;
-  color: $bleu;
-  background: $white;
+ margin-top: $l-size;
 }
+//
+//.mySpace--deleteLink:hover {
+//  border: solid 0.07rem $bleu;
+//  color: $bleu;
+//  background: $white;
+//}
 
 .mySpace--link {
   color: white;
