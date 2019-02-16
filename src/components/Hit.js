@@ -82,7 +82,7 @@ class Hit extends React.Component {
                         </div>
                         <div className="hit-description hit-descriptionPerso">
                             <div dangerouslySetInnerHTML={{ __html: hit.short_description }}></div>
-                            {/*<Highlight attribute="short_description" hit={hit}/>*/}
+                            
                         </div>
                     </div>
                 </div>
