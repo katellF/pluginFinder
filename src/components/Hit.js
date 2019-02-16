@@ -89,13 +89,13 @@ class Hit extends React.Component {
                     {isUserConnected
                         ? ( this.state.isFavorite ? (<p className={"hit_center"}>
                                     <button onClick={this.removeFavorite}
-                                            className="hit__add hit--addLink"
+                                            className="button_blue hit--addLink"
                                             data-id={hit.id} data-name={encodeURIComponent(hit.name)} id={hit.id}>Remove
                                     </button>
                                 </p>)
                                 : (<p className={"hit_center"}>
                                     <button onClick={this.addFavorite}
-                                            className="hit__add hit--addLink"
+                                            className="button_blue hit--addLink"
                                             data-id={hit.id} data-name={hit.name} id={hit.id}>Add to favorites
                                     </button>
                                 </p>)

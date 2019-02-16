@@ -4,14 +4,21 @@
   color: #3F584D;
 }
 
-.hit__add {
+.button_blue {
   background: $bleu;
   color: $white;
   padding: $xs-size;
   border-radius: $xxs-size;
 }
 
-a.hit__add:hover {
+.button_blue:hover {
+  border: solid 0.07rem $bleu;
+  background: $white;
+  color: $bleu;
+  text-decoration: none;
+}
+
+a.button_blue:hover {
   border: solid 0.07rem $bleu;
   background: $white;
   color: $bleu;
@@ -54,12 +61,18 @@ a.hit--moreInfoLink:hover {
 
   }
 
+  .hit-added {
+    background: #ADF1D2;
+    color: #3F584D;
+  }
+
+
   .hit_buttonGrey {
     margin-left: 0.5rem;
     margin-top: 2rem;
   }
 
-  .hit__add {
+  .button_blue {
     padding: 1rem;
   }
 
