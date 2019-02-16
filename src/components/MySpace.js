@@ -92,7 +92,7 @@ class MySpace extends React.Component {
                                         Delete
                                     </button>
                                 <button key={'info_' + json.pluginId}
-                                        className="mySpace__moreInfo mySpace--moreInfoLink">
+                                        className="mySpace__moreInfo mySpace--moreInfoLink button_grey">
                                     <a className="mySpace--link" href={"https://wordpress.org/plugins/" + json.pluginId} target="_blank">More Info</a>
                                 </button>
                             </div>

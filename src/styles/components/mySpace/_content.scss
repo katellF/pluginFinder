@@ -25,13 +25,9 @@
 }
 
 .mySpace__moreInfo {
-  background: #7D808A;
-  opacity: 0.8;
-  color: $white;
   margin-top: $s-size;
   margin-bottom: $m-size;
-  padding: $xs-size;
-  border-radius: $xxs-size;
+
 }
 
 .mySpace--moreInfoLink:hover {
@@ -44,12 +40,6 @@
 
  margin-top: $l-size;
 }
-//
-//.mySpace--deleteLink:hover {
-//  border: solid 0.07rem $bleu;
-//  color: $bleu;
-//  background: $white;
-//}
 
 .mySpace--link {
   color: white;
@@ -64,21 +54,7 @@ a.mySpace--link:hover {
   margin-right: $s-size;
 }
 
-// image
 
-.imageFav:after {
-  content: ' ';
-  display: block;
-  position: absolute;
-  height: 100px;
-  width: 100px;
-  margin-left: $s-size;
-  background-image: url("/pluginfinder/public/img/logo_2.png");
-}
-
-.imageFav {
-  margin-left: 1rem;
-}
 
 ///* ================================= DEVICES Max 1000PX ================================== */
 @media (max-width: 1000px) {
