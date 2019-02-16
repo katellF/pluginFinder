@@ -1,0 +1,88 @@
+
+.hit-added {
+  background: #ADF1D2;
+  color: #3F584D;
+}
+
+.hit__add {
+  background: $bleu;
+  color: $white;
+  padding: $xs-size;
+  border-radius: $xxs-size;
+}
+
+a.hit__add:hover {
+  border: solid 0.07rem $bleu;
+  background: $white;
+  color: $bleu;
+  text-decoration: none;
+}
+
+.hit__moreInfo {
+  background: #7D808A;
+  opacity: 0.8;
+  color: $white;
+  padding: $xs-size;
+  border-radius: $xxs-size;
+}
+
+a.hit--moreInfoLink:hover {
+  background: $white;
+  border: solid 0.07rem #4C5E6F;
+  color: #4C5E6F;
+  text-decoration: none;
+}
+
+.buttons_block {
+  margin-top: 1rem;
+}
+
+.hit_buttonBlue {
+  margin-top: $l-size;
+}
+
+
+
+
+///* ================================= DEVICES Max 1000PX ================================== */
+@media (max-width: 1000px) {
+  .buttons_block {
+    margin-top: 1rem;
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .hit_buttonGrey {
+    margin-left: 0.5rem;
+    margin-top: 2rem;
+  }
+
+  .hit__add {
+    padding: 1rem;
+  }
+
+  .hit__moreInfo {
+    padding: 1rem;
+  }
+
+}
+
+
+///* ================================= DEVICES MAX 550PX ================================== */
+@media (max-width: 550px) {
+
+  .buttons_block {
+    margin-top: 1rem;
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hit_buttonGrey {
+    margin-top: 1.2rem;
+    margin-left: 0;
+
+  }
+}
