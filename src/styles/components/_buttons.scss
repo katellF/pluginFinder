@@ -45,20 +45,17 @@ a.button_grey:hover {
 ///* ================================= DEVICES Max 1000PX ================================== */
 @media (max-width: 1000px) {
 
-  .hit-remove {
-    background: #ADF1D2;
-    color: #3F584D;
-  }
 
-
-  .hit_buttonGrey {
-    margin-left: 0.5rem;
-    margin-top: 2rem;
+  .button_grey {
+    padding:1rem;
   }
 
   .button_blue {
-    padding: 1rem;
+    padding:1rem;
   }
+
+
+
 
 
 }
@@ -66,6 +63,7 @@ a.button_grey:hover {
 
 ///* ================================= DEVICES MAX 550PX ================================== */
 @media (max-width: 550px) {
+
 
 
 }
