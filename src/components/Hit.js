@@ -129,15 +129,19 @@ class Hit extends React.Component {
                         {isUserConnected
                             ? ( this.state.isFavorite ? (<p className={"hit_center"}>
                                         <button onClick={this.removeFavorite}
-                                                className="hit__add hit--addLink" type="button" data-toggle="tooltip" data-placement="right"  data-html="true" title="Remove from your favorite"
+                                                className="hit__add hit--addLink tooltip" type="button"
                                                 data-id={hit.id} data-name={encodeURIComponent(hit.name)} id={hit.id}>
                                             <FontAwesomeIcon className={'button_heartRemove fa-2x'}
-                                                             icon="heart"/>
+                                                             icon="heart"
+                                            title={"Remove from your Favorite"}
+                                            />
+                                            
+
                                         </button>
                                     </p>)
                                     : (<p className={"hit_center"}>
                                         <button onClick={this.addFavorite}
-                                                className="hit__add hit--addLink" type="button" data-toggle="tooltip" data-placement="right" data-html="true" title="Add to your favorite"
+                                                className="hit__add hit--addLink tooltip" type="button"
                                                 data-id={hit.id} data-name={hit.name} id={hit.id}>
                                             <FontAwesomeIcon className={'button_heartAdd fa-2x'}
                                                              icon="heart"
