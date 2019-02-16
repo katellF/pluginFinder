@@ -1,15 +1,16 @@
 // image
 
-.imageFav:after {
-  content: ' ';
-  display: block;
-  position: absolute;
-  height: 100px;
-  width: 100px;
-  margin-left: $s-size;
-  background-image: url("/pluginfinder/public/img/logo_2.png");
-}
-
+//.imageFav:before {
+//  content: ' ';
+//  display: block;
+//  position: absolute;
+//  height: 100px;
+//  width: 100px;
+//  margin-left: $s-size;
+//  background-image: url("/pluginfinder/public/img/logo_2.png");
+//
+//}
+//
 .imageFav {
   margin-left: 1rem;
 }
