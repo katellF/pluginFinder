@@ -99,14 +99,14 @@ class Hit extends React.Component {
                                             data-id={hit.id} data-name={hit.name} id={hit.id}>Add to favorites
                                     </button>
                                 </p>)
-                        ) : (<p className="hit_center hit_buttonBlue"><a href="index.php?action=connect/redirect"
-                                                                         className={"hit__add"}>Add to Favorites</a>
+                        ) : (<p className="hit_center hit_buttonBlue">
+                            <a href="index.php?action=connect/redirect" className={"hit__add"}>Add to Favorites</a>
                         </p>)
                     }
 
-                    <p className="hit_center hit_buttonGrey"><a href={hit.plugin_page_at_source} target="_blank"
-                                                                className="hit__moreInfo hit--moreInfoLink">More
-                        Info</a></p>
+                    <p className="hit_center hit_buttonGrey">
+                        <a href={hit.plugin_page_at_source} target="_blank" className="hit__moreInfo hit--moreInfoLink">More Info</a>
+                    </p>
                 </div>
 
             </div>
