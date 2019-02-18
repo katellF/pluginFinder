@@ -11,7 +11,6 @@ class View
     {
         $this->file = "view/" . $action . "View.php";
 
-
     }
 
     public function generate($datas, $template = 'template')

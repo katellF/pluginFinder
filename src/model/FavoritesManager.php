@@ -40,7 +40,6 @@ class FavoritesManager extends Manager
 
     public function add($data)
     {
-
         $db = $this->dbConnect();
         $addFavorite = $db->prepare('INSERT INTO favorites (userId, pluginId, pluginName) VALUES ( :userId, :pluginId, :pluginName  ) ');
         $addFavorite->execute(array(
