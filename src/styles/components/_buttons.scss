@@ -23,7 +23,7 @@ a.button_blue:hover {
 }
 
 .button_grey {
-  background: #7D808A;
+  background: $grey;
   opacity: 0.8;
   color: $white;
   padding: $xs-size;
@@ -32,12 +32,10 @@ a.button_blue:hover {
 
 a.button_grey:hover {
   background: $white;
-  border: solid 0.07rem #4C5E6F;
-  color: #4C5E6F;
+  border: solid 0.07rem $grey;
+  color: $grey;
   text-decoration: none;
 }
-
-
 
 
 
@@ -47,11 +45,11 @@ a.button_grey:hover {
 
 
   .button_grey {
-    padding:1rem;
+    padding: $s-size;
   }
 
   .button_blue {
-    padding:1rem;
+    padding: $s-size;
   }
 
 
