@@ -7,6 +7,8 @@
      SearchBox,
  } from 'react-instantsearch/dom';
 
+
+
  class HomeSearch extends React.Component {
     render() {
 
@@ -19,7 +21,6 @@
                 <header className="header marginBottom50 marginTop50 container">
                     <SearchBox translations={{placeholder: 'Search for Plugins'}}/>
                 </header>
-
 
                 <main>
                     <div className="main">

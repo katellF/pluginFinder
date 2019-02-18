@@ -55,6 +55,7 @@ class MySpace extends React.Component {
             .then(json => this.setState({data: json}));
     };
 
+
     shortName(name){
 
         let stringLength = name.length;
