@@ -16,11 +16,11 @@
 }
 
 .ais-SortBy-select {
-  color: #3a4570 !important;
+  color: $darkGrey !important;
 }
 
 .hit__buttonsBlock {
-  margin-top: 1rem;
+  margin-top: $s-size;
 }
 
 .hit_buttonBlue {
@@ -62,7 +62,6 @@
     flex-direction: row !important;
     justify-content: center;
     align-items: center;
-
   }
 
   .hit_buttonGrey {
