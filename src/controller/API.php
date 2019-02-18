@@ -34,7 +34,7 @@ class API
             $view = new View("backend/API");
             $view->generate(array('data' => $getFavorites), 'template_API');
         } else {
-            throw new \Exception('Vous n avez pas acces à cette page!');
+            throw new \Exception("Sorry, You don't have access to this page.");
         }
 
     }
@@ -58,7 +58,7 @@ class API
             $view = new View("backend/API");
             $view->generate(array('data' => $deleteFavoriteAPI), 'template_API');
         } else {
-            throw new \Exception('Vous n avez pas acces à cette page!');
+            throw new \Exception("Sorry, You don't have access to this page.");
         }
     }
 
