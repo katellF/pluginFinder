@@ -5,13 +5,13 @@
 
 .mySpace_title {
   background: $white;
-  margin-top: 3rem;
+  margin-top: $xl-size;
   margin-bottom: 4rem;
 }
 
 .mySpace_list {
-  padding-top: 2rem;
-  padding-bottom: 1.5rem;
+  padding-top: $xl-size;
+  padding-bottom: $m-size;
   width: 50%;
   margin: auto;
   border-radius: 0.1rem;
@@ -19,9 +19,9 @@
 
 .mySpace_favorite {
   background: $white;
-  margin-bottom: 1rem;
-  border: 1px solid #c4c8d8;
-  box-shadow: 0 2px 5px 0 #e3e5ec;
+  margin-bottom: $s-size;
+  border: 1px solid $greyBorder;
+  box-shadow: 0 2px 5px 0 $box-shadow;
 }
 
 .mySpace__moreInfo {
@@ -32,8 +32,8 @@
 
 .mySpace--moreInfoLink:hover {
   background: $white;
-  border: solid 0.07rem #4C5E6F;
-  color: #4C5E6F;
+  border: solid 0.07rem $grey;
+  color: $grey;
 }
 
 .mySpace__delete {
@@ -46,7 +46,7 @@
 }
 
 a.mySpace--link:hover {
-  color: #7D808A;
+  color: $grey;
   text-decoration: none;
 }
 
