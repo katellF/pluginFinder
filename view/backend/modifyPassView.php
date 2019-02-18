@@ -4,7 +4,7 @@
 $this->title = htmlspecialchars('Modify password');
 ?>
 
-<p class="margin-top50 margin-bottom25 margin-left15"><a class="btn btn-primary"
+<p class="margin-top50 margin-bottom25 margin-left15"><a class="btn btn-primary buttonForm back"
                                                          href="index.php?action=homeSearch">Back to Home</a></p>
 
 
