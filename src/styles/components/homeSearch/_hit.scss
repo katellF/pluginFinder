@@ -2,12 +2,12 @@
 
 
 .hit-descriptionPerso {
-  margin-top: 1rem;
+  margin-top: $s-size;
 }
 
 .hit__namePerso {
-  margin-left: 2rem;
-  margin-top: 1.5rem;
+  margin-left: $l-size;
+  margin-top: $m-size;
   font-weight: bolder;
 }
 
@@ -58,7 +58,7 @@
   }
 
   .hit__buttonsBlock {
-    margin-top: 1rem;
+    margin-top: $s-size;
     flex-direction: row !important;
     justify-content: center;
     align-items: center;
@@ -66,16 +66,16 @@
   }
 
   .hit_buttonGrey {
-    margin-left: 0.5rem;
-    margin-top: 2rem;
+    margin-left: $xs-size;
+    margin-top: $l-size;
   }
 
   .hit__moreInfo {
-    padding: 1rem;
+    padding: $s-size;
   }
 
   .hit-remove {
-    padding: 1rem;
+    padding: $s-size;
   }
 
 }
@@ -94,7 +94,7 @@
   }
 
   .hit__buttonsBlock {
-    margin-top: 1rem;
+    margin-top: $s-size;
     flex-direction: column !important;
     justify-content: center;
     align-items: center;
