@@ -65,8 +65,9 @@ class MySpace extends React.Component {
     render() {
         if (this.state.data.length === 0) {
             return (
-                <div key={'noPlugins'}>
-                    <p>{this.state.message}</p>
+                <div key={'noPlugins'} className="mySpace">
+                    <h1 className="mySpace_title">My Favorites Plugins</h1>
+                    <p className="mySpace_list mySpace_favorite mySpace_noFavorite">{this.state.message}</p>
                 </div>);
         } else {
 
