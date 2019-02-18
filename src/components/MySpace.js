@@ -12,38 +12,38 @@ class MySpace extends React.Component {
         this.shortName = this.shortName.bind(this);
         this.state = {
             data: [],
+            message:''
         };
 
     }
 
 
     deletePlugin(favoriteToRemove) {
-        let isIndexOf = this.state.data.indexOf(favoriteToRemove);
-        console.log(isIndexOf);
+console.log(favoriteToRemove);
         fetch(Config.base_url + '/pluginfinder/index.php?action=API/deleteFavorite' + '/' + favoriteToRemove)
             .then(results => results.json())
             .then(() => {
-
                 this.state.data.map(i => {
                     if (i.pluginId === favoriteToRemove) {
-                        console.log("Remove", favoriteToRemove);
-                        const response = confirm("Do you want to delete this plugin from your favorites ");
-
-                        if (response) {
-                            console.log('ok');
-                        } else {
-                            console.log('cancel');
-                            event.preventDefault();
-                        }
-
+                        confirm("Do you want to delete this plugin from your favorites ");
+                        const test =this.state.data.splice(i, 1);
                         this.setState((prevState) => {
-                            this.state.data.splice(i, 1);
                             return {
                                 data: prevState.data
                             }
                         });
+
+                        if(favoriteToRemove.lentgh === 0){
+                            console.log('test');
+                            this.setState({
+                                message: 'You do not have any favorites.'
+                                //console.log('test');
+                            })
+                        }
                     }
+
                 });
+
             })
     }
 
@@ -76,6 +76,7 @@ class MySpace extends React.Component {
             <div>
                 <div className="mySpace">
                     <h1 className="mySpace_title">My Favorites Plugins</h1>
+                    {this.state.message}
                     <div className="mySpace_list">{this.state.data.map((json, index) =>
                         <div key={index} id={`plugin_${json.pluginId}`}
                              className="d-flex justify-content-between mySpace_favorite align-items-center">
@@ -85,7 +86,7 @@ class MySpace extends React.Component {
                                 <img width="100" height="100"
                                      src={"https://www.katellfracassi.com/pluginfinder/public/img/logo_2.png"}
                                      alt="images"/>
-                                {/*// src={"http://localhost:8888/projetsoc/pluginfinder/public/img/logo_2.png"} alt="images"/>*/}
+
                             </object>
                             <div>
                                 <h2>{json.pluginId.substring(0, 20)}</h2>
