@@ -43,16 +43,4 @@ class Member
 
     }
 
-    public function deleteFavorite($pluginId)
-    {
-        session_start();
-
-        if ($this->ctrlConnect->isUserConnected()) {
-
-            $this->favoritesManager->delete($_SESSION['id'], $pluginId);
-            $view = new View("backend/favoriteDeleted");
-            $view->generate(array(), 'template_mySpace');
-        }
-    }
-
 }

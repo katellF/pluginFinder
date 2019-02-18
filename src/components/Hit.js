@@ -98,7 +98,7 @@ class Hit extends React.Component {
                                     </button>
                                 </p>)
                         ) : (<p className="hit_center hit_buttonBlue">
-                            <a href="index.php?action=connect/redirect" className={"hit__add"}>Add to Favorites</a>
+                            <a href="index.php?action=connect/redirect" className={"button_blue"}>Add to Favorites</a>
                         </p>)
                     }
 
@@ -111,8 +111,6 @@ class Hit extends React.Component {
 
         );
     }
-
-
 }
 
 export default Hit;
