@@ -19,7 +19,6 @@ class Hit extends React.Component {
 
     addFavorite() {
         const {hit} = this.props;
-        console.log(this.state.isFavorite);
 
         fetch(Config.base_url + '/pluginfinder/index.php?action=API/addFavorite' + '/' + hit.id + '/' + encodeURIComponent(hit.name))
             .then(results => results.json())
@@ -33,13 +32,12 @@ class Hit extends React.Component {
                 });
             })
             .catch((error) => console.error(error));
-        console.log(this.state.isFavorite);
     }
 
     removeFavorite() {
         const {hit} = this.props;
         let isInFavorites = listFavoritesIds.indexOf(hit.id);
-        console.log(hit.id);
+
         fetch(Config.base_url + '/pluginfinder/index.php?action=API/deleteFavorite' + '/' + hit.id + '/' + hit.name)
             .then(results => results.json())
             .then(() => {
@@ -52,7 +50,7 @@ class Hit extends React.Component {
                 });
             })
             .catch((error) => console.error(error));
-        console.log(this.state.isFavorite);
+
     }
 
 

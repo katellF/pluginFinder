@@ -27,6 +27,6 @@ const Content = () =>
             <Pagination showLast/>
         </div>
 
-    </div>;
+    </div>
 
 export default Content;
