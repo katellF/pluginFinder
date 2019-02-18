@@ -28,17 +28,16 @@
 }
 
 .hit-remove {
-  //background: #FF4545;
-  background: #ff8888;
+  background: $offRed;
   color: $white;
   padding: $xs-size;
   border-radius: $xxs-size;
 }
 
 .hit-remove:hover {
-  border: solid 0.07rem #ff8888;
+  border: solid 0.07rem $offRed;
   background: $white;
-  color: #ff8888;
+  color: $offRed;
   text-decoration: none;
 }
 
@@ -85,11 +84,9 @@
 @media (max-width: 550px) {
 
 
-
   .hit-descriptionPerso {
     display: none;
   }
-
 
 
   .ais-Hits-item {
