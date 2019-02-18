@@ -25,10 +25,8 @@ class API
         $this->listFavorites();
     }
 
-
     public function listFavorites()
     {
-
         session_start();
 
         if ($this->ctrlConnect->isUserConnected()) {
@@ -38,7 +36,6 @@ class API
         } else {
             throw new \Exception('Vous n avez pas acces à cette page!');
         }
-
 
     }
 
@@ -93,30 +90,5 @@ class API
         }
 
     }
-
-    public function modifyPassword($password)
-    {
-        session_start();
-
-        if ($this->ctrlConnect->isuserconnected()) {
-
-            $dataPasswordAPI = [
-                "pseudo" => $_SESSION['pseudo'],
-                "password" => $password
-            ];
-
-            $modifyPassword = $this->userManager->setPassword($dataPasswordAPI);
-            $modifyPassword = array(
-                "action" => "modifyPassword",
-                "result" => $modifyPassword,
-            );
-
-            $view = new View("backend/API");
-            $view->generate(array('dataPasswordAPI' => $modifyPassword), 'template_API');
-
-
-        }
-    }
-
 
 }
