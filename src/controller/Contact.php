@@ -22,17 +22,17 @@ class Contact
 
         if (isset($_POST) && !empty($_POST)) {
 
-            if (filter_var(htmlspecialchars($_POST['email']), FILTER_VALIDATE_EMAIL) === false) {
-
-            throw new \Exception('The email was not written correctly');
-
-        }
-
-        if (empty (htmlspecialchars($_POST['message'])) || empty (htmlspecialchars($_POST['lastname'])) || empty (htmlspecialchars($_POST['firstname']))) {
+            if (empty (htmlspecialchars($_POST['message'])) || empty (htmlspecialchars($_POST['lastname'])) || empty (htmlspecialchars($_POST['firstname']))) {
 
             throw new \Exception('All fields must be completed');
 
         }
+
+            if (filter_var(htmlspecialchars($_POST['email']), FILTER_VALIDATE_EMAIL) === false) {
+
+                throw new \Exception('The email was not written correctly');
+
+            }
 
             $email_sent = $this->sendContactMessage($_POST);
 
