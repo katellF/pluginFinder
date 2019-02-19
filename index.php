@@ -18,7 +18,7 @@ define('ROOT', dirname(__DIR__) . DIRECTORY_SEPARATOR);
 define('APP', ROOT . 'pluginfinder' . DIRECTORY_SEPARATOR);
 
 
-//require('Autoload.php');
+
 
 
 //autoload::load();
@@ -35,4 +35,3 @@ require('src/controller/Router.php');
 
 $router = new Router();
 $router->routerRequest();
-//$routeur->routerRequest();

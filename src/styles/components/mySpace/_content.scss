@@ -66,6 +66,11 @@ a.mySpace--link:hover {
   .mySpace_list {
     width: 90%;
   }
+
+  .mySpace_favorite {
+    flex-direction: column;
+  }
+  
 }
 
 ///* ================================= DEVICES MAX 550PX ================================== */
