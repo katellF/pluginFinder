@@ -44,10 +44,6 @@
 ///* ================================= DEVICES Max 1000PX ================================== */
 @media (max-width: 1000px) {
 
-  .hit_details {
-    display: flex;
-    justify-content: space-between;
-  }
 
   .ais-Hits-list {
     display: block !important;
@@ -66,8 +62,14 @@
 
   .hit_buttonGrey {
     margin-left: $xs-size;
-    margin-top: $l-size;
+    margin-top:1rem;
+
   }
+
+  .hit_buttonBlue {
+    margin-top: 1rem;
+  }
+
 
   .hit__moreInfo {
     padding: $s-size;

@@ -69,20 +69,20 @@ class Hit extends React.Component {
         this.isInFavorites();
         return (
 
-            <div className="hit hitPerso">
-                <div className="hit__details">
-                    <div className="hit-image">
-                        <img width="100" height="100" src={hit.img_thumb} alt="images"/>
+            <div className="hit">
+
+                <div className="hit-image">
+                    <img width="100" height="100" src={hit.img_thumb} alt="images"/>
+                </div>
+                <div className="hit-content">
+                    <div className="hit-name hit__namePerso">
+                        <Highlight attribute="name" hit={hit}/>
                     </div>
-                    <div className="hit-content">
-                        <div className="hit-name hit__namePerso">
-                            <Highlight attribute="name" hit={hit}/>
-                        </div>
-                        <div className="hit-description hit-descriptionPerso">
-                            <div dangerouslySetInnerHTML={{ __html: hit.short_description }}></div>
-                        </div>
+                    <div className="hit-description hit-descriptionPerso">
+                        <div dangerouslySetInnerHTML={{__html: hit.short_description}}></div>
                     </div>
                 </div>
+
                 <div className={"hit__buttonsBlock d-flex flex-column align-items-center"}>
                     {isUserConnected
                         ? ( this.state.isFavorite ? (<p className={"hit_center"}>
@@ -93,7 +93,7 @@ class Hit extends React.Component {
                                 </p>)
                                 : (<p className={"hit_center"}>
                                     <button onClick={this.addFavorite}
-                                            className="button_blue"
+                                            className="button_blue hit_buttonBlue"
                                             data-id={hit.id} data-name={hit.name} id={hit.id}>Add to favorites
                                     </button>
                                 </p>)
