@@ -42,7 +42,6 @@ class API
 
     public function deleteFavorite($pluginId)
     {
-
         session_start();
 
         if ($this->ctrlConnect->isUserConnected()) {
