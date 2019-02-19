@@ -28,7 +28,7 @@ class Contact
 
         }
 
-        if (empty (htmlspecialchars($_POST['content'])) || empty (htmlspecialchars($_POST['lastname'])) || empty (htmlspecialchars($_POST['firstname']))) {
+        if (empty (htmlspecialchars($_POST['message'])) || empty (htmlspecialchars($_POST['lastname'])) || empty (htmlspecialchars($_POST['firstname']))) {
 
             throw new \Exception('All fields must be completed');
 
@@ -37,7 +37,7 @@ class Contact
             $email_sent = $this->sendContactMessage($_POST);
 
             if ($email_sent){
-                $view = new View("frontend/MessageSent");
+                $view = new View("frontend/messageSent");
             } else {
                 throw new \Exception('Message not sent') ;
             }
@@ -56,10 +56,6 @@ class Contact
 
     public function sendContactMessage ($data){
 
-
-    //http://rockstarninja.labak.xyz/gandisimple-hosting-envoie-de-mail-par-le-smtp-de-gandi
-
-    //works only for site not for local
 
             $headers = 'From: '.$data['email'] . "\r\n" .
                 'Reply-To: '.$data['email'] . "\r\n" .
