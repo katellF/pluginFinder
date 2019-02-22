@@ -25,16 +25,13 @@ class MySpace extends React.Component {
 
                 this.state.data.map(i => {
                     if (i.pluginId === favoriteToRemove) {
-                        confirm("Do you want to delete this plugin from your favorites ");
                         this.state.data.splice(i, 1);
                         this.setState((prevState) => {
                             return {
                                 data: prevState.data
                             }
                         });
-
                     }
-
                 });
             })
     }
@@ -91,12 +88,15 @@ class MySpace extends React.Component {
                                         <p>{this.shortName(element.pluginName)}</p>
                                     </div>
                                     <div className="d-flex flex-column justify-content-center mySpace__buttons">
-                                        <button key={'del_' + element.pluginId} onClick={(e) => {
-                                            this.deletePlugin(element.pluginId);
+
+                                        <button key={'del_' + element.pluginId} onClick={() => { if(window.confirm('Do you want to delete this plugin from your favorites?'))
+                                        {this.deletePlugin(element.pluginId);}
+
                                         }} data-id={element.pluginId} className="button_blue mySpace__delete"
                                                 id={element.pluginId}>
                                             Delete
                                         </button>
+
                                         <button key={'info_' + element.pluginId}
                                                 className="mySpace__moreInfo mySpace--moreInfoLink button_grey">
                                             <a className="mySpace--link"
