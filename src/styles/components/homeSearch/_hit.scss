@@ -21,9 +21,9 @@
   margin-top: $s-size;
 }
 
-.hit_buttonBlue {
-  margin-top: $l-size;
-}
+//.hit_buttonBlue {
+//  margin-top: $l-size;
+//}
 
 .hit-remove {
   background: $offRed;
@@ -105,11 +105,15 @@
     margin-left: 0;
 
   }
+
+  .hit_buttonBlue {
+    margin-top: 0;
+  }
+
 }
 
 ///* ================================= DEVICES MAX 370PX ================================== */
 @media (max-width: 370px) {
-
 
 
   .ais-Hits-item {

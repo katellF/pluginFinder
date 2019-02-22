@@ -53,7 +53,6 @@ class MySpace extends React.Component {
         } else {
             return name;
         }
-
     }
 
 
