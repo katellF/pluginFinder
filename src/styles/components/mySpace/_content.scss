@@ -41,8 +41,7 @@
 }
 
 .mySpace__delete {
-
- margin-top: $l-size;
+  margin-top: $l-size;
 }
 
 .mySpace--link {
@@ -60,8 +59,8 @@ a.mySpace--link:hover {
 
 
 
-///* ================================= DEVICES Max 1000PX ================================== */
-@media (max-width: 1000px) {
+///* ================================= DEVICES Max 1025PX ================================== */
+@media (max-width: 1025px) {
 
   .mySpace_list {
     width: 90%;

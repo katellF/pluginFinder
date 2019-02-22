@@ -23,3 +23,16 @@ body{
   min-height: 100%;
 }
 
+///* ================================= DEVICES Max 1155PX ================================== */
+@media (max-width: 1155px) {
+
+  html{
+    font-size: 80% !important;
+}}
+
+/* ================================= DEVICES Max 1000PX ================================== */
+@media (max-width: 1000px) {
+
+  html{
+    font-size: 100% !important;
+  }}

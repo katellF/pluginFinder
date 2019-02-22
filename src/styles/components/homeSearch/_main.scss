@@ -1,11 +1,12 @@
 
 .main{
-
   display: flex;
   margin-right: $s-size;
   margin-left: $s-size;
+
 }
 
+///* ================================= DEVICES Max 550PX ================================== */
 @media (max-width: 550px) {
 
  .main{

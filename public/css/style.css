@@ -138,10 +138,6 @@ body {
         font-size: 1.2em;
     }
 
-    #footer {
-
-    }
-
     .footer_r {
         flex-direction: row !important;
     }
@@ -150,12 +146,11 @@ body {
         margin-left: 1rem;
     }
 
-
     .header__nav {
         background: #161A29;
         font-size: 1.1rem;
         height: auto;
-
+        width:102%;
     }
 
     .bar{
@@ -177,6 +172,17 @@ body {
 
         width:100%;
     }
+
+
+}
+
+/* ================================= DEVICES MAX 370PX ================================== */
+@media (max-width: 370px) {
+
+.header__nav{
+    width:105%;
+}
+
 
 
 }

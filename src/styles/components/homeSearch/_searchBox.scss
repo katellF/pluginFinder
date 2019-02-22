@@ -1,38 +1,32 @@
 
 .ais-SearchBox-input{
-
   padding: 2rem !important;
   font-size: 2rem !important;
   margin-left: 0.2rem !important;
   color: $darkBlue !important;
-
 }
-//.ais-SearchBox-form{
-//  color: $darkBlue !important;
-//}
 
 .ais-SearchBox-submitIcon{
-
   height: 2rem !important;
   width: 2rem !important;
   -webkit-transform: translateX(-30%) translateY(-50%) !important;
   transform: translateX(-30%) translateY(-50%) !important;
 }
 
+///* ================================= DEVICES Max 1025PX ================================== */
 
-@media (max-width: 1000px) {
+@media (max-width: 1025px) {
 
   .ais-SearchBox {
-
     width:100% !important;
   }
 }
+
+///* ================================= DEVICES Max 550PX ================================== */
 
 @media (max-width: 550px) {
 
   .ais-SearchBox-input{
     font-size: 1rem !important;
-   // margin-left: 0 !important;
-
   }
 }
