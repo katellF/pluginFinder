@@ -1,6 +1,5 @@
 <?php
 
-
 $this->title = htmlspecialchars('Modify password');
 ?>
 

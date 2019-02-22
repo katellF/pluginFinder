@@ -1,6 +1,5 @@
 <?php
 
-//session_start();
 $this->title = htmlspecialchars('Logout');
 ?>
 <body class="body_background">
