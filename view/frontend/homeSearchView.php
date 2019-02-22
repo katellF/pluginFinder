@@ -8,8 +8,8 @@ $this->title = htmlspecialchars('Home');
 
 
 <script type="text/javascript">
-    let currentPage = "homeView"; // "A string here"
-    let isUserConnected = <?=$isUserConnected ?>; // "A string here"
+    let currentPage = "homeView";
+    let isUserConnected = <?=$isUserConnected ?>;
     let listFavoritesIds = <?php
 
 
@@ -19,7 +19,7 @@ $this->title = htmlspecialchars('Home');
         } else {
             echo "[];";
         }
-        ?> // "A string here"
+        ?>
 
 
 </script>

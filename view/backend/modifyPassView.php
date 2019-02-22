@@ -40,7 +40,7 @@ if (isset ($_POST) && !empty($_POST)  && $password ) {
         </div>
 
         <div>
-            <input type="submit" class="btn btn-primary btn-lg btn-block active button-form button-change-pass" value="Modifier"/>
+            <input type="submit" class="btn btn-primary btn-lg btn-block active buttonForm" value="Modifier"/>
         </div>
     </form>
 
