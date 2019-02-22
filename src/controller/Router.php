@@ -99,7 +99,6 @@ class Router
 
             // split URL
             $url = trim($_GET['action'], '/');
-            //$url = filter_var($url, FILTER_SANITIZE_URL);
             $url = filter_var($url);
 
             $url = explode('/', $url);
