@@ -149,40 +149,35 @@ body {
         background: #161A29;
         font-size: 1.1rem;
         height: auto;
-        width:102%;
+
     }
 
-    .bar{
+    .bar {
         border-bottom: 1px solid #0096db;
     }
 
-    .bar:hover{
+    .bar:hover {
         border-top: unset;
         border-bottom: 1px solid white;
         padding: 1.7rem 0.2rem 1rem 0.2rem;
     }
 
-    .nav_linkR{
+    .nav_linkR {
         margin-left: 1rem;
     }
 
 
-    .message_content{
-
+    .message_content {
         width:100%;
     }
-
-
 }
 
 /* ================================= DEVICES MAX 370PX ================================== */
 @media (max-width: 370px) {
 
-.header__nav{
-    width:105%;
+.header__nav {
+    width:108%;
 }
-
-
 
 }
 
