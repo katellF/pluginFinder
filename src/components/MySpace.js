@@ -6,7 +6,6 @@ import {Hit} from './Hit';
 class MySpace extends React.Component {
 
     constructor(props) {
-
         super(props);
         this.deletePlugin = this.deletePlugin.bind(this);
         this.shortName = this.shortName.bind(this);
@@ -20,7 +19,6 @@ class MySpace extends React.Component {
 
 
     deletePlugin(favoriteToRemove) {
-
         fetch(Config.base_url + '/pluginfinder/index.php?action=API/deleteFavorite/' + favoriteToRemove)
             .then(results => results.json())
             .then(() => {
@@ -43,7 +41,6 @@ class MySpace extends React.Component {
 
 
     componentDidMount() {
-
         fetch(Config.base_url + '/pluginfinder/index.php?action=API/listFavorites')
             .then(results => results.json())
             .then(element => this.setState({data: element}));
@@ -51,7 +48,6 @@ class MySpace extends React.Component {
 
 
     shortName(name) {
-
         let stringLength = name.length;
 
         if (stringLength > 50) {
