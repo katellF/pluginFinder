@@ -56,7 +56,6 @@ class Contact
 
     public function sendContactMessage ($data){
 
-
             $headers = 'From: '.$data['email'] . "\r\n" .
                 'Reply-To: '.$data['email'] . "\r\n" .
                 'X-Mailer: PHP/' . phpversion();

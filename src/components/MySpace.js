@@ -61,8 +61,6 @@ class MySpace extends React.Component {
 
 
     render() {
-        console.log(this.state.data);
-
         if (this.state.data.length === 0) {
             return (
                 <div key={'noPlugins'} className="mySpace">

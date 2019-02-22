@@ -1,7 +1,6 @@
 <?php
 namespace Katell\Controller;
 use Katell\Helpers\View;
-//use Katell\Controller\Connect;
 use Katell\Model\FavoritesManager;
 
 
