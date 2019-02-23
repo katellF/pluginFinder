@@ -31,6 +31,7 @@ class MySpace extends React.Component {
                                 data: prevState.data
                             }
                         });
+
                     }
                 });
             })
@@ -88,7 +89,8 @@ class MySpace extends React.Component {
                                     </div>
                                     <div className="d-flex flex-column justify-content-center mySpace__buttons">
 
-                                        <button key={'del_' + element.pluginId} onClick={() => { if(window.confirm('Do you want to delete this plugin from your favorites?'))
+                                        <button key={'del_' + element.pluginId} onClick={() =>
+                                        { if(window.confirm('Do you want to delete this plugin from your favorites?'))
                                         {this.deletePlugin(element.pluginId);}
 
                                         }} data-id={element.pluginId} className="button_blue mySpace__delete"
