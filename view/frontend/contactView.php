@@ -17,14 +17,15 @@ $this->title = htmlspecialchars('Contact');
         </div><div class="form-group">
 
             <label for="email">Email</label><br/>
-            <input type="email" class="form-control" id="email" name="email" required minlength="6" maxlength="50"/>
+            <input type="text" class="form-control" id="email" name="email"  minlength="6" maxlength="50"/>
+            <div id="result"></div>
         </div>
         <div class="form-group">
             <label for="message">Your Message</label><br/>
             <textarea class="form-control" id="message" name="message" required minlength="5" maxlength="500"></textarea>
         </div>
         <div class="row no-gutters justify-content-center send">
-            <input type="submit" class="btn btn-primary btn-lg btn-block active buttonForm" value="Send"/>
+            <input type="submit" class="btn btn-primary btn-lg btn-block active buttonForm" value="Send" id="send"/>
         </div>
     </form>
 </div>

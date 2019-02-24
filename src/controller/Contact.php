@@ -42,13 +42,6 @@ class Contact
 
             }
 
-            if (strlen(htmlspecialchars(trim($_POST['email']))) < 6 || strlen(htmlspecialchars(trim($_POST['email']))) > 50 ) {
-
-                throw new \Exception('Email length not correct. Minimum 6 characters, maximum 50 characters.');
-
-            }
-
-
 
             if (strlen(htmlspecialchars(trim($_POST['message']))) > 500 ) {
 
@@ -56,6 +49,12 @@ class Contact
 
             }
 
+
+            if (strlen(htmlspecialchars(trim($_POST['email']))) < 6 || strlen(htmlspecialchars(trim($_POST['email']))) > 50 ) {
+
+                throw new \Exception('Email length not correct. Minimum 6 characters, maximum 50 characters.');
+
+            }
 
 
             if (filter_var(htmlspecialchars(trim($_POST['email'])), FILTER_VALIDATE_EMAIL) === false) {

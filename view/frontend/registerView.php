@@ -20,6 +20,7 @@ $this->title = htmlspecialchars('Register');
         <div class="form-group margin-bottom25">
             <label for="email" class="margin-bottom15">Email</label><br/>
             <input type="email" class="form-control" id="email" placeholder="Email" name="email" required minlength="6" maxlength="50">
+            <div id="result"></div>
         </div>
 
         <div class="form-group margin-bottom25">
@@ -35,7 +36,7 @@ $this->title = htmlspecialchars('Register');
             <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your Password" name="confirmPassword" required minlength="5" maxlength="20">
         </div>
         <div class="send">
-            <input type="submit" class="btn btn-primary btn-lg btn-block active buttonForm" value="Register"/>
+            <input type="submit" class="btn btn-primary btn-lg btn-block active buttonForm" value="Register" id="send"/>
         </div>
     </form>
 
