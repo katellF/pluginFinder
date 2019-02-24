@@ -20,9 +20,9 @@ class ValidationClass{
         const email = $("#email").val();
         result.text("");
 
-        if (this.validateEmail(email)) {
+        if (this.validateEmail(trim(email))) {
             result.text("");
-           
+
         } else {
             result.text(email + " is not valid :(");
             result.css("color", "red");
