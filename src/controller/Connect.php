@@ -43,10 +43,36 @@ class Connect
 
             }
 
-            if (strlen(htmlspecialchars(trim($_POST['password']))) < 6) {
+
+            if (strlen(htmlspecialchars(trim($_POST['firstname']))) < 1) {
 
 
-                throw new \Exception('Password too short. At least 6 characters are necessary');
+                throw new \Exception('First Name too short. At least 1 character is necessary.');
+
+            }
+
+
+            if (strlen(htmlspecialchars(trim($_POST['lastname']))) < 1) {
+
+
+                throw new \Exception('Last Name too short. At least 1 character is necessary.');
+
+            }
+
+
+
+            if (strlen(htmlspecialchars(trim($_POST['pseudo']))) < 3) {
+
+
+                throw new \Exception('Login too short. At least 3 characters are necessary.');
+
+            }
+
+
+            if (strlen(htmlspecialchars(trim($_POST['password']))) < 5) {
+
+
+                throw new \Exception('Password too short. At least 5 characters are necessary.');
 
             }
 
@@ -56,6 +82,15 @@ class Connect
                 throw new \Exception('the passwords have to be identical');
 
             }
+
+            if (strlen(htmlspecialchars(trim($_POST['email']))) < 6) {
+
+
+                throw new \Exception('Email too short. At least 6 characters are necessary.');
+
+            }
+
+
             if (filter_var(htmlspecialchars(trim($_POST['email'])), FILTER_VALIDATE_EMAIL) === false) {
 
                 throw new \Exception('The email was not written correctly');
@@ -88,6 +123,21 @@ class Connect
 
                 throw new \Exception('All fields must be completed');
             }
+
+
+            if (strlen(htmlspecialchars(trim($_POST['pseudoConnect']))) < 3 ) {
+
+                throw new \Exception('Login too short. At least 3 characters are necessary.');
+            }
+
+
+            if (strlen(htmlspecialchars(trim($_POST['passwordConnect']))) < 5 ) {
+
+                throw new \Exception('Password too short. At least 5 characters are necessary.');
+            }
+
+
+
 
             $res = $this->UserConnect->userConnect(trim($_POST['pseudoConnect']));
 

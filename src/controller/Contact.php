@@ -26,7 +26,37 @@ class Contact
 
             throw new \Exception('All fields must be completed');
 
-        }
+            }
+
+
+            if (strlen(htmlspecialchars(trim($_POST['lastname']))) > 50  ) {
+
+                throw new \Exception('Last Name is too long, maximum 50 characters.');
+
+            }
+
+
+            if (strlen(htmlspecialchars(trim($_POST['firstname']))) > 50  ) {
+
+                throw new \Exception('First Name is too long, maximum 50 characters.');
+
+            }
+
+            if (strlen(htmlspecialchars(trim($_POST['email']))) < 6 || strlen(htmlspecialchars(trim($_POST['email']))) > 50 ) {
+
+                throw new \Exception('Email length not correct. Minimum 6 characters, maximum 50 characters.');
+
+            }
+
+
+
+            if (strlen(htmlspecialchars(trim($_POST['message']))) > 500 ) {
+
+                throw new \Exception('Message is too long, maximum 500 characters.');
+
+            }
+
+
 
             if (filter_var(htmlspecialchars(trim($_POST['email'])), FILTER_VALIDATE_EMAIL) === false) {
 
