@@ -22,13 +22,13 @@ class Contact
 
         if (isset($_POST) && !empty($_POST)) {
 
-            if (empty (htmlspecialchars($_POST['message'])) || empty (htmlspecialchars($_POST['lastname'])) || empty (htmlspecialchars($_POST['firstname']))) {
+            if (empty (htmlspecialchars(trim($_POST['message']))) || empty (htmlspecialchars(trim($_POST['lastname']))) || empty (htmlspecialchars(trim($_POST['firstname'])))) {
 
             throw new \Exception('All fields must be completed');
 
         }
 
-            if (filter_var(htmlspecialchars($_POST['email']), FILTER_VALIDATE_EMAIL) === false) {
+            if (filter_var(htmlspecialchars(trim($_POST['email'])), FILTER_VALIDATE_EMAIL) === false) {
 
                 throw new \Exception('The email was not written correctly');
 
@@ -56,11 +56,11 @@ class Contact
 
     public function sendContactMessage ($data){
 
-            $headers = 'From: '.$data['email'] . "\r\n" .
-                'Reply-To: '.$data['email'] . "\r\n" .
+            $headers = 'From: '.htmlspecialchars(trim($data['email']) ). "\r\n" .
+                'Reply-To: '. htmlspecialchars (trim($data['email']) ) . "\r\n" .
                 'X-Mailer: PHP/' . phpversion();
 
-            $result = mail("katell@katellfracassi.com","Message from " . $data['email'], $data['message'], $headers);
+            $result = mail("katell@katellfracassi.com","Message from " . htmlspecialchars(trim($data['email'])), htmlspecialchars(trim($data['message'])), $headers);
 
             return $result;
 
