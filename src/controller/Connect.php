@@ -28,11 +28,11 @@ class Connect
         if (isset ($_POST) && !empty($_POST)) {
 
 
-            $post_pseudo = htmlspecialchars($_POST['pseudo']);
+            $post_pseudo = htmlspecialchars(trim($_POST['pseudo']));
 
             $user = $this->UserConnect->getUser($post_pseudo);
 
-            if (empty (htmlspecialchars($_POST['password'])) || empty (htmlspecialchars($_POST['pseudo'])) || empty (htmlspecialchars($_POST['lastname'])) || empty (htmlspecialchars($_POST['firstname'])) || empty (htmlspecialchars($_POST['pseudo']))) {
+            if (empty (htmlspecialchars(trim($_POST['password']))) || empty (htmlspecialchars(trim($_POST['pseudo']))) || empty (htmlspecialchars(trim($_POST['lastname']))) || empty (htmlspecialchars(trim($_POST['firstname']))) || empty (htmlspecialchars(trim($_POST['pseudo'])))) {
 
                 throw new \Exception('All fields must be completed');
             }
@@ -43,20 +43,20 @@ class Connect
 
             }
 
-            if (strlen(htmlspecialchars($_POST['password'])) < 6) {
+            if (strlen(htmlspecialchars(trim($_POST['password']))) < 6) {
 
 
                 throw new \Exception('Password too short. At least 6 characters are necessary');
 
             }
 
-            if (htmlspecialchars($_POST['password']) !== htmlspecialchars($_POST['confirmPassword'])) {
+            if (htmlspecialchars(trim($_POST['password'])) !== htmlspecialchars(trim($_POST['confirmPassword']))) {
 
 
                 throw new \Exception('the passwords have to be identical');
 
             }
-            if (filter_var(htmlspecialchars($_POST['email']), FILTER_VALIDATE_EMAIL) === false) {
+            if (filter_var(htmlspecialchars(trim($_POST['email'])), FILTER_VALIDATE_EMAIL) === false) {
 
                 throw new \Exception('The email was not written correctly');
 
@@ -66,7 +66,7 @@ class Connect
             session_start();
 
             $this->UserConnect->registerUser($_POST);
-            $connect = $this->UserConnect->userConnect($_POST['pseudo']);
+            $connect = $this->UserConnect->userConnect(htmlspecialchars(trim($_POST['pseudo'])));
             $_SESSION['pseudo'] = $connect['pseudo'];
             $_SESSION['id'] = $connect['id'];
 
@@ -84,14 +84,14 @@ class Connect
     {
         if (isset ($_POST) && !empty($_POST)) {
 
-            if (empty (htmlspecialchars($_POST['passwordConnect'])) || empty (htmlspecialchars($_POST['pseudoConnect']))) {
+            if (empty (htmlspecialchars(trim($_POST['passwordConnect']))) || empty (htmlspecialchars(trim($_POST['pseudoConnect'])))) {
 
                 throw new \Exception('All fields must be completed');
             }
 
-            $res = $this->UserConnect->userConnect($_POST['pseudoConnect']);
+            $res = $this->UserConnect->userConnect(trim($_POST['pseudoConnect']));
 
-            $isPasswordCorrect = password_verify(htmlspecialchars($_POST['passwordConnect']), $res['password']);
+            $isPasswordCorrect = password_verify(htmlspecialchars(trim($_POST['passwordConnect'])), $res['password']);
             if (!$res) {
 
                 throw new \Exception('Wrong pseudo or password');
@@ -101,7 +101,7 @@ class Connect
 
                     session_start();
                     $_SESSION['id'] = $res['id'];
-                    $_SESSION['pseudo'] = $_POST['pseudoConnect'];
+                    $_SESSION['pseudo'] =htmlspecialchars(trim($_POST['pseudoConnect']));
 
                     header('Location: index.php?action=member');
 
@@ -146,16 +146,16 @@ class Connect
         if ($this->isuserconnected()) {
             if (isset($_POST) && !empty($_POST)) {
 
-                $pass_hache = password_hash((htmlspecialchars($_POST['passwordConnect'])), PASSWORD_DEFAULT);
+                $pass_hache = password_hash((htmlspecialchars(trim($_POST['passwordConnect']))), PASSWORD_DEFAULT);
                 $modifyPassword = $this->UserConnect->setPassword($_SESSION['pseudo'], $pass_hache);
 
 
-                if (strlen(htmlspecialchars($_POST['passwordConnect'])) < 6) {
+                if (strlen(htmlspecialchars(trim($_POST['passwordConnect']))) < 6) {
 
                     throw new \Exception('Password too short. At least 6 characters are necessary');
                 }
 
-                if ((htmlspecialchars($_POST['passwordConnect'])) !== (htmlspecialchars($_POST['passwordConfirm']))) {
+                if ((htmlspecialchars(trim($_POST['passwordConnect']))) !== (htmlspecialchars(trim($_POST['passwordConfirm'])))) {
 
                     throw new \Exception('the passwords have to be identical');
                 }
