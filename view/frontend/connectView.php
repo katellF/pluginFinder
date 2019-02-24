@@ -19,7 +19,7 @@ $this->title = htmlspecialchars('Login');
             <input type="password" class="form-control" id="passwordConnect" placeholder="Password" name="passwordConnect" required minlength="5" maxlength="20">
         </div>
         <div class="send">
-            <input type="submit" class="btn btn-primary btn-lg btn-block active buttonForm" value="login"/>
+            <input type="submit" class="btn btn-primary btn-lg btn-block active buttonForm" value="login" id="sendconnect"/>
         </div>
     </form>
 
