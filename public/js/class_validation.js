@@ -22,7 +22,7 @@ class ValidationClass{
 
         if (this.validateEmail(email)) {
             result.text("");
-            //result.css("color", "green");
+           
         } else {
             result.text(email + " is not valid :(");
             result.css("color", "red");

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  mar. 19 fév. 2019 à 22:08
+-- Généré le :  Dim 24 fév. 2019 à 22:38
 -- Version du serveur :  5.7.23-23-log
 -- Version de PHP :  7.1.25
 
@@ -39,11 +39,7 @@ CREATE TABLE `favorites` (
 --
 
 INSERT INTO `favorites` (`userId`, `pluginId`, `pluginName`) VALUES
-(15, 'buddyforms', 'Contact – Registration – Post Form Builder & FrontEnd Editor BuddyForms – Making WordPress Forms A Breeze'),
-(15, 'captainform', 'Forms by CaptainForm – Form Builder for WordPress'),
-(16, 'captainform', 'Forms by CaptainForm – Form Builder for WordPress'),
-(16, 'mailoptin', 'MailOptin – Popups, Email Optin Forms & Newsletters for MailChimp, Aweber etc.'),
-(16, 'weglot', 'Translate WP website – Weglot Translate');
+(38, 'captainform', 'Forms by CaptainForm – Form Builder for WordPress');
 
 -- --------------------------------------------------------
 
@@ -53,10 +49,10 @@ INSERT INTO `favorites` (`userId`, `pluginId`, `pluginName`) VALUES
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `lastname` varchar(250) NOT NULL,
-  `firstname` varchar(250) NOT NULL,
-  `pseudo` varchar(250) NOT NULL,
-  `email` varchar(250) NOT NULL,
+  `lastname` varchar(50) NOT NULL,
+  `firstname` varchar(50) NOT NULL,
+  `pseudo` varchar(20) NOT NULL,
+  `email` varchar(100) NOT NULL,
   `password` varchar(250) NOT NULL,
   `registration_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -66,8 +62,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `lastname`, `firstname`, `pseudo`, `email`, `password`, `registration_date`) VALUES
-(15, 'katell', 'katell', 'katell', 'katell@gmail.com', '$2y$10$TQzkLvrLIxjCvLwS4K.5a.7hvdXLNzKtMvQ41G6RqK/zKyqaTKe1W', '2019-02-19 00:00:00'),
-(16, 'kat', 'ka', 'katou', 'katell.fracassi@gmail.com', '$2y$10$4LjSZvexBgM.JdRyuOBDF.oXp7vGXCwGtzCav36h45oMuKo5nM.Ju', '2019-02-19 00:00:00');
+(38, 'katell', 'katell', 'katell', 'katell.fracassi@gmail.com', '$2y$10$9kZ0BT1WkfhWQJiepDiFWOgHSLOgMfZhmYNDuzO80aMPzLr5b2Kt.', '2019-02-24 00:00:00'),
+(39, 'a', 'a', 'aaa', 'z.aa@a.fr', '$2y$10$P./Rx8qRRUp9w76pLj.tjeNebz/1ekdiDPdruATWmIbNpQexesBhy', '2019-02-24 00:00:00'),
+(40, 'a', 'a', 'azerty', 'a.a@a.a', '$2y$10$cWZR.pBVzA05UhjSGbcHeOwTqrrxUK3TTcPM0XLXwxCgoCg.YBQx6', '2019-02-24 00:00:00');
 
 --
 -- Index pour les tables déchargées
@@ -93,7 +90,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- Contraintes pour les tables déchargées
