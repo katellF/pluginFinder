@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  Dim 24 fév. 2019 à 22:38
+-- Généré le :  lun. 25 fév. 2019 à 19:16
 -- Version du serveur :  5.7.23-23-log
 -- Version de PHP :  7.1.25
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `favorites` (
   `userId` int(11) NOT NULL,
-  `pluginId` varchar(255) NOT NULL,
+  `pluginId` varchar(100) NOT NULL,
   `pluginName` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
