@@ -200,9 +200,9 @@ class Connect
                 $modifyPassword = $this->UserConnect->setPassword($_SESSION['pseudo'], $pass_hache);
 
 
-                if (strlen(htmlspecialchars(trim($_POST['passwordConnect']))) < 6) {
+                if (strlen(htmlspecialchars(trim($_POST['passwordConnect']))) < 5) {
 
-                    throw new \Exception('Password too short. At least 6 characters are necessary');
+                    throw new \Exception('Password too short. At least 5 characters are necessary');
                 }
 
                 if ((htmlspecialchars(trim($_POST['passwordConnect']))) !== (htmlspecialchars(trim($_POST['passwordConfirm'])))) {

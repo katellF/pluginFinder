@@ -135,6 +135,45 @@ class ValidationClass{
 
     }
 
+    validateModifyPwd(){
+
+
+        // MODIFY PASSWORD FORM
+        const passwordConnect = $("#passwordConnect").val();
+        const passwordConfirm = $("#passwordConfirm").val();
+
+        $("#passwordConnect").val(passwordConnect.trim());
+        $("#passwordConfirm").val(passwordConfirm.trim());
+
+
+        $("#passwordConnectCheck").text("");
+        if ( passwordConnect.length < 5  ){
+            $("#passwordConnectCheck").text("Password is too short...");
+            $("#passwordConnectCheck").css("color", "red");
+            return false;
+        }
+
+        $("#passwordConfirmCheck").text("");
+
+        if ( passwordConfirm.length < 5  ){
+            $("#passwordConfirmCheck").text("Password is too short...");
+            $("#passwordConfirmCheck").css("color", "red");
+            return false;
+        }
+
+        $("#passwordConfirmCheck").text("");
+        if ( passwordConnect !== passwordConfirm ){
+            $("#passwordConfirmCheck").text("Passwords needs to be identical");
+            $("#passwordConfirmCheck").css("color", "red");
+            return false;
+        }
+
+        return true;
+
+
+    }
+
+
     validateContact() {
 
         const lastname= $("#lastname").val();
@@ -223,6 +262,16 @@ class ValidationClass{
 
         });
 
+
+        $("#sendmodifypwd").click(() => {
+
+            let validation = this.validateModifyPwd();
+
+            if( !validation ) {
+                event.preventDefault();
+            }
+
+        });
 
 
     }
