@@ -30,9 +30,23 @@ class ValidationClass{
         $("#password").val(password.trim());
         $("#confirmPassword").val(confirmPassword.trim());
 
+
+        $("#lastnameCheck").text("");
+        if ( lastname.length < 3  ){
+            $("#lastnameCheck").text("Last Name is too short...");
+            $("#lastnameCheck").css("color", "red");
+            return false;
+        }
+
+        $("#firstnameCheck").text("");
+        if ( firstname.length < 3  ){
+            $("#firstnameCheck").text("First Name is too short...");
+            $("#firstnameCheck").css("color", "red");
+            return false;
+        }
+
         const result = $("#result");
         const email = $("#email").val();
-        console.log(email);
         $("#email").val(email.trim());
 
         result.text("");
@@ -43,8 +57,49 @@ class ValidationClass{
         } else {
             result.text(email + " is not valid :(");
             result.css("color", "red");
+            return false;
         }
-        return false;
+
+        $("#pseudoCheck").text("");
+        if ( pseudo.length < 3  ){
+            $("#pseudoCheck").text("Pseudo is too short...");
+            $("#pseudoCheck").css("color", "red");
+            return false;
+        }
+
+
+        $("#passwordCheck").text("");
+        if ( password.length < 5  ){
+            $("#passwordCheck").text("Password is too short...");
+            $("#passwordCheck").css("color", "red");
+            return false;
+        }
+
+        console.log(password)
+        console.log(confirmPassword)
+
+
+
+        $("#confirmPasswordCheck").text("");
+        if ( confirmPassword.length < 5  ){
+            $("#confirmPasswordCheck").text("Password is too short...");
+            $("#confirmPasswordCheck").css("color", "red");
+            return false;
+        }
+
+
+
+
+        $("#confirmPasswordCheck").text("");
+        if ( password !== confirmPassword ){
+            $("#confirmPasswordCheck").text("Passwords needs to be identical");
+            $("#confirmPasswordCheck").css("color", "red");
+            return false;
+        }
+
+
+
+        return true;
 
     }
 
@@ -59,7 +114,25 @@ class ValidationClass{
         $("#pseudoConnect").val(pseudoConnect.trim());
         $("#passwordConnect").val(passwordConnect.trim());
 
-        return false;
+
+        $("#pseudoConnectCheck").text("");
+        if ( pseudoConnect.length < 3  ){
+            $("#pseudoConnectCheck").text("Login is too short...");
+            $("#pseudoConnectCheck").css("color", "red");
+            return false;
+        }
+
+        $("#passwordConnectCheck").text("");
+
+        if ( passwordConnect.length < 5  ){
+            $("#passwordConnectCheck").text("Password is too short...");
+            $("#passwordConnectCheck").css("color", "red");
+            return false;
+        }
+
+        return true;
+
+
     }
 
     validateContact() {
@@ -73,6 +146,20 @@ class ValidationClass{
         $("#message").val(message.trim());
 
 
+        $("#lastnameCheck").text("");
+        if ( lastname.length < 3  ){
+            $("#lastnameCheck").text("Last Name is too short...");
+            $("#lastnameCheck").css("color", "red");
+            return false;
+        }
+
+        $("#firstnameCheck").text("");
+        if ( firstname.length < 3  ){
+            $("#firstnameCheck").text("First Name is too short...");
+            $("#firstnameCheck").css("color", "red");
+            return false;
+        }
+
         const result = $("#result");
         const email = $("#email").val();
         $("#email").val(email.trim());
@@ -85,22 +172,55 @@ class ValidationClass{
         } else {
             result.text(email + " is not valid :(");
             result.css("color", "red");
+            return false;
         }
-        return false;
+
+
+        $("#messageCheck").text("");
+        if ( message.length < 5  ){
+            $("#messageCheck").text("Your message is too short...");
+            $("#messageCheck").css("color", "red");
+            return false;
+        }
+
+
+        return true;
     }
 
     initEventListeners() {
 
         $("#sendcontact").click(() => {
-            this.validateContact()
+
+
+            let validation = this.validateContact()
+
+            if( !validation ) {
+                event.preventDefault();
+            }
+
+
+
         });
 
-        $("#sendconnect").click(() => {
-            this.validateConnect()
+        $("#sendconnect").click((event) => {
+
+            let validation = this.validateConnect();
+
+            if( !validation ) {
+                event.preventDefault();
+            }
+
+
         });
 
         $("#sendregister").click(() => {
-            this.validateRegister()
+
+            let validation = this.validateRegister();
+
+            if( !validation ) {
+                event.preventDefault();
+            }
+
         });
 
 
